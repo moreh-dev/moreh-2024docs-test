@@ -4,7 +4,7 @@ tags: [component]
 order: 100
 ---
 
-# Fine-tuning Model Tutorials
+# Fine-tuning Tutorials
 
 - [Llama2](/Tutorials/Llama2%20Tutorial/index.md)
 - [Mistral](/Tutorials/Mistral%20Tutorial/index.md)
