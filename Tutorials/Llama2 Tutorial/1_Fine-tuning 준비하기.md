@@ -24,7 +24,7 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 
 만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 ***([Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare%20Fine-tuning%20on%20MoAI%20Platform.md))*** 문서에 따라 conda 환경을 생성하십시오.
 
-# PyTorch 동작 여부 확인하기
+## PyTorch 동작 여부 확인하기
 
 다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
 
@@ -47,7 +47,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
 ```
 
-# 필요 Python 패키지 설치
+## 필요 Python 패키지 설치
 
 다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
 
@@ -55,7 +55,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 $ pip install transformers==4.36.2 datasets==2.19.0 loguru==0.7.2 sentencepiece==0.2.0
 ```
 
-# 학습 스크립트 다운로드
+## 학습 스크립트 다운로드
 
 다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_llama2.py` 스크립트를 사용할 것입니다.
 
@@ -67,7 +67,7 @@ $ cd quickstart
 ...  train_llama2.py  ...
 ```
 
-# 학습 모델 및 토크나이저 다운로드
+## 학습 모델 및 토크나이저 다운로드
 
 Hugging Face를 이용해 Llama2-13b-hf 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama2 13B 모델의 경우 체크포인트 용량이 약 49GB이기 때문에 체크포인트를 위한 50GB 스토리지 여유가 권장됩니다.
 
@@ -102,7 +102,7 @@ model-00006-of-00011.safetensors  tokenizer.json
 model-00007-of-00011.safetensors  tokenizer.model
 ```
 
-# 학습 데이터 다운로드
+## 학습 데이터 다운로드
 
 학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_llama2_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `llama2_dataset.pt` 파일로 저장합니다.
 
