@@ -14,7 +14,7 @@ Mistral 모델은 2023년 [Mistral AI](https://mistral.ai/)사에서 공개한 �
 
 Mistral 7B 모델은 Transformer의 decoder만을 사용한 Decoder-only 모델입니다. Sliding Window Attention 기법을 적용해 한 번에 처리할 수 있는 입력 토큰의 길이를 크게 늘렸고, Rolling Buffer Cache를 도입해 메모리 사용량을 효율적으로 최적화했습니다.
 
-이 튜토리얼에서는 MoAI Platform에서 코드 생성 태스크에 대해 [python_code_instructions_18k-alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) **데이터셋을 활용하여 Mistral 7B 모델을 fine-tuning 해보겠습니다.
+이 튜토리얼에서는 MoAI Platform에서 코드 생성 태스크에 대해 [python_code_instructions_18k-alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터셋을 활용하여 Mistral 7B 모델을 fine-tuning 해보겠습니다.
 
 ## 시작하기 전에
 
