@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768331791885">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768332022868">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,23 +21,21 @@
     <meta property="og:url" content="https://docs.moreh.io/tutorials/llama2-tutorial/1_fine-tuning-준비하기/">
     <meta property="og:title" content="1. Fine-tuning 준비하기">
     <meta property="og:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
-    <meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/a22d7b0b-cfc7-49af-a6b4-2148ef891af4/Untitled.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/tutorials/llama2-tutorial/1_fine-tuning-준비하기/">
     <meta property="twitter:title" content="1. Fine-tuning 준비하기">
     <meta property="twitter:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
-    <meta property="twitter:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/a22d7b0b-cfc7-49af-a6b4-2148ef891af4/Untitled.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768331791885" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768332022868" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768331791885" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768332022868" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768331791885" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768331791885" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768332022868" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768332022868" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -253,8 +251,8 @@ $ cd quickstart
 <p><a href="https://huggingface.co/meta-llama/Llama-2-13b-hf">meta-llama/Llama-2-13b-hf · Hugging Face</a></p>
 <p>동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.</p>
 <p><figure class="content-center">
-    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/a22d7b0b-cfc7-49af-a6b4-2148ef891af4/Untitled.png" alt="Untitled">
-    <figcaption class="caption">Untitled</figcaption>
+    <img src="../alert.png" alt="">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>상태 변경이 되었다면, 다음과 같이 <code v-pre>tutorial</code> 디렉토리 안의 <code v-pre>download_llama2_13b.py</code> 스크립트를 이용해 모델 체크포인트와 토크나이저를 <code v-pre>./llama-2-13b-hf</code> 디렉토리에 다운로드 받을 수 있습니다.</p>
