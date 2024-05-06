@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768027943920">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768331791885">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,23 +21,21 @@
     <meta property="og:url" content="https://docs.moreh.io/tutorials/qwen-tutorial/3.-학습-실행하기/">
     <meta property="og:title" content="3. 학습 실행하기">
     <meta property="og:description" content="이제 실제로 fine tuning을 실행해 보겠습니다.">
-    <meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/85462faa-2423-4322-a6aa-69a631c9dd4c/Untitled.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/tutorials/qwen-tutorial/3.-학습-실행하기/">
     <meta property="twitter:title" content="3. 학습 실행하기">
     <meta property="twitter:description" content="이제 실제로 fine tuning을 실행해 보겠습니다.">
-    <meta property="twitter:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/85462faa-2423-4322-a6aa-69a631c9dd4c/Untitled.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768027943920" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768331791885" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768027943920" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768331791885" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768027943920" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768027943920" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768331791885" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768331791885" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -331,8 +329,8 @@ Model saved in ./qwen_code_generation</code></pre>
 </doc-codeblock></div>
 <p>Loss 값이 다음과 같이 떨어지며 정상 학습이 이루어지는 것을 확인할 수 있습니다.</p>
 <p><figure class="content-center">
-    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/85462faa-2423-4322-a6aa-69a631c9dd4c/Untitled.png" alt="Untitled">
-    <figcaption class="caption">Untitled</figcaption>
+    <img src="../loss.png" alt="">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>학습 도중에 출력되는 throughput은 해당 PyTorch 스크립트를 통해 초당 몇 개의 token을 학습하고 있는지를 의미합니다.</p>
