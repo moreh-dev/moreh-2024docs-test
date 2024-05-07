@@ -24,9 +24,20 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 
 만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 ***([Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare%20Fine-tuning%20on%20MoAI%20Platform.md))*** 문서에 따라 conda 환경을 생성하십시오.
 
+만약 해당 MoAI 버전이 24.2.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.
+
+```bash
+$ update-moreh --target 24.2.0
+Currently installed: 24.3.0
+Possible upgrading version: 24.2.0
+
+Do you want to upgrade? (y/n, default:n)
+y
+```
+
 ## PyTorch 동작 여부 확인하기
 
-다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
+다음과 같이 실행하여 torch 패키지가 정상적으로 import 되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
 
 ```bash
 $ python
@@ -67,9 +78,17 @@ $ cd quickstart
 ...  train_llama2.py  ...
 ```
 
+## 필요 Python 패키지 설치
+
+다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
+
+```bash
+$ pip install -r requirements/requirements_baichuan.txt
+```
+
 ## 학습 모델 및 토크나이저 다운로드
 
-Hugging Face를 이용해 Llama2-13b-hf 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama2 13B 모델의 경우 체크포인트 용량이 약 49GB이기 때문에 체크포인트를 위한 50GB 스토리지 여유가 권장됩니다.
+Hugging Face를 이용해 Llama2-13b-hf 모델의 체크포인트와 토크나이저를 다운로드합니다. 이때 Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama2 13B 모델의 경우 체크포인트 용량이 약 49GB이기 때문에 체크포인트를 위한 50GB 스토리지 여유가 필수적입니다.
 
 먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
 

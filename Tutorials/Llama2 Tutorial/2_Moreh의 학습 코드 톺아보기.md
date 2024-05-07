@@ -5,9 +5,9 @@ order: 40
 ---
 # 2. Moreh의 학습 코드 톺아보기
 
-학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_llama2.py` 스크립트의 내용에 대해 살펴 보겠습니다. 이 스크립트는 통상적인 PyTorch 코드로서 Hugging Face Transformers 라이브러리에 있는 Llama2 13B 모델 구현을 기반으로 fine tuning 작업을 실행합니다.
+학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_llama2.py` 스크립트의 내용에 대해 살펴보겠습니다. 이 스크립트는 통상적인 PyTorch 코드로서 Hugging Face Transformers 라이브러리에 있는 Llama2 13B 모델 구현을 기반으로 fine-tuning 작업을 실행합니다.
 
-**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Llama2 13B 모델을 다른 방식으로 fine-tuning하는 것도 얼마든지 가능합니다. MoAI Platform은 PyTorch와의 완전한 호환성을 제공하기 때문입니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드([LLM Fine-tuning 파라미터 가이드](///Supported_Documents/LLM_param_guide.md))를 참고하십시오.
+**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Llama2 13B 모델을 다른 방식으로 fine-tuning 하는 것도 얼마든지 가능합니다. MoAI Platform은 PyTorch와의 완전한 호환성을 제공하기 때문입니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드([LLM Fine-tuning 파라미터 가이드](///Supported_Documents/LLM_param_guide.md))를 참고하십시오.
 
 
 ## Training Code
@@ -27,7 +27,7 @@ model = AutoModelForCausalLM.from_pretrained("./llama-2-13b-hf")
 tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
 ```
 
-[Fine tuning 준비하기](https://www.notion.so/1-Fine-tuning-052d303ba7f34b5f89692af10bb53fd7?pvs=21) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+[Fine tuning 준비하기](1_Fine-tuning%20준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
 
 ```python
   dataset = torch.load("./llama2_dataset.pt")
@@ -80,19 +80,21 @@ tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
             model.zero_grad(set_to_none=True)
 ```
 
-**위와 같이 MoAI Platform에서는 기존 pytorch 코드와 동일한 방식으로 작성하실 수 있습니다.**
+**위와 같이 MoAI Platform에서는 기존에 사용하시던 PyTorch 스크립트를 수정 없이 동일하게 사용하실 수 있습니다.**
 
 # About Advanced Parallelism
 
-본 튜토리얼에 사용되는 학습 스크립트에서는 아래와 같은 코드가 추가로 한 줄 존재합니다. 이는 MoAI Platform에서 제공하는 최고의 병렬화 기능을 수행하는 코드입니다.
+본 튜토리얼에 사용되는 학습 스크립트에는 아래와 같은 코드가 추가로 한 줄 존재합니다. 이는 MoAI Platform에서 제공하는 자동 병렬화 기능을 수행하는 코드입니다.
 
 ```bash
 torch.moreh.option.enable_advanced_parallelization()
 ```
 
-본 튜토리얼에서 사용하는 Llama2 13B와 같은 거대한 언어 모델의 경우 필연적으로 여러 개의 GPU를 사용하여 학습시켜야만 합니다. 이 경우 MoAI Platform이 아닌 다른 프레임워크를 사용할 경우, Data Parallel, Pipeline Parallel, Tensor Parallel과 같은 병렬화 기법을 도입하여 학습을 수행해야 합니다.
+Llama2 13B와 같은 거대 언어 모델은 학습에 많은 양의 GPU가 필요합니다. 따라서 MoAI Platform이 아닌 다른 프레임워크를 사용할 경우, Data Parallelism, Pipeline Parallelism, Tensor Parallelism과 같은 병렬화 기법을 도입하여 학습을 수행해야 합니다.
 
-예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다. (https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다.
+[https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+
 
 ```python
 ...
@@ -124,7 +126,7 @@ torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 
 이와 같은 기본적인 세팅 이외에도 유저는 학습 스크립트 작성 과정에서 multi processing 환경에서의 Python 코드의 동작에 대해 이해하고 있어야 하며, 특히 multi node 세팅에서는 학습에 사용되는 노드들에 대한 환경 구성 작업이 추가적으로 들어가야 합니다. 게다가 모델의 종류, 크기, 데이터셋 등을 고려한 최적의 병렬화 방법을 찾기 위해서는 매우 많은 시간이 소요됩니다.
 
-**반면, MoAI Platform의 AP기능은 유저가 직접 이러한 추가적인 병렬화 기법을 적용할 필요 없이, 단지 학습 스크립트에 다음과 같은 코드 한 줄을 추가하는 것 만으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
+**반면, MoAI Platform의 AP기능은 유저가 직접 이러한 추가적인 병렬화 기법을 적용할 필요 없이, 단지 학습 스크립트에 다음과 같은 코드 한 줄을 추가하는 것만으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
 
 ```bash
 import torch
@@ -135,4 +137,4 @@ model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
 ...
 ```
 
-이렇듯 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능인 MoAI Platform만의 Advanced Parallelization(AP)을 통해 **최적의 분산 병렬처리**를 경험해보시기 바랍니다. AP기능을 이용하면 일반적으로 대규모 모델 훈련시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **아주 간단한** **코드 한 줄**을 통해 확보할 수 있습니다.
+이렇듯 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능인 MoAI Platform만의 Advanced Parallelization(AP)을 통해 **최적의 분산 병렬처리**를 경험해 보시기 바랍니다. AP기능을 이용하면 일반적으로 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **아주 간단한 코드 한 줄**을 통해 확보할 수 있습니다.
