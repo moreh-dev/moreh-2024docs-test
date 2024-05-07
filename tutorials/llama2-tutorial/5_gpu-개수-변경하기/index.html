@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768358344717">
+    <meta name="turbo-root" content="/ko/​">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768411483387">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,28 +15,28 @@
     <meta name="description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/tutorials/llama2-tutorial/5_gpu-개수-변경하기/">
+    <link rel="canonical" href="https://docs.moreh.io/ko/​/tutorials/llama2-tutorial/5_gpu-개수-변경하기/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/tutorials/llama2-tutorial/5_gpu-개수-변경하기/">
+    <meta property="og:url" content="https://docs.moreh.io/ko/​/tutorials/llama2-tutorial/5_gpu-개수-변경하기/">
     <meta property="og:title" content="5. GPU 개수 변경하기">
     <meta property="og:description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/tutorials/llama2-tutorial/5_gpu-개수-변경하기/">
+    <meta property="twitter:url" content="https://docs.moreh.io/ko/​/tutorials/llama2-tutorial/5_gpu-개수-변경하기/">
     <meta property="twitter:title" content="5. GPU 개수 변경하기">
     <meta property="twitter:description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768358344717" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768411483387" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768358344717" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768411483387" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768358344717" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768358344717" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768411483387" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768411483387" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,7 +182,7 @@
         <span>가속기 Flavor 변경</span>
     </h2>
 </doc-anchor-target>
-<p><code v-pre>moreh-switch-model</code> 툴을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 <a href="https://www.notion.so/3-cdd50f06805241ec92bbe2f1feee6c24?pvs=21">3. 학습 실행하기</a> 문서를 한번 더 참고해주시기 바랍니다.</p>
+<p><code v-pre>moreh-switch-model</code> 툴을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 <a href="3_%ED%95%99%EC%8A%B520%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0.md">3. 학습 실행하기</a> 문서를 한번 더 참고해주시기 바랍니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model</code></pre>
 </doc-codeblock></div>
@@ -189,8 +190,12 @@
 <ul>
 <li>AMD MI250 GPU 32개 사용
 <ul>
-<li>Moreh의 체험판 컨테이너 사용 시: “8xlarge” 선택</li>
-<li>KT Cloud의 Hyperscale AI Computing 사용 시: “8xLarge.4096GB” 선택</li>
+<li>Moreh의 체험판 컨테이너 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xlarge</span>
+</span> 선택</li>
+<li>KT Cloud의 Hyperscale AI Computing 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span> 선택</li>
 </ul>
 </li>
 <li>AMD MI210 GPU 64개 사용</li>
