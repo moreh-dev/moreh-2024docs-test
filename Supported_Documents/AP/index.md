@@ -20,6 +20,6 @@ MoAI Platform은 가상화 된 GPU 하나를 제공하지만, 이는 실제로 �
 
 ### Advanced Parallelization이란?
 
-`Advanced Parallelization`(이하 `AP`)은 MoAI Platform에서 제공하는 `최적화된 분산 병렬처리` 기능입니다. 일반적으로 ML 엔지니어라면 모델 병렬화를 ‘최적화’하기 위해 수 많은 경험적 시행착오를 겪곤합니다. (예를 들어, 모델의 stages 개수, micro batches 개수 등) 하지만 MoAI Platform을 사용한다면 다른 프레임워크에서는 경험할 수 없는 특별한 AP 기능을 활용할 수 있어 최적화된 병렬화에 소요되는 시간과 노력을 획기적으로 줄일 수 있습니다.
+`Advanced Parallelization`(이하 `AP`)은 MoAI Platform에서 제공하는 **최적화된 분산 병렬처리** 기능입니다. 일반적으로 ML 엔지니어라면 모델 병렬화를 ‘최적화’하기 위해 수 많은 경험적 시행착오를 겪곤합니다. (예를 들어, 모델의 stages 개수, micro batches 개수 등) 하지만 MoAI Platform을 사용한다면 다른 프레임워크에서는 경험할 수 없는 특별한 AP 기능을 활용할 수 있어 최적화된 병렬화에 소요되는 시간과 노력을 획기적으로 줄일 수 있습니다.
 
-Moreh의 AP 기능은 기존 최적화 과정을 `자동화`함으로써, 최적의 병렬화 환경 변수 조합을 신속하게 결정합니다. 따라서 대규모 모델 훈련시 적용하는 효율적인 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경 변수 조합을 간단히 얻을 수 있습니다.
+Moreh의 AP 기능은 기존 최적화 과정을 **자동화**함으로써, 최적의 병렬화 환경 변수 조합을 신속하게 결정합니다. 따라서 대규모 모델 훈련시 적용하는 효율적인 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경 변수 조합을 간단히 얻을 수 있습니다.

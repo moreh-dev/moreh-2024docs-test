@@ -2,12 +2,15 @@
 # LLM Fine-tuning parameter guide
 
 
-<aside>
-💡 이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.
+!!!primary 
+이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.
+!!!
 
-</aside>
+!!!secondary 
+MoAI Accelerator 에 명시된 명칭은 사용자가 이용하는 CSP에 따라 다를 수 있습니다.
+!!!
 
-- *MoAI Accelerator 에 명시된 명칭은 사용자가 이용하는 CSP에 따라 다를 수 있습니다.*
+
 
 | 모델명 | MoAI Platform version | MoAI Accelerator | Advanced Parallelism 적용 유무 | batch size | sequence length | token 갯수 | vram 사용량 | 학습 시간 | throughput |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -42,10 +42,6 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 
 \
 \
-\
-\
-\
-\
 &nbsp;
 &nbsp;
 
@@ -74,9 +70,6 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 -![](./img/overview_03.png)
 
 
-\
-\
-\
 \
 \
 \
