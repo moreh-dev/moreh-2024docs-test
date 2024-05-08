@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko/​">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768454461851">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768461957484">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768454461851" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768461957484" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768454461851" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768461957484" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768454461851" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768454461851" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768461957484" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768461957484" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -184,7 +184,7 @@
         <span>가속기 Flavor 설정</span>
     </h1>
 </doc-anchor-target>
-<p>MoAI Platform에서는 사용자에게 물리 GPU가 노출되지 않습니다. 대신 PyTorch에서 사용 가능한 가상의 MoAI Accelerator가 제공됩니다. 가속기의 flavor를 설정함으로써 실제로 PyTorch에서 물리 GPU를 얼마나 활용할지를 결정할 수 있습니다. 선택한 가속기 Flavor에 따라 학습 총 시간 및 gpu 사용 비용이 달라지므로 사용자의 학습 상황에 따른 판단이 필요합니다. 사용자의 학습 목표에 맞는 가속기 Flavor를 선택하기 위해 다음 문서를 참고하세요.</p>
+<p>MoAI Platform에서는 사용자에게 물리 GPU가 노출되지 않습니다. 대신 PyTorch에서 사용 가능한 가상의 MoAI Accelerator가 제공됩니다. 가속기의 flavor를 설정함으로써 실제로 PyTorch에서 물리 GPU를 얼마나 활용할지를 결정할 수 있습니다. 선택한 가속기 Flavor에 따라 총 학습 시간과 GPU 사용 비용이 달라지므로 사용자의 학습 상황에 따른 판단이 필요합니다. 사용자의 학습 목표에 맞는 가속기 Flavor를 선택하기 위해 다음 문서를 참고하세요.</p>
 <ul>
 <li><em><strong><a href="../../../supported_documents/kt_hac_models_info/">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</a></strong></em>  문서를 참고하십시오.</li>
 <li><a href="../../../supported_documents/llm_param_guide/">LLM Fine-tuning 파라미터 가이드</a></li>
@@ -194,8 +194,12 @@
 <ul>
 <li>AMD MI250 GPU 16개 사용
 <ul>
-<li>Moreh의 체험판 컨테이너 사용 시: “4xlarge” 선택</li>
-<li>KT Cloud의 Hyperscale AI Computing 사용 시: “4xLarge.2048GB” 선택</li>
+<li>Moreh의 체험판 컨테이너 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xlarge</span>
+</span> 선택</li>
+<li>KT Cloud의 Hyperscale AI Computing 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span> 선택</li>
 </ul>
 </li>
 <li>AMD MI210 GPU 32개 사용</li>
@@ -236,8 +240,14 @@ Current MoAI Accelerator: Large.256GB
 </doc-codeblock></div>
 <p>여기서 번호를 입력하여 다른 flavor로 전환할 수 있습니다.</p>
 <p>이번 튜토리얼에서는 2048GB 크기의 MoAI Accelerator를 이용하겠습니다.</p>
-<p>따라서 처음 설정되어 있던 “Large.256GB” flavor를 “4xLarge.2048GB”로 전환한 다음 <code v-pre>moreh-smi</code> 명령을 사용하여 정상적으로 반영되었는지 확인하겠습니다.</p>
-<p><code v-pre>2xLarge.1024GB</code> 사용을 위해 <code v-pre>8</code> 을 입력합니다.</p>
+<p>따라서 처음 설정되어 있던 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>xLarge.512GB</span>
+</span> flavor를 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span>로 전환한 다음 <code v-pre>moreh-smi</code> 명령을 사용하여 정상적으로 반영되었는지 확인하겠습니다.</p>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span> 사용을 위해 8을 입력합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 8
 The MoAI Accelerator flavor is successfully switched to  &quot;4xLarge.2048GB&quot;.
@@ -324,8 +334,8 @@ The argument `trust_remote_code` is to be used with Auto classes. It has no effe
 </doc-codeblock></div>
 <p>Loss 값이 다음과 같이 떨어지며  정상 학습이 이루어지는 것을 확인할 수 있습니다.</p>
 <p><figure class="content-center">
-    <img src="../img/training_loss.png" alt="Untitled">
-    <figcaption class="caption">Untitled</figcaption>
+    <img src="../img/training_loss.png" alt="">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>학습 도중에 출력되는 throughput은 해당 PyTorch 스크립트를 통해 초당 몇 개의 token을 학습하고 있는지를 의미합니다.</p>
@@ -342,7 +352,7 @@ The argument `trust_remote_code` is to be used with Auto classes. It has no effe
         <span>학습 중에 가속기 상태 확인</span>
     </h1>
 </doc-anchor-target>
-<p>학습 도중에 터미널을 하나 더 띄워서 컨테이너에 접속한 후 <code v-pre>moreh-smi</code> 명령을 실행하시면 다음과 같이 MoAI Accelerator의 메모리를 점유하며 학습 스크립트가 실행되는 것을 확인하실 수 있습니다. 실행 로그상에서 초기화 과정이 끝나고 Step 1~15가 출력되는 도중에 확인해 보시기 바랍니다.</p>
+<p>학습 도중에 터미널을 하나 더 띄워서 컨테이너에 접속한 후 <code v-pre>moreh-smi</code> 명령을 실행하시면 다음과 같이 MoAI Accelerator의 메모리를 점유하며 학습 스크립트가 실행되는 것을 확인하실 수 있습니다. 실행 로그상에서 초기화 과정이 끝나고 Loss가 출력되는 도중에 확인해 보시기 바랍니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-2004-vm15  pytorch | ubuntu  ~  moreh-smi
 +-----------------------------------------------------------------------------------------------------+
