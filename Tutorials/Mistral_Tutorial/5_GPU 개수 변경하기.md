@@ -10,7 +10,7 @@ order: 40
 
 ## 가속기 Flavor 변경
 
-`moreh-switch-model` 을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 [3. 학습 실행하기](3_학습%20실행하기.md) 문서를 한번 더 참고해주시기 바랍니다.
+`moreh-switch-model` 을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 [3. 학습 실행하기](3_학습_실행하기.md) 문서를 한번 더 참고해주시기 바랍니다.
 
 ```
 $ moreh-switch-model

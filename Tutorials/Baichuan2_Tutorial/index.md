@@ -8,6 +8,7 @@ order: 600
 
 이 튜토리얼은 MoAI Platform에서 오픈 소스 [Baichuan2 13B](https://huggingface.co/baichuan-inc/Baichuan2-13B-Base) 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
 
+
 ## 개요
 
 Baichuan2는 [Baichuan Intelligent Technology](https://github.com/baichuan-inc)가 개발한 오픈 소스, 대규모 다국어 언어 모델입니다. 이 모델은 2조 6천억 개의 토큰으로 구성된 방대한 데이터 세트에서 훈련된 70억 및 130억 매개 변수로 사용할 수 있는 구성을 가지고 있습니다. 
