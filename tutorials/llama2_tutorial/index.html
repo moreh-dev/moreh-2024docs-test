@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko/​">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768461957484">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768474314243">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Llama2 Fine-tuning</title>
     <meta name="title" content="Llama2 Fine-tuning">
-    <meta name="description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Llama2 13B 모델 을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.">
+    <meta name="description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Llama2 13B 모델 을 fine-tuning하는 예시를 소개합니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/ko/​/tutorials/llama2_tutorial/">
@@ -21,22 +21,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/ko/​/tutorials/llama2_tutorial/">
     <meta property="og:title" content="Llama2 Fine-tuning">
-    <meta property="og:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Llama2 13B 모델 을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.">
+    <meta property="og:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Llama2 13B 모델 을 fine-tuning하는 예시를 소개합니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/ko/​/tutorials/llama2_tutorial/">
     <meta property="twitter:title" content="Llama2 Fine-tuning">
-    <meta property="twitter:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Llama2 13B 모델 을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.">
+    <meta property="twitter:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Llama2 13B 모델 을 fine-tuning하는 예시를 소개합니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.768461957484" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768474314243" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768461957484" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768474314243" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768461957484" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.768461957484" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768474314243" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.768474314243" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,7 +175,7 @@
         <span>Llama2 Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>이 튜토리얼은 MoAI Platform에서 오픈 소스 <a href="https://huggingface.co/meta-llama/Llama-2-13b-hf">Llama2 13B 모델</a>을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.</p>
+<p>이 튜토리얼은 MoAI Platform에서 오픈 소스 <a href="https://huggingface.co/meta-llama/Llama-2-13b-hf">Llama2 13B 모델</a>을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform을 통해 AMD GPU 클러스터를 활용하는 방법을 배우고, 성능 및 자동 병렬화의 장점을 확인할 수 있습니다.</p>
 <doc-anchor-target id="개요">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#개요">#</doc-anchor-trigger>
@@ -184,7 +184,7 @@
 </doc-anchor-target>
 <p>Llama2 모델은 2023년 7월에 <a href="https://about.meta.com/">Meta</a>가 공개한 Decoder-only Transformer 기반 오픈 소스 모델입니다. 기존 Llama 모델의 구조를 따르지만 40% 더 많은 데이터로 학습시켜 더 다양하고 복잡한 정보를 이해할 수 있습니다.</p>
 <p>Llama2는 특히 언어 이해 및 생성 작업에 있어서 뛰어난 성능을 보이며, 다양한 자연어 처리 태스크에서 SOTA 성능을 달성하였습니다. 이 모델은 다국어 지원이 가능하여 전 세계 다양한 언어의 텍스트를 처리할 수 있으며, 공개적으로 접근 가능하여 연구 및 개발 목적으로 널리 사용될 수 있습니다.</p>
-<p>이 튜토리얼에서는 MoAI Platform에서 <a href="https://huggingface.co/datasets/cnn_dailymail">CNN Daily Mail</a> 데이터셋을 활용하여 Llama2 모델을 fine-tuning하는 방법을 살펴보겠습니다. 이 fine-tuning 과정에서는 자연어 처리 방법 중 하나인 요약(summarize) 작업을 다룰 것입니다.</p>
+<p>이 튜토리얼에서는 MoAI Platform에서 <a href="https://huggingface.co/datasets/cnn_dailymail">CNN Daily Mail</a> 데이터셋을 활용하여 Llama2 모델을 fine-tuning하는 방법을 살펴보겠습니다.  이 과정에서는 자연어 처리 방법 중 하나인 요약(summarize) 작업을 다룰 것입니다.</p>
 <doc-anchor-target id="시작하기-전에">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#시작하기-전에">#</doc-anchor-trigger>
