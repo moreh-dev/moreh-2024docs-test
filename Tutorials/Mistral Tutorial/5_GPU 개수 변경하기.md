@@ -10,19 +10,21 @@ order: 40
 
 ## 가속기 Flavor 변경
 
-`moreh-switch-model` 을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 [3. 학습 실행하기](3.%20학습%20실행하기.md) 문서를 한번 더 참고해주시기 바랍니다.
+`moreh-switch-model` 을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 [3. 학습 실행하기](3_학습%20실행하기.md) 문서를 한번 더 참고해주시기 바랍니다.
 
 ```
 $ moreh-switch-model
 ```
 
-인프라 제공자에게 문의하여 다음 중 하나를 선택한 다음 계속 진행하십시오. ([KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](https://www.notion.so/KT-Hyperscale-AI-Computing-HAC-ee3383b7a8bb4943af82cba81b8321cd?pvs=21))
+인프라 제공자에게 문의하여 다음 중 하나를 선택한 다음 계속 진행하십시오. ([KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT%20Hyperscale%20AI%20Computing%20(HAC)%20서비스%20가속기%20모델%20정보.md))
 
 - AMD MI250 GPU 32개 사용
-    - Moreh의 체험판 컨테이너 사용 시: “8xlarge” 선택
-    - KT Cloud의 Hyperscale AI Computing 사용 시: “8xLarge.4096GB” 선택
+    - Moreh의 체험판 컨테이너 사용 시: [!badge variant="secondary" text=“8xlarge”]  선택
+    - KT Cloud의 Hyperscale AI Computing 사용 시: [!badge variant="secondary" text=“8xLarge.4096GB”] 선택
 - AMD MI210 GPU 64개 사용
 - AMD MI300X GPU 16개 사용
+
+
 
 ## 학습 실행
 

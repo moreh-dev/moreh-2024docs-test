@@ -73,11 +73,11 @@ Hugging Face를 이용해 Mistral 7B v0.1 모델의 체크포인트와 토크나
 
 먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
 
-[mistralai/Mistral-7B-v0.1 · Hugging Face](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+[!ref icon="link-external" text="mistralai/Mistral-7B-v0.1 · Hugging Face"](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/59a50975-2c9c-4aae-9f9b-5eafac2881b4/a22d7b0b-cfc7-49af-a6b4-2148ef891af4/Untitled.png)
+![](alert.png)
 
 상태 변경이 되었다면, 다음과 같이 `tutorial` 디렉토리 안의 `download_mistral_7b.py` 스크립트를 이용해 모델 체크포인트와 토크나이저를 `./mistral-7b` 디렉토리에 다운로드 받을 수 있습니다. 
 
@@ -99,7 +99,7 @@ model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.js
 
 ## 학습 데이터 다운로드
 
-이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) **데이터셋(11.4 MB)을 사용할 것입니다.
+이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터셋(11.4 MB)을 사용할 것입니다.
 
 `prepare_mistral_dataset.py` 를 실행해 데이터셋을 다운로드하고, 학습에 사용할 수 있도록 전처리를 진행합니다.
 
