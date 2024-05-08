@@ -25,7 +25,7 @@ HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.
 model = AutoModelForCausalLM.from_pretrained("./mistral-7b")
 ```
 
-[Fine tuning 준비하기](1_Fine-tuning%20준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+[Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
 
 ```python
   dataset = torch.load("mistral_dataset.pt")
