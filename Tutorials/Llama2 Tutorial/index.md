@@ -8,9 +8,6 @@ order: 1000
 
 이 튜토리얼은 MoAI Platform에서 오픈 소스 [Llama2 13B 모델](https://huggingface.co/meta-llama/Llama-2-13b-hf)을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
 
-
-이 튜토리얼은 MoAI Platform에서 오픈 소스 [Llama2 13B 모델](https://huggingface.co/meta-llama/Llama-2-13b-hf)을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
-
 ### 개요
 
 Llama2 모델은 2023년 7월에 [Meta](https://about.meta.com/)가 공개한 Decoder-only Transformer 기반 오픈 소스 모델입니다. 기존 Llama 모델의 구조를 따르지만 40% 더 많은 데이터로 학습시켜 더 다양하고 복잡한 정보를 이해할 수 있습니다.
