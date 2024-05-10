@@ -16,4 +16,9 @@ tags: [component]
 - [Products](/products/index.md)
     - [Moreh Model Hub](/products/Model%20AI%20Hub.md)
     - [Platform Cloud Service](/products/Platform%20Cloud%20Service.md)
-
+- [Tutorials](Tutorials/index.md)
+    - [Llama2 Fine-tuning](/Tutorials/Llama2_Tutorial/index.md)
+    - [Mistral Fine-tuning](/Tutorials/Mistral_Tutorial/index.md)
+    - [GPT Fine-tuning](/Tutorials/GPT_Tutorial/index.md)
+    - [Qwen Fine-tuning](/Tutorials/Qwen_Tutorial/index.md)
+    - [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)
