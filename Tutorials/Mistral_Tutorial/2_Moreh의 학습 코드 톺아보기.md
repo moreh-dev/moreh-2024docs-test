@@ -128,4 +128,4 @@ tokenizer = AutoTokenizer.from_pretrained("./mistral-7b")
 ...
 ```
 
-이렇듯 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능인 MoAI Platform만의 Advanced Parallelization(AP)을 통해 **최적의 분산 병렬처리**를 경험해보시기 바랍니다. AP기능을 이용하면 일반적으로 대규모 모델 훈련시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **아주 간단한** **코드 한 줄**을 통해 확보할 수 있습니다.
+이렇듯 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능인 MoAI Platform만의 Advanced Parallelization(AP)을 통해 **최적의 분산 병렬처리**를 경험해보시기 바랍니다. AP기능을 이용하면 일반적으로 대규모 모델 훈련시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **아주 간단한 코드 한 줄**을 통해 확보할 수 있습니다.

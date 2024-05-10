@@ -6,7 +6,7 @@ order: 700
 
 # Qwen Fine-tuning
 
-이 튜토리얼은 MoAI Platform에서 오픈 소스 [Qwen1.5 7B](https://huggingface.co/Qwen/Qwen1.5-7B) 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
+이 튜토리얼은 MoAI Platform에서 오픈 소스[Qwen1.5 7B](https://huggingface.co/Qwen/Qwen1.5-7B) 모델을 fine-tuning 하는 예시를 소개합니다. 이를 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 배우고 성능 및 자동 병렬화의 장점을 확인할 수 있습니다.
 
 ## 개요
 
