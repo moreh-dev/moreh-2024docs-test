@@ -124,9 +124,10 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
-tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B") 
+model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
+tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-7B")
+...
 ...
 ```
 
-이렇듯 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능인 MoAI Platform만의 Advanced Parallelization(AP)을 통해 **최적의 분산 병렬처리**를 경험해보시기 바랍니다. AP기능을 이용하면 일반적으로 대규모 모델 훈련시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **아주 간단한** **코드 한 줄**을 통해 확보할 수 있습니다.
+이렇게 MoAI Platform만의 Advanced Parallelization(AP)은 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능입니다. 이를 통해 **최적의 분산 병렬 처리**를 경험해 보실 수 있습니다. AP기능을 활용하면 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **매우 간단한 코드 한 줄**로 설정할 수 있습니다.

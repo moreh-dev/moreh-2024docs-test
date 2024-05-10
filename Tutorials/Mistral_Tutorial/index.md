@@ -8,6 +8,7 @@ order: 900
 
 이 튜토리얼은 MoAI Platform에서 오픈 소스 [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
 
+
 ## 개요
 
 Mistral 모델은 2023년 [Mistral AI](https://mistral.ai/)사에서 공개한 거대 언어 모델입니다. 코드 생성, 질의 응답, 수학 문제 풀기와 같은 복잡한 태스크에서 더 큰 크기의 모델보다 더 좋은 성능을 기록해 주목 받기도 했습니다.
