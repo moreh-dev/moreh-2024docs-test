@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-root" content="/ko/​">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768657723347">
+    <meta name="turbo-root" content="/two-lang-demo">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768987707611">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Getting Started</title>
-    <meta name="title" content="Getting Started">
-    <meta name="description" content="이 매뉴얼은 개발자가 터미널에 접속해서 MoAI 플랫폼을 이용하는 Quickstart 가이드를 제공합니다.">
+    <title>5. Changing the Number of GPUs</title>
+    <meta name="title" content="5. Changing the Number of GPUs">
+    <meta name="description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/ko/​/archive/moai_guides/getting-started/">
+    <link rel="canonical" href="/two-lang-demo/tutorials/llama2_tutorial/5_changing-the-number-of-gpus/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/ko/​/archive/moai_guides/getting-started/">
-    <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="이 매뉴얼은 개발자가 터미널에 접속해서 MoAI 플랫폼을 이용하는 Quickstart 가이드를 제공합니다.">
+    <meta property="og:url" content="/two-lang-demo/tutorials/llama2_tutorial/5_changing-the-number-of-gpus/">
+    <meta property="og:title" content="5. Changing the Number of GPUs">
+    <meta property="og:description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/ko/​/archive/moai_guides/getting-started/">
-    <meta property="twitter:title" content="Getting Started">
-    <meta property="twitter:description" content="이 매뉴얼은 개발자가 터미널에 접속해서 MoAI 플랫폼을 이용하는 Quickstart 가이드를 제공합니다.">
+    <meta property="twitter:url" content="/two-lang-demo/tutorials/llama2_tutorial/5_changing-the-number-of-gpus/">
+    <meta property="twitter:title" content="5. Changing the Number of GPUs">
+    <meta property="twitter:description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768657723347" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768987707611" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768657723347" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768987707611" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768657723347" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768657723347" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768987707611" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.768987707611" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,13 +51,9 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
-                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo-white.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo-white.png">
-                            </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Moreh Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Docs</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">KOR</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -68,7 +64,10 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://moreh.io">About Moreh</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../">EN</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="ko/">KO</a>
                             </li>
         
                         </ul>
@@ -145,7 +144,10 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://moreh.io">About Moreh</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../">EN</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="ko/">KO</a>
                                     </li>
             
                                 </ul>
@@ -169,92 +171,91 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="getting-started" class="break-words">
+<doc-anchor-target id="5-changing-the-number-of-gpus" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
-        <span>Getting Started</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-changing-the-number-of-gpus">#</doc-anchor-trigger>
+        <span>5. Changing the Number of GPUs</span>
     </h1>
 </doc-anchor-target>
-<p>이 매뉴얼은 개발자가 터미널에 접속해서 MoAI 플랫폼을 이용하는 Quickstart 가이드를 제공합니다.</p>
-<doc-anchor-target id="서버-접속하기">
+<p>앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다. 따라서 GPU 개수를 변경하더라도 PyTorch 스크립트를 수정할 필요가 전혀 없습니다.</p>
+<doc-anchor-target id="가속기-flavor-변경">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#서버-접속하기">#</doc-anchor-trigger>
-        <span>서버 접속하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#가속기-flavor-변경">#</doc-anchor-trigger>
+        <span>가속기 Flavor 변경</span>
     </h2>
 </doc-anchor-target>
-<p>관리자가 이용자에게 제공한 VM 접속정보(IP, Port, SSH Key)를 입력해 접속할 수 있습니다.</p>
-<p>여기서는 아래 VM 접속정보를 제공하였다고 가정하겠습니다.</p>
+<p><code v-pre>moreh-switch-model</code> 툴을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 <a href="3_%ED%95%99%EC%8A%B5_%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0.md">3. 학습 실행하기</a> 문서를 한번 더 참고해주시기 바랍니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">hostname: vm
-ip: xxx.00.xx.000
-port: 22
-user: ubuntu
-permission key: key.pem</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model</code></pre>
 </doc-codeblock></div>
-<p>다음은 VM 접속정보를 활용하여 해당 VM에 ssh 명령어로 접속하는 예시입니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ ssh -i key.pem -p 22 ubuntu@xxx.00.xx.000
-Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.13.0-35-generic x86_64)
-
-* Documentation:  https://help.ubuntu.com
-* Management:     https://landscape.canonical.com
-* Support:        https://ubuntu.com/advantage
-
-    (...)
-
-(moreh) ubuntu@vm:~$</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="모델-학습-실행하기">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#모델-학습-실행하기">#</doc-anchor-trigger>
-        <span>모델 학습 실행하기</span>
-    </h2>
-</doc-anchor-target>
-<p>여기서는 Bert 모델을 학습해 보겠습니다. 먼저 Bert 모델을 다운로드합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">ubuntu@vm:~$ get-reference-model bert</code></pre>
-</doc-codeblock></div>
-<p>설치 완료 이후 학습하고자 하는 모델 폴더로 이동합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># 현재 디렉토리 목록 확인
-ubuntu@vm:~$ ls
-anaconda3  morehtools  resnet   bert   sample
-
-# 학습 모델 폴더로 이동
-ubuntu@vm:~$ cd bert
-
-# conda 환경 활성화
-ubuntu@vm:~/bert$ conda activate pytorch
-
-# Bert 모델 사전 학습 시작
-(pytorch) ubuntu@vm:~/bert$ python train.py</code></pre>
-</doc-codeblock></div>
+<p>인프라 제공자에게 문의하여 다음 중 하나를 선택한 다음 계속 진행하십시오.  (<a href="../../../supported_documents/kt_hac_models_info/">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</a>)</p>
 <ul>
-<li><code v-pre>python train.py</code> 를 실행하여 Bert 모델의 사전 학습을 진행합니다.</li>
-<li>모델 학습을 강제 중단 혹은 종료로 인해 Python 프로세스가 종료되지 않는 경우를 방지하기 위해, <code v-pre>moreh-smi -r</code> 명령어를 통해 학습 프로세스를 종료하시길 권장드립니다.</li>
-<li>SSH 클라이언트와 통신이 끊겨 학습이 종료되는 문제를 방지하기 위하여, tmux 등의 터미널 다중화 프로그램을 이용하시는 것을 권장드립니다.</li>
+<li>AMD MI250 GPU 32개 사용
+<ul>
+<li>Moreh의 체험판 컨테이너 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xlarge</span>
+</span> 선택</li>
+<li>KT Cloud의 Hyperscale AI Computing 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span> 선택</li>
 </ul>
-<p><code v-pre>moreh-smi</code>를 통해 실행 중인 학습 프로세스 및 GPU 자원 사용량을 확인할 수 있습니다.</p>
+</li>
+<li>AMD MI210 GPU 64개 사용</li>
+<li>AMD MI300X GPU 16개 사용</li>
+</ul>
+<doc-anchor-target id="학습-실행">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-실행">#</doc-anchor-trigger>
+        <span>학습 실행</span>
+    </h2>
+</doc-anchor-target>
+<p>다시 <code v-pre>train_llama2.py</code> 스크립트를 실행합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi
-13:42:32 September 12, 2023
-+-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 23.9.0  Latest Version: 23.8.1  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|  * 0     |  KT AI Accelerator  |  4xLarge.2048GB  |  886 MiB       |  2096640 MiB   |   62 %        |
-|    1     |  KT AI Accelerator  |  -               |  -             |  -             |  -            |
-|    2     |  KT AI Accelerator  |  -               |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+
-
-Processes:
-+-------------------------------------------------------------------------+
-|  Device  |  Job ID  |    PID   |        Process        |  Memory Usage  |
-+=========================================================================+
-|       0  |  901372  |  170394  |    python train.py    |  886 MiB       |
-+-------------------------------------------------------------------------+</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/train_llama2.py --batch-size 512</code></pre>
 </doc-codeblock></div>
+<p>사용 가능한 GPU 메모리가 <strong>2배</strong> 늘었기 때문에, 배치 사이즈 또한 기존 <code v-pre>256</code> 에서 <code v-pre>512</code>로 변경하여 실행시켜 보겠습니다.</p>
+<p>학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">...
+[2024-04-25 15:56:09.831] [info] Requesting resources for KT AI Accelerator from the server...
+[2024-04-25 15:56:09.841] [info] Initializing the worker daemon for KT AI Accelerator
+[2024-04-25 15:56:15.130] [info] [1/8] Connecting to resources on the server (192.168.110.1:24166)...
+[2024-04-25 15:56:15.143] [info] [2/8] Connecting to resources on the server (192.168.110.24:24166)...
+[2024-04-25 15:56:15.150] [info] [3/8] Connecting to resources on the server (192.168.110.25:24166)...
+[2024-04-25 15:56:15.156] [info] [4/8] Connecting to resources on the server (192.168.110.26:24166)...
+[2024-04-25 15:56:15.164] [info] [5/8] Connecting to resources on the server (192.168.110.51:24166)...
+[2024-04-25 15:56:15.170] [info] [6/8] Connecting to resources on the server (192.168.110.79:24166)...
+[2024-04-25 15:56:15.177] [info] [7/8] Connecting to resources on the server (192.168.110.80:24166)...
+[2024-04-25 15:56:15.184] [info] [8/8] Connecting to resources on the server (192.168.110.99:24166)...
+[2024-04-25 15:56:15.191] [info] Establishing links to the resources...
+[2024-04-25 15:56:16.061] [info] KT AI Accelerator is ready to use.
+[2024-04-25 15:56:16.521] [info] The number of candidates is 24.
+[2024-04-25 15:56:16.521] [info] Parallel Graph Compile start...
+[2024-04-25 15:57:14.441] [info] Elapsed Time to compile all candidates = 57920 [ms]
+[2024-04-25 15:57:14.441] [info] Parallel Graph Compile finished.
+[2024-04-25 15:57:14.441] [info] The number of possible candidates is 3.
+[2024-04-25 15:57:14.441] [info] SelectBestGraphFromCandidates start...
+[2024-04-25 15:57:16.562] [info] Elapsed Time to compute cost for survived candidates = 2120 [ms]
+[2024-04-25 15:57:16.562] [info] SelectBestGraphFromCandidates finished.
+[2024-04-25 15:57:16.562] [info] Configuration for parallelism is selected.
+[2024-04-25 15:57:16.562] [info] num_stages : 2, num_micro_batches : 16, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
+[2024-04-25 15:57:16.562] [info] train: true
+
+2024-04-25 15:59:00.492 | INFO     | __main__:main:136 - [Step 2/560] | Loss: 1.6953125 | Duration: 15.12 | Throughput: 69337.98 tokens/sec
+2024-04-25 16:00:05.283 | INFO     | __main__:main:136 - [Step 4/560] | Loss: 1.6875 | Duration: 15.93 | Throughput: 65842.99 tokens/sec
+2024-04-25 16:01:12.262 | INFO     | __main__:main:136 - [Step 6/560] | Loss: 1.703125 | Duration: 15.73 | Throughput: 66656.28 tokens/sec
+2024-04-25 16:02:19.591 | INFO     | __main__:main:136 - [Step 8/560] | Loss: 1.6328125 | Duration: 15.36 | Throughput: 68263.53 tokens/sec
+2024-04-25 16:03:24.498 | INFO     | __main__:main:136 - [Step 10/560] | Loss: 1.5859375 | Duration: 12.78 | Throughput: 82040.81 tokens/sec
+2024-04-25 16:04:28.820 | INFO     | __main__:main:136 - [Step 12/560] | Loss: 1.59375 | Duration: 13.00 | Throughput: 80657.85 tokens/sec
+2024-04-25 16:05:32.933 | INFO     | __main__:main:136 - [Step 14/560] | Loss: 1.6328125 | Duration: 12.65 | Throughput: 82906.48 tokens/sec
+2024-04-25 16:06:37.614 | INFO     | __main__:main:136 - [Step 16/560] | Loss: 1.6796875 | Duration: 14.94 | Throughput: 70195.58 tokens/sec
+2024-04-25 16:07:44.641 | INFO     | __main__:main:136 - [Step 18/560] | Loss: 1.6875 | Duration: 13.01 | Throughput: 80607.34 tokens/sec
+...</code></pre>
+</doc-codeblock></div>
+<p>앞서 GPU 개수가 절반이었을 때 실행한 결과와 비교해 동일하게 학습이 이루어지며 throughput이 향상되었음을 확인할 수 있습니다.</p>
+<ul>
+<li>AMD MI250 GPU 16 → 32개 사용 시: 약 35,000 tokens/sec → 74,000 tokens/sec</li>
+</ul>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -272,12 +273,33 @@ Processes:
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/moreh-dev/moreh-2024docs/blob/main/Archive/MoAI_guides/getting-started.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/retypeapp/two-lang-demo/blob/main/Tutorials/Llama2_Tutorial/5_Changing the Number of GPUs.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/llama2_tutorial/4_checking_results/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">4. Checking Training Results</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/llama2_tutorial/6_conclusion/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">6. Conclusion</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -316,6 +338,6 @@ Processes:
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "5. Changing the Number of GPUs", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

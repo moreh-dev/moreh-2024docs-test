@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docs.moreh.io/ko/​/sitemap.xml.gz
+Sitemap: /two-lang-demo/sitemap.xml.gz
