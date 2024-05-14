@@ -4,13 +4,13 @@ tags: [guide]
 order: 40
 ---
 
-# 1. Fine-tuning 준비하기
+# 1. Prepare Fine-tuning
 
-MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
+Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.
 
-## PyTorch 설치 여부 확인하기
+## Checking PyTorch Installation
 
-SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 conda 환경에 PyTorch가 설치되어 있는지 확인합니다.
+After connecting to the container via SSH, run the following command to check if PyTorch is installed in the current conda environment:
 
 ```bash
 $ conda list torch
@@ -20,13 +20,13 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 ...
 ```
 
-버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.
+The version name includes both the PyTorch version and the version of MoAI required to run it. In the example above, it indicates that version 24.2.0 of MoAI, which runs PyTorch version 1.13.1+cu116, is installed.
 
-만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 **[Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)** 문서에 따라 conda 환경을 생성하십시오.
+If you see the message conda: command not found, if the torch package is not listed, or if the torch package exists but does not include "moreh" in the version name, please follow the instructions in the **[Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)** to create a conda environment.
 
-## PyTorch 동작 여부 확인하기
+## Verifying PyTorch Installation
 
-다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
+Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized. If you encounter any issues during this process, please refer to the  (troubleshooting TBA).
 
 ```bash
 $ python

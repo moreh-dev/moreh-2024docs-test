@@ -4,11 +4,11 @@ tags: [guide]
 order: 40
 ---
 
-# 4. 학습 결과 확인하기
+# 4. Checking Training Results
 
-앞 장과 같이 `train_gpt.py` 스크립트를 실행하면 결과 모델이 `code_generation` 디렉토리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.
+As in the previous chapter, when you run the `train_gpt.py` script, the resulting model will be saved in the `code_generation` directory. This is a pure PyTorch model parameter file and is fully compatible compatible not only with MoAI Platform but also with regular GPU servers.
 
-미리 다운로드한 GitHub 레포지토리의 `tutorial` 디렉토리 아래에 있는 `inference_gpt.py`  스크립트로 학습된 모델을 테스트해 볼 수 있습니다.
+You can test the trained model using the **`inference_gpt.py`** script located under the **`tutorial`** directory of the GitHub repository you downloaded beforehand.
 
 ```python
 # inference_gpt.py
@@ -17,15 +17,15 @@ QUERY = """Write a python program that counts all 'a's in a string. For example,
 """
 ```
 
-코드를 실행합니다.
+Run the train script.
 
 ```bash
 ~/quickstart$ python tutorial/inference_gpt.py
 ```
 
-출력값을 확인해보면 모델이 프롬프트 내용대로 적절한 함수를 생성한 것을 확인할 수 있습니다.
+Upon inspecting the output, you can confirm that the model has generated an appropriate function based on the prompt content.
 
-```bash
+```python
 
 def count_a(string):
     count = 0
@@ -47,3 +47,4 @@ In the given example, the string "Banana" is passed to the count_a function, and
 
 Note: The program assumes that there will always be at least one 'a' in the string. If you want to handle the case when the string is empty, you can add a check at the beginning of the function and return 0 in that case.</s>
 ```
+

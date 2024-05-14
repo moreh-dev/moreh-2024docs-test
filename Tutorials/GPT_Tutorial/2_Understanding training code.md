@@ -3,30 +3,31 @@ icon: terminal
 tags: [guide]
 order: 40
 ---
-# 2. Moreh의 학습 코드 톺아보기
+# 2. Understanding training code
 
-학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_gpt.py` 스크립트의 내용을 살펴 보겠습니다. **이번 단계에서는 MoAI Platform은 pytorch와의 완전한 호환성으로 학습 코드가 일반적인 nvidia gpu를 위한 pytorch 코드와 100% 동일하다는 것을 확인하실 수 있습니다.** **또한 이를 넘어서 기존의 복잡한 병렬화 기법들을 MoAI Platform에서는 얼마나 효율적으로 구현할 수 있는지도 확인하실 수 있습니다.**
+Once you have prepared all the training data, let's take a look at the contents of the **`train_gpt.py`** script to execute the actual fine-tuning process. **In this step, you'll notice that the MoAI Platform offers full compatibility with PyTorch, meaning that the training code is 100% identical to typical PyTorch code for Nvidia GPUs.** **Furthermore, you'll see how efficiently the MoAI Platform implements complex parallelization techniques beyond what's traditionally possible.**
 
-**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Cerebras-GPT-13B 모델, 혹은 다른 공개된 모델을 다른 방식으로 fine-tuning하는 것도 얼마든지 가능합니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드(**[LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md)**)를 참고하십시오.
+**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Cerebras-GPT-13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide ([LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md) ) provided by Moreh.
+
 
 ## Training Code
 
-**모든 코드는 일반적인 pytorch 사용 경험과 완벽하게 동일합니다.** 
+**All code remains fully consistent with general PyTorch usage.**
 
-먼저, `transformers` 라이브러리에서 필요한 모듈을 불러옵니다.
+Firstly, import the required modules from the **`transformers`** library.
 
 ```python
 from transformers import AutoModelForCausalLM, AdamW, AutoTokenizer
 ```
 
-HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다. 
+Load the model configuration and checkpoint publicly available on Hugging Face. 
 
 ```python
 model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
 tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B") 
 ```
 
-[Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Then load the preprocessed dataset saved during the preparation for [Fine-tuning step](https://www.notion.so/GPT-Fine-tuning-ENG-785a1edb6eba473d81a5c328c8d49739?pvs=21) and define the data loaders. 
 
 ```python
   dataset = torch.load("gpt_dataset.pt")
@@ -40,7 +41,7 @@ tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B")
   )
 ```
 
-이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
+Subsequently, the training proceeds similarly to general AI model training with Pytorch.
 
 ```python
     # Mask pad tokens for training
@@ -73,19 +74,19 @@ tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B")
             model.zero_grad(set_to_none=True)
 ```
 
-**위와 같이 MoAI Platform에서는 기존 pytorch 코드와 동일한 방식으로 작성하실 수 있습니다.**
+As shown above, you can code in the same way as traditional PyTorch code on MoAI Platform.
 
 ## About Advanced Parallelism
 
-본 튜토리얼에 사용되는 학습 스크립트에서는 아래와 같은 코드가 추가로 한 줄 존재합니다. 이는 MoAI Platform에서 제공하는 최고의 병렬화 기능을 수행하는 코드입니다.
+In the training script used in this tutorial, there is an additional line of code as follows, which executes the top-tier parallelization feature provided by the MoAI Platform:
 
 ```bash
 torch.moreh.option.enable_advanced_parallelization()
 ```
 
-본 튜토리얼에서 사용하는 [Cerebras-GPT-13B](https://huggingface.co/cerebras/Cerebras-GPT-13B) 과 같은 거대한 언어 모델의 경우 필연적으로 여러 개의 GPU를 사용하여 학습시켜야만 합니다. 이때, MoAI Platform이 아닌 다른 프레임워크를 사용할 경우, Data Parallel, Pipeline Parallel, Tensor Parallel과 같은 병렬화 기법을 도입하여 학습을 수행해야 합니다. 
+For enormous language models like [Cerebras-GPT-13B](https://huggingface.co/cerebras/Cerebras-GPT-13B) used in this tutorial, it is inevitable to train them using multiple GPUs. In such cases, if you were to use frameworks other than the MoAI Platform, you would need to employ parallelization techniques like Data Parallel, Pipeline Parallel, or Tensor Parallel for training.
 
-예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다. (https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+For instance, if a user wants to apply DDP in a typical PyTorch code, the following code snippet would need to be added. (https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
 
 ```python
 ...
@@ -109,25 +110,24 @@ main(rank, world_size, args)
 ```
 
 ```bash
-# single node 실행
+# Execute single node 
 torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
-# multi node 실행
+# Execute multi node 
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
-이와 같은 기본적인 세팅 이외에도 유저는 학습 스크립트 작성 과정에서 multi processing 환경에서의 Python 코드의 동작에 대해 이해하고 있어야 하며, 특히 multi node 세팅에서는 학습에 사용되는 노드들에 대한 환경 구성 작업이 추가적으로 들어가야 합니다. 게다가 모델의 종류, 크기, 데이터셋 등을 고려한 최적의 병렬화 방법을 찾기 위해서는 매우 많은 시간이 소요됩니다.
+In addition to these basic settings, users need to understand how Python code behaves in a multiprocessing environment during the process of writing the training script. Especially in a multi-node setup, additional configuration work is required for the nodes used in training. Furthermore, finding the optimal parallelization method considering factors such as the type of model, its size, and the dataset can take a significant amount of time.
 
-**반면, MoAI Platform의 AP기능은 유저가 직접 이러한 추가적인 병렬화 기법을 적용할 필요 없이, 단지 학습 스크립트에 다음과 같은 코드 한 줄을 추가하는 것 만으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
+**On the other hand, MoAI Platform's AP feature allows users to proceed with optimized parallelized training with just one line of code added to the training script, without the need for users to apply these additional parallelization techniques themselves.**
 
 ```python
 import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-7B")
-...
+model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
+tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B") 
 ...
 ```
 
-이렇게 MoAI Platform만의 Advanced Parallelization(AP)은 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능입니다. 이를 통해 **최적의 분산 병렬 처리**를 경험해 보실 수 있습니다. AP기능을 활용하면 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **매우 간단한 코드 한 줄**로 설정할 수 있습니다.
+Experience optimal distributed parallel processing like no other framework can offer, thanks to MoAI Platform's Advanced Parallelization (AP), a feature that optimizes and automates parallelization in ways not found in other frameworks. With the AP feature, you can easily secure the optimal parameters and environment variables for Pipeline Parallelism and Tensor Parallelism, typically required for training large-scale models, with just one simple line of code.
