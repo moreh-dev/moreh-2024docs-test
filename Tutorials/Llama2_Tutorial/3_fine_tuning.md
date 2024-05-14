@@ -13,6 +13,10 @@ In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virt
 - **[KT Hyperscale AI Computing (HAC) AI Accelerator Information](/Supported_Documents/KT_HAC_Models_Info.md)**  
 - **[LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md)**
 
+!!!
+Please refer to the document above or reach out to your infrastructure provider to inquire about the GPU types and quantities corresponding to each flavor.
+!!!
+
 ***(모든 문서에 추가될 그림 생성 예정)***
 
 Before continuing with the tutorial, we recommend reaching out to your infrastructure provider to inquire about the types and quantities of GPUs associated with each flavor. Once you have this information, you can choose one of the following flavors to proceed:

@@ -47,17 +47,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
 ```
 
-## 필요 Python 패키지 설치
+## Install Required Python Packages
 
-다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
+Execute the following command to install third-party Python packages required for script execution:
 
 ```bash
 $ pip install transformers==4.39.3 datasets==2.19.1 loguru==0.7.2
 ```
 
-## 학습 스크립트 다운로드
+## Download the Training Script
 
-다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_mistral.py` 스크립트를 사용할 것입니다.
+Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the `train_mistral.py` script located inside the **`tutorial`** directory.
 
 ```bash
 $ sudo apt-get install git
@@ -67,27 +67,27 @@ $ cd quickstart
 ...  train_mistral.py  ...
 ```
 
-## 학습 모델 및 토크나이저 다운로드
+## Download the Model and Tokenizer
 
-Hugging Face를 이용해 Mistral 7B v0.1 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Mistral 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Mistral 7B 모델의 경우 체크포인트 용량이 약 15GB이기 때문에 체크포인트를 위한 16GB 이상의 스토리지 여유가 권장됩니다.
+Let's download the checkpoint and tokenizer for the Mistral 7B v0.1 model using Hugging Face. This process requires agreeing to the community license and providing your Hugging Face token information to access the Mistral model. Additionally, since the checkpoint size for the Mistral 7B model is approximately 15GB, it's essential to have at least 16GB of storage space available to store the checkpoint.
 
-먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
+First, enter the required information on the Hugging Face website below and proceed with the license agreement.
 
 [!ref icon="link-external" text="mistralai/Mistral-7B-v0.1 · Hugging Face"](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 
-동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
+After submitting the agreement form, confirm that the status on the page has changed as follows:
 
 ![](alert.png)
 
-상태 변경이 되었다면, 다음과 같이 `tutorial` 디렉토리 안의 `download_mistral_7b.py` 스크립트를 이용해 모델 체크포인트와 토크나이저를 `./mistral-7b` 디렉토리에 다운로드 받을 수 있습니다. 
+If the status has been updated, you can use the **`download_mistral_7b.py`** script located in the **`tutorial`** directory to download the model checkpoint and tokenizer into the **`./mistral-7b`** directory.
 
-`<user-token>` 은 사용자의 Hugging Face 토큰으로 치환합니다.
+Replace **`<user-token>`** with your Hugging Face token.
 
 ```bash
 ~/quickstart$ python tutorial/download_mistral_7b.py --token <user-token>
 ```
 
-모델 체크포인트와 토크나이저가 다운로드 받아졌는지 확인합니다.
+Check if the model checkpoint and tokenizer have been downloaded.
 
 ```bash
 ~/quickstart$ ls ./mistral-7b
@@ -97,11 +97,11 @@ model-00001-of-00006.safetensors  model-00005-of-00006.safetensors  tokenizer_co
 model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.json
 ```
 
-## 학습 데이터 다운로드
+## Download Training Data
 
-이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터셋(11.4 MB)을 사용할 것입니다.
+In this tutorial, we will use the [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) dataset (11.4 MB) available on Hugging Face among various datasets publicly available for code generation training.
 
-`prepare_mistral_dataset.py` 를 실행해 데이터셋을 다운로드하고, 학습에 사용할 수 있도록 전처리를 진행합니다.
+We will execute **`prepare_mistral_dataset.py`** to download the dataset and preprocess it for training.
 
 ```
 ~/quickstart$ ls dataset
@@ -122,9 +122,10 @@ Dataset saved as ./mistral_dataset.pt
 ... mistral_dataset.pt ...
 ```
 
-전처리가 진행된 데이터셋은 `mistral_dataset.pt` 로 저장됩니다. 
 
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
+The preprocessed dataset will be saved as **`mistral_dataset.pt`**.
+
+You can load the saved dataset in your code as follows.
 
 ```bash
 dataset = torch.load("./mistral_dataset.pt")

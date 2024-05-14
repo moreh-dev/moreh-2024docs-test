@@ -4,16 +4,20 @@ tags: [guide]
 order: 40
 ---
 
-# 3. 학습 실행하기
+# 3. Model fine-tuning
 
-이제 실제로 fine tuning을 실행해 보겠습니다.
+Now, we will train the model through the following process. 
 
-## 가속기 Flavor 설정
+# **Setting Accelerator Flavor**
 
-MoAI Platform에서는 사용자에게 물리 GPU가 노출되지 않습니다. 대신 PyTorch에서 사용 가능한 가상의 MoAI Accelerator가 제공됩니다. 가속기의 flavor를 설정함으로써 실제로 PyTorch에서 물리 GPU를 얼마나 활용할지를 결정할 수 있습니다. 선택한 가속기 Flavor에 따라 학습 총 시간 및 gpu 사용 비용이 달라지므로 사용자의 학습 상황에 따른 판단이 필요합니다. 사용자의 학습 목표에 맞는 가속기 Flavor를 선택하기 위해 다음 문서를 참고하세요.
+In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.
 
-- **[KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md)**  문서를 참고하십시오.
+- **[KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md)** 
 - **[LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md)**
+
+!!!
+Please refer to the document above or reach out to your infrastructure provider to inquire about the GPU types and quantities corresponding to each flavor.
+!!!
 
 ***(모든 문서에 추가될 그림 생성 예정)***
 
