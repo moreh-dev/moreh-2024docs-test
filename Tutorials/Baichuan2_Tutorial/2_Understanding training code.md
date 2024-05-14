@@ -4,7 +4,7 @@ tags: [guide]
 order: 40
 ---
 
-# 2. Moreh의 학습 코드 톺아보기
+# 2. Understanding training code
 
 학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_baichuan2_13b.py` 스크립트의 내용을 살펴 보겠습니다. **이번 단계에서는 MoAI Platform은 pytorch와의 완전한 호환성으로 학습 코드가 일반적인 nvidia gpu를 위한 pytorch 코드와 100% 동일하다는 것을 확인하실 수 있습니다. 또한 이를 넘어서 기존의 복잡한 병렬화 기법들을 MoAI Platform에서는 얼마나 효율적으로 구현할 수 있는지도 확인하실 수 있습니다.**
 

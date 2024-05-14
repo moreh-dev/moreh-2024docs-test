@@ -4,37 +4,39 @@ tags: [guide]
 order: 40
 ---
 
-# 5. GPU 개수 변경하기
+# 5. Changing the Number of GPUs
 
-앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다. 따라서 GPU 개수를 변경하더라도 PyTorch 스크립트는 전혀 고칠 필요가 없습니다. 
+Let's rerun the fine-tuning task with a different number of GPUs. MoAI Platform abstracts GPU resources into a single accelerator and automatically performs parallel processing. Therefore, there is no need to modify the PyTorch script even when changing the number of GPUs.
 
-## 가속기 Flavor 변경
+## Changing the Accelerator type
 
-`moreh-switch-model` 툴을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 [3. 학습 실행하기](3_학습_실행하기.md) 문서를 한번 더 참고해주시기 바랍니다.
+Switch the accelerator type using the `moreh-switch-model` tool. For instructions on changing the accelerator, please refer to the [3. Model fine-tuning](3_finetuning.md)
 
 ```
 $ moreh-switch-model
 ```
 
-인프라 제공자에게 문의하여 다음 중 하나를 선택한 다음 계속 진행하십시오.  ([KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md))
+Please contact your infrastructure provider and choose one of the following options before proceeding. ([KT Hyperscale AI Computing(HAC) AI Accelerator Information](/Supported_Documents/KT_HAC_Models_Info.md))
 
-- AMD MI250 GPU 32개 사용
-    - Moreh의 체험판 컨테이너 사용 시: [!badge variant="secondary" text="8xlarge"] 선택
-    - KT Cloud의 Hyperscale AI Computing 사용 시: [!badge variant="secondary" text="8xLarge.4096GB"] 선택
-- AMD MI210 GPU 64개 사용
-- AMD MI300X GPU 16개 사용
+- AMD MI250 GPU with 32 units
+    - When using Moreh's trial container: select [!badge variant="secondary" text="8xlarge"]
+    - When using KT Cloud's Hyperscale AI Computing: select [!badge variant="secondary" text="8xLarge.4096GB"] 
+- AMD MI210 GPU with 64 units
+- AMD MI300X GPU with 16 units
 
-## 학습 실행
+## Training Parameters
 
-다시 `train_baichuan2_13b.py` 스크립트를 실행합니다.
+Run the `train_baichuan2_13b.py` script again.
 
 ```bash
 ~/moreh-quickstart$ python tutorial/train_baichuan2_13b.py --batch-size 512
 ```
 
-사용 가능한 GPU 메모리가 2배가 늘었기 때문에, 배치 사이즈 또한 2048로 변경하여 실행시켜 보겠습니다. 
+Since the available GPU memory has doubled, let's increase the batch size to 2048 and run the training.
 
-학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다.
+f the training proceeds normally, you should see the following log:
+
+
 
 ```bash
 $ python tutorial/train_baichuan2_13b.py
@@ -72,6 +74,6 @@ $ python tutorial/train_baichuan2_13b.py
 2024-04-26 19:05:56.813 | INFO     | __main__:main:143 - [Step 7/52] Throughput : 380014.4669324378tokens/sec
 ```
 
-앞서 GPU 개수가 절반이었을 때 실행한 결과와 비교해 동일하게 학습이 이루어지며 throughput이 향상되었음을 확인할 수 있습니다.
+Upon comparison with the results obtained when the number of GPUs was halved, you'll notice that the training progresses similarly, with an improvement in throughput.
 
-- AMD MI250 GPU 16 → 32개 사용 시: 약 198,000 tokens/sec → 370,000 tokens/sec
+- When using AMD MI250 GPU 16 → 32 : approximately 198,000 tokens/sec → 370,000 tokens/sec

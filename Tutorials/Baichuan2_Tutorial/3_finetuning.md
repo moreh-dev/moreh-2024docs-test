@@ -4,30 +4,35 @@ tags: [guide]
 order: 40
 ---
 
-# 3. 학습 실행하기
+# 3. Model fine-tuning
 
-이제 실제로 fine tuning을 실행해 보겠습니다.
+Now, we will train the model through the following process. 
 
-# 가속기 Flavor 설정
+## Setting Accelerator Flavor
 
-MoAI Platform에서는 사용자에게 물리 GPU가 노출되지 않습니다. 대신 PyTorch에서 사용 가능한 가상의 MoAI Accelerator가 제공됩니다. 가속기의 flavor를 설정함으로써 실제로 PyTorch에서 물리 GPU를 얼마나 활용할지를 결정할 수 있습니다. 선택한 가속기 Flavor에 따라 총 학습 시간과 GPU 사용 비용이 달라지므로 사용자의 학습 상황에 따른 판단이 필요합니다. 사용자의 학습 목표에 맞는 가속기 Flavor를 선택하기 위해 다음 문서를 참고하세요.
+In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.
 
-- ***[KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md)***  문서를 참고하십시오.
+- ***[KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md)***  
 - [LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md)
+
+!!!
+Please refer to the document above or reach out to your infrastructure provider to inquire about the GPU types and quantities corresponding to each flavor.
+!!!
 
 ***(모든 문서에 추가될 그림 생성 예정)***
 
-튜토리얼을 계속 진행하기 위해 인프라 제공자에게 각 flavor에 대응되는 GPU 종류 및 개수를 문의하십시오. 다음 중 하나에 해당하는 flavor를 선택하여 계속 진행하십시오.
+You can choose one of the following flavors to proceed:
 
-- AMD MI250 GPU 16개 사용
-    - Moreh의 체험판 컨테이너 사용 시: [!badge variant="secondary" text="4xlarge"] 선택 
-    - KT Cloud의 Hyperscale AI Computing 사용 시: [!badge variant="secondary" text="4xLarge.2048GB"] 선택
-- AMD MI210 GPU 32개 사용
-- AMD MI300X GPU 8개 사용
+- AMD MI250 GPU with 16 units:
+    - Select [!badge variant="secondary" text="4xlarge"] when using Moreh's trial container.
+    - Select [!badge variant="secondary" text="4xLarge.2048GB"] when using KT Cloud's Hyperscale AI Computing.
+- AMD MI210 GPU with 32 units.
+- AMD MI300X GPU with 8 units.
 
-앞서 ‘[Baichuan2 Finetuning](index.md)’ 문서에서 MoAI Accelerator를 확인했던 것을 기억하시나요? 이제 본격적인 학습 실행을 위해 필요한 가속기를 설정해보겠습니다.
+Remember we checked the MoAI Accelerator in the previous [Baichuan2 Finetuning](index.md) step? Now, let's set up the required accelerators for the actual training process.
 
- 먼저 `moreh-smi` 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.
+First, we'll use the `moreh-smi` command to check the currently used MoAI Accelerator.
+
 
 ```bash
 $ moreh-smi
@@ -40,10 +45,10 @@ $ moreh-smi
 |  * 0     |   MoAI Accelerator  |  Large.256GB  |  -             |  -             |  -            |
 +-------------------------------------------------------------------------------------------------+
 ```
+The current MoAI Accelerator in use has a memory size of 256GB.
 
-현재 사용중인 MoAI Accelerator의 메모리 크기는 256GB입니다. 
+You can utilize the `moreh-switch-model` command to review the available accelerator flavors on the current system. For seamless model training, consider using the `moreh-switch-model`command to switch to a MoAI Accelerator with larger memory capacity.
 
-`moreh-switch-model` 툴을 사용하여 현재 시스템에서 사용 가능한 가속기 flavor 리스트를 확인할 수 있습니다. 원활한 모델 학습을 위해 `moreh-switch-model` 명령어를 이용해 더 큰 메모리의 MoAI Accelerator로 변경할 수 있습니다. 
 
 ```bash
 $ moreh-switch-model
@@ -64,13 +69,15 @@ Current MoAI Accelerator: Large.256GB
 13. 48xLarge.24576GB 
 ```
 
-여기서 번호를 입력하여 다른 flavor로 전환할 수 있습니다. 
+You can enter the number to switch to a different flavor.
 
-이번 튜토리얼에서는 2048GB 크기의 MoAI Accelerator를 이용하겠습니다.
+In this tutorial, we will use a 2048GB-sized MoAI Accelerator.
 
-따라서 처음 설정되어 있던 [!badge variant="secondary" text="xLarge.512GB"] flavor를 [!badge variant="secondary" text="4xLarge.2048GB"]로 전환한 다음 `moreh-smi` 명령을 사용하여 정상적으로 반영되었는지 확인하겠습니다. 
+Therefore, after switching from the initially set [!badge variant="secondary" text="Large.256GB"] flavor to [!badge variant="secondary" text="4xLarge.2048GB"], we will use the **`moreh-smi`** command to confirm that the change has been successfully applied.
 
-[!badge variant="secondary" text="4xLarge.2048GB"] 사용을 위해 8을 입력합니다.
+Enter 8 to use [!badge variant="secondary" text="4xLarge.2048GB"].
+
+
 
 ```bash
 Selection (1-13, q, Q): 8
@@ -93,9 +100,9 @@ The MoAI Accelerator flavor is successfully switched to  "4xLarge.2048GB".
 Selection (1-13, q, Q): q
 ```
 
-`q` 를 입력해 변경을 완료합니다.
+Enter **`q`** to complete the change.
 
-변경 사항이 잘 반영되었는지 확인하기 위해 다시 `moreh-smi` 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.
+To confirm that the changes have been successfully applied, use the **`moreh-smi`** command again to check the currently used MoAI Accelerator.
 
 ```bash
 $ moreh-smi
@@ -108,18 +115,18 @@ $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-`4xLarge.2048GB` 로 잘 변경된 것을 확인할 수 있습니다.
+Now you can see that it has been successfully changed to [!badge variant="secondary" text="4xLarge.2048GB"].
 
-# 학습 실행
+# Training Execution
 
-주어진 `train_baichuan2_13b.py` 스크립트를 실행합니다.
+Execute the `train_baichuan2_13b.py` script below.
 
 ```
 $ cd ~/quickstart
 ~/quickstart$ python tutorial/train_baichuan2_13b.py
 ```
 
-학습이 정상적으로 진행된다면 다음과 같은 로그가 출력 될 것입니다. 로그를 통해 최적의 병렬화 설정을 찾는 Advanced Parallelism 기능이 정상 동작하는 것을 확인할 수 있습니다. 앞서 살펴 본 PyTorch 스크립트 상에서는 AP 코드 한 줄을 제외한 다른 부분에서 GPU 여러 개를 동시에 사용하기 위한 처리가 전혀 없었음을 참고하십시오.
+If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It's worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.
 
 ```bash
 2024-04-25 18:31:36,493 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmph165oq0w
@@ -161,17 +168,18 @@ The argument `trust_remote_code` is to be used with Auto classes. It has no effe
 2024-04-25 18:41:38.419 | INFO     | __main__:main:143 - [Step 9/104] Throughput : 195401.16844504434tokens/sec
 ```
 
-Loss 값이 다음과 같이 떨어지며  정상 학습이 이루어지는 것을 확인할 수 있습니다.
+You can confirm that the training is progressing smoothly by observing the loss values decreasing as follows.
 
 ![](./img/training_loss.png)
 
-학습 도중에 출력되는 throughput은 해당 PyTorch 스크립트를 통해 초당 몇 개의 token을 학습하고 있는지를 의미합니다.
+The throughput displayed during training indicates how many tokens per second are being processed through the PyTorch script.
 
-- AMD MI250 GPU 8개 사용 시: 약 191605 tokens/sec
+- When using 8 AMD MI250 GPUs: approximately 191605 tokens/sec
 
-GPU 종류 및 개수에 따른 대략적인 학습 소요 시간은 다음과 같습니다.
+Approximate training time based on GPU type and quantity is as follows:
 
-- AMD MI250 GPU 8개 사용 시: 약 30분
+- When using 8 AMD MI250 GPUs: approximately 30 minutes
+
 
 # 학습 중에 가속기 상태 확인
 
