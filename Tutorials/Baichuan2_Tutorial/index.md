@@ -2,6 +2,7 @@
 icon: terminal
 tags: [guide]
 order: 600
+expanded: false
 ---
 
 # Baichuan2 Fine-tuning

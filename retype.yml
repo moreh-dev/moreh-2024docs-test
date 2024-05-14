@@ -3,7 +3,7 @@ output: .retype
 url: /two-lang-demo/
 branding:
   title: Docs
-  label: EN
+  label: KOR
 exclude:
   - "fr"
   - "ko"
@@ -16,3 +16,6 @@ links:
   link: ko/
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
+
+
+  
