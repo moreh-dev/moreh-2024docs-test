@@ -5,29 +5,29 @@ order: 40
 ---
 # 2. Understanding training code
 
-학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_llama2.py` 스크립트의 내용에 대해 살펴보겠습니다. 이 스크립트는 통상적인 PyTorch 코드로서 Hugging Face Transformers 라이브러리에 있는 Llama2 13B 모델 구현을 기반으로 fine-tuning 작업을 실행합니다.
+If you've got all your training data ready, let's dive into running the actual fine-tuning process using the **`train_llama2.py`** script. This script is just standard PyTorch code, performing fine-tuning based on the Llama2 13B model from the Hugging Face Transformers library.
 
-**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Llama2 13B 모델을 다른 방식으로 fine-tuning 하는 것도 얼마든지 가능합니다. MoAI Platform은 PyTorch와의 완전한 호환성을 제공하기 때문입니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드([LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md))를 참고하십시오.
-
+**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide ([LLM Fine-tuning 파라미터 가이드](https://www.notion.so/LLM-Fine-tuning-a169bf8a667c4a0689ec2d4ff464775b?pvs=21) ) provided by Moreh.
 
 ## Training Code
 
-**모든 코드는 일반적인 pytorch 사용 경험과 완벽하게 동일합니다.** 
+All the code used during training is exactly the same as when you're using PyTorch in general.
 
-먼저, `transformers` 라이브러리에서 필요한 모듈을 불러옵니다.
+Import the necessary modules from the **`transformers`** library.
 
 ```python
 from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
 ```
 
- 앞서 다운로드 받았던 모델 체크포인트와 토크나이저를 불러옵니다.
+Then, load up the model checkpoint and tokenizer you downloaded earlier.
 
 ```python
 model = AutoModelForCausalLM.from_pretrained("./llama-2-13b-hf")
 tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
 ```
 
-[1. Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Load your preprocessed dataset, which you prepared during the [1. Prepare fine-tuning](1_Prepare%20Fine-tuning.md) step, and define your data loaders.
+
 
 ```python
   dataset = torch.load("./llama2_dataset.pt")
@@ -41,7 +41,7 @@ tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
   )
 ```
 
-이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
+Training proceeds as usual, just like with any other PyTorch model.
 
 ```python
     # Compose pad token mask
@@ -80,20 +80,19 @@ tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
             model.zero_grad(set_to_none=True)
 ```
 
-**위와 같이 MoAI Platform에서는 기존에 사용하시던 PyTorch 스크립트를 수정 없이 동일하게 사용하실 수 있습니다.**
+**With MoAI Platform, you can seamlessly use your existing PyTorch scripts without any modifications.**
 
 # About Advanced Parallelism
 
-본 튜토리얼에 사용되는 학습 스크립트에는 아래와 같은 코드가 추가로 한 줄 존재합니다. 이는 MoAI Platform에서 제공하는 자동 병렬화 기능을 수행하는 코드입니다.
+In the training script used in this tutorial, there is an additional line of code as follows, which executes the top-tier parallelization feature provided by the MoAI Platform:
 
 ```bash
 torch.moreh.option.enable_advanced_parallelization()
 ```
 
-Llama2 13B와 같은 거대 언어 모델은 학습에 많은 양의 GPU가 필요합니다. 따라서 MoAI Platform이 아닌 다른 프레임워크를 사용할 경우, Data Parallelism, Pipeline Parallelism, Tensor Parallelism과 같은 병렬화 기법을 도입하여 학습을 수행해야 합니다.
+Training a massive language model like Llama2 13B requires a significant number of GPUs. Therefore, when not using the MoAI Platform, you would need to introduce parallelization techniques such as Data Parallelism, Pipeline Parallelism, and Tensor Parallelism into your training process.
 
-예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다.
-[https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+For example, if a user wants to apply DDP in their regular PyTorch code, the following code snippet would need to be added (Reference: [https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html))
 
 
 ```python
@@ -124,9 +123,9 @@ torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
-이와 같은 기본적인 설정 외에도 사용자는 학습 스크립트 작성 과정에서 Python 코드가 다중 처리(multi processing) 환경에서 어떻게 동작하는지 이해해야 하며, 특히 다중 노드(multi node) 설정에서는 학습에 사용되는 각 노드의 환경을 구성해야 합니다. 또한, 모델 종류, 크기, 데이터셋 등을 고려하여 최적의 병렬화 방법을 찾기 위해서는 상당한 시간이 필요합니다.
+In addition to these basic settings, users need to understand how Python code behaves in a multiprocessing environment during the process of writing training scripts. Especially in multi-node setups, configuring the environment of each node used for training is necessary. Furthermore, finding the optimal parallelization method considering factors such as model type, size, and dataset requires a considerable amount of time.
 
-**반면, MoAI Platform의 AP 기능을 통해 사용자는 별도의 병렬화 기법을 적용할 필요 없이, 학습 스크립트에 단 한 줄의 코드를 추가하는 것으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
+**On the other hand, MoAI Platform's AP feature allows users to proceed with optimized parallelized training with just one line of code added to the training script, without the need for users to apply these additional parallelization techniques themselves.**
 
 
 ```bash
@@ -139,3 +138,5 @@ model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
 ```
 
 이렇게 MoAI Platform의 Advanced Parallelization(AP)은 다른 프레임워크에서는 경험하기 어려운 최적화 및 자동화 기능을 제공합니다. AP 기능를 통해 **최적의 분산 병렬처리**를 경험해 보시기 바랍니다. AP기능을 이용하면 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경 변수 조합을 **아주 간단한 코드 한 줄**로 설정할 수 있습니다.
+
+MoAI Platform's Advanced Parallelization (AP) provides optimization and automation features that are difficult to experience in other frameworks. Through the AP feature, users can experience **the best distributed parallel processing**. By leveraging AP, users can easily configure the optimal parameters and environment variables for Pipeline Parallelism and Tensor Parallelism required for training large-scale models with **just a single line of code**.

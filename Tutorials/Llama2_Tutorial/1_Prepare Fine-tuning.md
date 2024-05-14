@@ -35,9 +35,9 @@ Do you want to upgrade? (y/n, default:n)
 y
 ```
 
-## PyTorch 동작 여부 확인하기
+## Verifying PyTorch Installation
 
-다음과 같이 실행하여 torch 패키지가 정상적으로 import 되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
+Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized. If you encounter any issues during this process, please refer to the  (troubleshooting TBA).
 
 ```bash
 $ python
@@ -58,17 +58,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
 ```
 
-## 필요 Python 패키지 설치
 
-다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
+## Download the Training Script
 
-```bash
-$ pip install transformers==4.36.2 datasets==2.19.0 loguru==0.7.2 sentencepiece==0.2.0
-```
-
-## 학습 스크립트 다운로드
-
-다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_llama2.py` 스크립트를 사용할 것입니다.
+Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the **`train_llama2.py`** script located inside the **`tutorial`** directory.
 
 ```bash
 $ sudo apt-get install git
@@ -78,35 +71,35 @@ $ cd quickstart
 ...  train_llama2.py  ...
 ```
 
-## 필요 Python 패키지 설치
+## Install Required Python Packages
 
-다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
+Execute the following command to install third-party Python packages required for script execution:
 
 ```bash
 $ pip install -r requirements/requirements_baichuan.txt
 ```
 
-## 학습 모델 및 토크나이저 다운로드
+## Download the Model and Tokenizer
 
-Hugging Face를 이용해 Llama2-13b-hf 모델의 체크포인트와 토크나이저를 다운로드합니다. 이때 Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama2 13B 모델의 경우 체크포인트 용량이 약 49GB이기 때문에 체크포인트를 위한 50GB 스토리지 여유가 필수적입니다.
+Download the checkpoint and tokenizer for the Llama2-13b-hf model using Hugging Face. Please note that the Llama2 model requires community license agreement and Hugging Face token information. Additionally, since the checkpoint size for the Llama2 13B model is approximately 49GB, it is essential to have at least 50GB of storage space for the checkpoint.
 
-먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
+Begin by visiting the following website and providing the required information to proceed with the license agreement.
 
 [meta-llama/Llama-2-13b-hf · Hugging Face](https://huggingface.co/meta-llama/Llama-2-13b-hf)
 
-동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
+Once you've submitted the agreement form, check that the status on the page has updated as follows:
 
 ![](alert.png)
 
-상태 변경이 되었다면, 다음과 같이 `tutorial` 디렉토리 안의 `download_llama2_13b.py` 스크립트를 이용해 모델 체크포인트와 토크나이저를 `./llama-2-13b-hf` 디렉토리에 다운로드 받을 수 있습니다. 
+Once the status has changed, you can utilize the `download_llama2_13b.py` script found in the `tutorial` directory to download the model checkpoint and tokenizer into the `./llama-2-13b-hf directory.`
 
-`<user-token>` 은 사용자의 Hugging Face 토큰으로 치환합니다.
+Make sure to replace `<user-token>` with your Hugging Face token.
 
 ```bash
 ~/quickstart$ python tutorial/download_llama2_13b.py --token <user-token>
 ```
 
-모델 체크포인트와 토크나이저가 다운로드 받아졌는지 확인합니다.
+Check if the model checkpoint and tokenizer have been downloaded.
 
 ```bash
 ~/quickstart$ ls ./llama-2-13b-hf
@@ -121,9 +114,9 @@ model-00006-of-00011.safetensors  tokenizer.json
 model-00007-of-00011.safetensors  tokenizer.model
 ```
 
-## 학습 데이터 다운로드
+## Download Training Data
 
-학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_llama2_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `llama2_dataset.pt` 파일로 저장합니다.
+To download the training data, we'll use the **`prepare_llama2_dataset.py`** script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as **`llama2_dataset.pt`** file.
 
 ```bash
 ~/quickstart$ ls dataset
@@ -144,7 +137,7 @@ Dataset saved as ./llama2_dataset.pt
 ... llama2_dataset.pt ...
 ```
 
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
+You can then load the stored dataset in your code like this:
 
 ```bash
 dataset = torch.load("./llama2_dataset.pt")
