@@ -4,12 +4,11 @@ tags: [guide]
 order: 40
 ---
 
-# 6. 마무리 
+# 6. Conclusion
 
-지금까지 MoAI Platform에서 [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) 모델을 fine-tuning하는 과정을 살펴 보았습니다. MoAI Platform을 사용하면 **기존의 학습 코드를 그대로 사용하면서** PyTorch 기반 오픈 소스 LLM 모델을 쉽게 GPU 클러스터에서 fine-tuning할 수 있습니다. 또한, **MoAI 플랫폼을 사용한다면 여러분이 필요한 GPU 수를 코드 변경 없이 손쉽게 설정할 수 있습니다**. 여러분만의 데이터로 새로운 모델을 빠르고 쉽게 개발해 보세요. 
+From this tutorial, we have seen how to fine-tune the [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) model on the MoAI Platform. With MoAI Platform, you can easily fine-tune PyTorch-based open-source LLM models on GPU clusters while retaining your existing training code. Additionally, using the MoAI platform, you can easily configure the number of GPUs you need without any code changes. So please don’t hesitate to dive in and develop new models quickly and effortlessly with your data!
 
-
-# 더 알아보기
+## Learn more
 
 - *[MoAI Platform의 자동병렬화 기능,  Advanced Parallelization (AP)](/Supported_Documents/)*
 - [Llama2 Fine-tuning](/Tutorials/Llama2_Tutorial/index.md)

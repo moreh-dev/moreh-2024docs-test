@@ -4,13 +4,14 @@ tags: [guide]
 order: 40
 ---
 
-# 1. Fine-tuning 준비하기
+# 1. Prepare Fine-tuning
 
-MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
+Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.
 
-## PyTorch 설치 여부 확인하기
+## Checking PyTorch Installation
 
-SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 conda 환경에 PyTorch가 설치되어 있는지 확인합니다.
+After connecting to the container via SSH, run the following command to check if PyTorch is installed in the current conda environment:
+
 
 ```bash
 $ conda list torch
@@ -19,14 +20,14 @@ $ conda list torch
 torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 ...
 ```
+The version name includes both the PyTorch version and the version of MoAI required to run it. In the example above, it indicates that version 24.2.0 of MoAI, which runs PyTorch version 1.13.1+cu116, is installed.
 
-버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.
+If you see the message **`conda: command not found`**, if the torch package is not listed, or if the torch package exists but does not include "moreh" in the version name, please follow the instructions in the  ***([Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md))*** document to create a conda environment.
 
-만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 ***([Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md))*** 문서에 따라 conda 환경을 생성하십시오.
+## Verifying PyTorch Installation
 
-## PyTorch 동작 여부 확인하기
+Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized. If you encounter any issues during this process, please refer to the  ***(troubleshooting TBA).***
 
-다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
 
 ```bash
 $ python
@@ -47,17 +48,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
 ```
 
-# 필요 Python 패키지 설치
+## Install Required Python Packages
 
-다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
+Execute the following command to install third-party Python packages required for script execution:
 
 ```bash
 $ pip install transformers==4.40.1 datasets==2.18.0 loguru==0.7.2 tiktoken==0.6.0
 ```
 
-## 학습 스크립트 다운로드
+## Download the Training Script
 
-다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_qwen.py` 스크립트를 사용할 것입니다.
+Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the `train_qwen.py` script located inside the `tutorial` directory.
 
 ```bash
 $ sudo apt-get install git
@@ -67,11 +68,11 @@ $ cd quickstart
 ...  train_qwen.py  ...
 ```
 
-## 학습 데이터 다운로드
+## Download Training Data
 
-학습 데이터를 다운로드하기 위해 `dataset` 디렉터리 안에 있는 `prepare_qwen_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [python_code_instruction_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터를 다운로드하고 학습에 사용할 수 있도록 전처리를 진행하여 `qwen_dataset.pt` 파일로 저장합니다.
+To download the training data, we'll use the `prepare_qwen_dataset.py` script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as `qwen_dataset.pt` file.
 
-```
+```bash
 ~/quickstart$ ls dataset
 ...  prepare_qwen_dataset.py ...
 
@@ -90,9 +91,9 @@ Dataset saved as ./qwen_dataset.pt
 ... qwen_dataset.pt ...
 ```
 
-전처리가 진행된 데이터셋은 `qwen_dataset.pt` 로 저장됩니다. 
+The preprocessed dataset is saved as `qwen_dataset.pt`.
 
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
+You can then load the stored dataset in your code like this:
 
 ```bash
 dataset = torch.load("./qwen_dataset.pt")

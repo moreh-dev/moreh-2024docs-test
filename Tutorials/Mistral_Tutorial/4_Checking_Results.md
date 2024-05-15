@@ -4,11 +4,11 @@ tags: [guide]
 order: 40
 ---
 
-# 4. 학습 결과 확인하기
+# 4. Checking Training Results
 
-앞 장과 같이 `train_mistral.py` 스크립트를 실행하면 결과 모델이 `mistral_code_generation` 디렉터리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.
+Running the **`train_mistral.py`** script, as in the previous section, will save the resulting model in the **`mistral_code_generation`** directory. This is a pure PyTorch model parameter file and is fully compatible with regular GPU servers, not just the MoAI Platform.
 
-미리 다운로드한 GitHub 레포지토리의 `tutorial` 디렉토리 아래에 있는 `inference_mistral.py` 스크립트로 학습된 모델을 테스트해 볼 수 있습니다. 테스트에는 ‘주어진 문자열 리스트를 입력 받아 공백으로 결합하는 함수를 만들어’라는 프롬프트가 사용되었습니다.
+You can test the trained model using the **`inference_mistral.py`** script located in the **`tutorial`** directory of the GitHub repository you downloaded earlier. In this test, the prompt "Create a function that takes a list of strings as input and joins them with spaces" was used.
 
 ```python
 # tutorial/inference_mistral.py
