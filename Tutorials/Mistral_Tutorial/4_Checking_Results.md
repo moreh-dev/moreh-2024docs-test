@@ -24,13 +24,13 @@ Create a function to join given list of strings with space.
 """
 ```
 
-코드를 실행합니다.
+Run the code below.
 
 ```python
 ~/quickstart$ python tutorial/inference_mistral.py
 ```
 
-출력값을 확인해보면 모델이 프롬프트 내용대로 적절한 함수를 생성한 것을 확인할 수 있습니다.
+Upon examining the output, you can confirm that the model has appropriately generated the function as per the prompt.
 
 ```bash
 Mistral: Below is an instruction that describes a task. Write a response that appropriately completes the request.
