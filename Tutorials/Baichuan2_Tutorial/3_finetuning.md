@@ -181,9 +181,9 @@ Approximate training time based on GPU type and quantity is as follows:
 - When using 8 AMD MI250 GPUs: approximately 30 minutes
 
 
-# 학습 중에 가속기 상태 확인
+# Checking Accelerator Status During Training
 
-학습 도중에 터미널을 하나 더 띄워서 컨테이너에 접속한 후 `moreh-smi` 명령을 실행하시면 다음과 같이 MoAI Accelerator의 메모리를 점유하며 학습 스크립트가 실행되는 것을 확인하실 수 있습니다. 실행 로그상에서 초기화 과정이 끝나고 Loss가 출력되는 도중에 확인해 보시기 바랍니다.
+During training, open another terminal and connect to the container. You can execute the `moreh-smi` command to observe the MoAI Accelerator occupying memory while the training script is running. Please check the memory occupancy of MoAI accelerator when the training loss appears in the execution log after the initialization process.
 
 
 ```bash

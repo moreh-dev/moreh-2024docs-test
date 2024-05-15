@@ -23,11 +23,11 @@ Please refer to the document above or reach out to your infrastructure provider 
 
 튜토리얼을 계속 진행하기 위해 인프라 제공자에게 각 flavor에 대응되는 GPU 종류 및 개수를 문의하십시오. 다음 중 하나에 해당하는 flavor를 선택하여 계속 진행하십시오.
 
-- AMD MI250 GPU 16개 사용
-    - Moreh의 체험판 컨테이너 사용 시: [!badge variant="secondary" text=“4xlarge”] 선택
-    - KT Cloud의 Hyperscale AI Computing 사용 시: [!badge variant="secondary" text=“4xLarge.2048GB”] 선택
-- AMD MI210 GPU 32개 사용
-- AMD MI300X GPU 8개 사용
+- AMD MI250 GPU with 16 units:
+    - Select [!badge variant="secondary" text="4xlarge"] when using Moreh's trial container.
+    - Select [!badge variant="secondary" text="4xLarge.2048GB"] when using KT Cloud's Hyperscale AI Computing.
+- AMD MI210 GPU with 32 units.
+- AMD MI300X GPU with 8 units.
 
 
 앞서 [Mistral Fine-tuning](index.md)문서에서 MoAI Accelerator를 확인했던 것을 기억하시나요? 이제 본격적인 학습 실행을 위해 필요한 가속기를 설정해보겠습니다.

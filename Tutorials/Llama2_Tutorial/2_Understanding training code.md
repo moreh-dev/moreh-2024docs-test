@@ -7,7 +7,7 @@ order: 40
 
 If you've got all your training data ready, let's dive into running the actual fine-tuning process using the **`train_llama2.py`** script. This script is just standard PyTorch code, performing fine-tuning based on the Llama2 13B model from the Hugging Face Transformers library.
 
-**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide ([LLM Fine-tuning 파라미터 가이드](https://www.notion.so/LLM-Fine-tuning-a169bf8a667c4a0689ec2d4ff464775b?pvs=21) ) provided by Moreh.
+**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide ([LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md) ) provided by Moreh.
 
 ## Training Code
 
@@ -117,9 +117,9 @@ main(rank, world_size, args)
 ```
 
 ```bash
-# single node 실행
+# Execute single node 
 torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
-# multi node 실행
+# Execute multi node 
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
@@ -136,7 +136,5 @@ torch.moreh.option.enable_advanced_parallelization()
 model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
 ...
 ```
-
-이렇게 MoAI Platform의 Advanced Parallelization(AP)은 다른 프레임워크에서는 경험하기 어려운 최적화 및 자동화 기능을 제공합니다. AP 기능를 통해 **최적의 분산 병렬처리**를 경험해 보시기 바랍니다. AP기능을 이용하면 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경 변수 조합을 **아주 간단한 코드 한 줄**로 설정할 수 있습니다.
 
 MoAI Platform's Advanced Parallelization (AP) provides optimization and automation features that are difficult to experience in other frameworks. Through the AP feature, users can experience **the best distributed parallel processing**. By leveraging AP, users can easily configure the optimal parameters and environment variables for Pipeline Parallelism and Tensor Parallelism required for training large-scale models with **just a single line of code**.

@@ -6,7 +6,8 @@ order: 1000
 
 # Llama2 Fine-tuning
 
-This tutorial introduces an example of fine-tuning the open-source [Llama2 13B model](https://huggingface.co/meta-llama/Llama-2-13b-hf) on the MoAI Platform. Through this tutorial, you'll learn how to leverage the AMD GPU cluster using the MoAI Platform and explore the benefits of performance and automatic parallelization.
+This tutorial introduces an example of fine-tuning the open-source [Llama2 13B model](https://huggingface.co/meta-llama/Llama-2-13b-hf) on the MoAI Platform. 
+Through this tutorial, you'll learn how to leverage the AMD GPU cluster using the MoAI Platform and explore the benefits of performance and automatic parallelization.
 
 ### Overview
 

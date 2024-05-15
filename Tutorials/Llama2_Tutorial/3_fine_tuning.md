@@ -27,7 +27,7 @@ Before continuing with the tutorial, we recommend reaching out to your infrastru
 - AMD MI210 GPU with 32 units.
 - AMD MI300X GPU with 8 units.
 
-Remember when we checked the MoAI Accelerator in the [Llama2 Fine-tuning](https://www.notion.so/Llama2-Fine-tuning-4a34ac15f9d346f88f73a4add8b6759f?pvs=21)? Now let's set up the accelerator needed for learning.
+Remember when we checked the MoAI Accelerator in the [1. Prepare Fine-tuning](1_Prepare%20Fine-tuning.md)? Now let's set up the accelerator needed for learning.
 
 First, we'll use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 

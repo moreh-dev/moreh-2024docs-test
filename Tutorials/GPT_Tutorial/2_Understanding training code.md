@@ -27,7 +27,7 @@ model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
 tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B") 
 ```
 
-Then load the preprocessed dataset saved during the preparation for [Fine-tuning step](https://www.notion.so/GPT-Fine-tuning-ENG-785a1edb6eba473d81a5c328c8d49739?pvs=21) and define the data loaders. 
+Then load the preprocessed dataset saved during the preparation for [1. Prepare Fine-tuning ](1_Prepare_Finetuning.md) and define the data loaders. 
 
 ```python
   dataset = torch.load("gpt_dataset.pt")

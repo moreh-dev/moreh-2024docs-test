@@ -4,11 +4,11 @@ tags: [guide]
 order: 40
 ---
 
-# 4. 학습 결과 확인하기
+# 4. Checking Training Results
 
-앞 장과 같이 `train_baichuan2_13b.py`스크립트를 실행하면 결과 모델이 `baichuan_code_generation` 디렉토리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.
+Similar to the previous chapter, when you execute the **`train_baichuan2_13b.py`** script, the resulting model will be saved in the **`baichuan_code_generation`** directory. This model, stored as a pure PyTorch parameter file, is fully compatible not only with the MoAI Platform but also with regular GPU servers.
 
-미리 다운로드한 GitHub 레포지토리의 tutorial 디렉토리 아래에 있는 `inference_baichuan.py` 스크립트로 학습된 모델을 테스트해 볼 수 있습니다. 
+You can test the trained model using the **`inference_baichuan.py`** script located under the **`tutorial`** directory of the GitHub repository you downloaded earlier.
 
 ```python
 # tutorial/inference_baichuan.py
@@ -28,13 +28,13 @@ with torch.no_grad():
 ...
 ```
 
-코드를 실행합니다.
+Run the code below.
 
 ```bash
 ~/quickstart$ python tutorial/inference_baichuan.py
 ```
 
-출력값을 확인해보면 모델이 프롬프트에 대한 적절한 답변 생성한 것을 확인할 수 있습니다.
+Upon inspecting the output, you can verify that the model has generated appropriate responses to the prompts.
 
 ```bash
 ### Input
