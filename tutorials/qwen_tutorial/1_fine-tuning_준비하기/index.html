@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769096786929">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769101343779">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>1. Fine-tuning 준비하기</title>
-    <meta name="title" content="1. Fine-tuning 준비하기">
-    <meta name="description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <title>1. Prepare Fine-tuning</title>
+    <meta name="title" content="1. Prepare Fine-tuning">
+    <meta name="description" content="Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/two-lang-demo/tutorials/qwen_tutorial/1_fine-tuning_준비하기/">
@@ -20,23 +20,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/two-lang-demo/tutorials/qwen_tutorial/1_fine-tuning_준비하기/">
-    <meta property="og:title" content="1. Fine-tuning 준비하기">
-    <meta property="og:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta property="og:title" content="1. Prepare Fine-tuning">
+    <meta property="og:description" content="Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/two-lang-demo/tutorials/qwen_tutorial/1_fine-tuning_준비하기/">
-    <meta property="twitter:title" content="1. Fine-tuning 준비하기">
-    <meta property="twitter:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta property="twitter:title" content="1. Prepare Fine-tuning">
+    <meta property="twitter:description" content="Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769096786929" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769101343779" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769096786929" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769101343779" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769096786929" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769096786929" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769101343779" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769101343779" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -171,20 +171,20 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="1-fine-tuning-준비하기" class="break-words">
+<doc-anchor-target id="1-prepare-fine-tuning" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-fine-tuning-준비하기">#</doc-anchor-trigger>
-        <span>1. Fine-tuning 준비하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-prepare-fine-tuning">#</doc-anchor-trigger>
+        <span>1. Prepare Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.</p>
-<doc-anchor-target id="pytorch-설치-여부-확인하기">
+<p>Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.</p>
+<doc-anchor-target id="checking-pytorch-installation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-설치-여부-확인하기">#</doc-anchor-trigger>
-        <span>PyTorch 설치 여부 확인하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checking-pytorch-installation">#</doc-anchor-trigger>
+        <span>Checking PyTorch Installation</span>
     </h2>
 </doc-anchor-target>
-<p>SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 conda 환경에 PyTorch가 설치되어 있는지 확인합니다.</p>
+<p>After connecting to the container via SSH, run the following command to check if PyTorch is installed in the current conda environment:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
 ...
@@ -192,15 +192,15 @@
 torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 ...</code></pre>
 </doc-codeblock></div>
-<p>버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.</p>
-<p>만약 <code v-pre>conda: command not found</code> 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 <em><strong>(<a href="../../../supported_documents/prepare_fine_tuning_moai/">Prepare Fine-tuning on MoAI Platform</a>)</strong></em> 문서에 따라 conda 환경을 생성하십시오.</p>
-<doc-anchor-target id="pytorch-동작-여부-확인하기">
+<p>The version name includes both the PyTorch version and the version of MoAI required to run it. In the example above, it indicates that version 24.2.0 of MoAI, which runs PyTorch version 1.13.1+cu116, is installed.</p>
+<p>If you see the message <strong><code v-pre>conda: command not found</code></strong>, if the torch package is not listed, or if the torch package exists but does not include &quot;moreh&quot; in the version name, please follow the instructions in the  <em><strong>(<a href="../../../supported_documents/prepare_fine_tuning_moai/">Prepare Fine-tuning on MoAI Platform</a>)</strong></em> document to create a conda environment.</p>
+<doc-anchor-target id="verifying-pytorch-installation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-동작-여부-확인하기">#</doc-anchor-trigger>
-        <span>PyTorch 동작 여부 확인하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#verifying-pytorch-installation">#</doc-anchor-trigger>
+        <span>Verifying PyTorch Installation</span>
     </h2>
 </doc-anchor-target>
-<p>다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 <em><strong>(troubleshooting 문서 추가 예정)</strong></em> 문서에 따라 조치하십시오.</p>
+<p>Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized. If you encounter any issues during this process, please refer to the  <em><strong>(troubleshooting TBA).</strong></em></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ python
 Python 3.8.19 (default, Sep 11 2023, 13:40:15)
@@ -219,23 +219,23 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 'MoAI Accelerator'
 &gt;&gt;&gt; quit()</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="필요-python-패키지-설치">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#필요-python-패키지-설치">#</doc-anchor-trigger>
-        <span>필요 Python 패키지 설치</span>
-    </h1>
+<doc-anchor-target id="install-required-python-packages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-required-python-packages">#</doc-anchor-trigger>
+        <span>Install Required Python Packages</span>
+    </h2>
 </doc-anchor-target>
-<p>다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.</p>
+<p>Execute the following command to install third-party Python packages required for script execution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ pip install transformers==4.40.1 datasets==2.18.0 loguru==0.7.2 tiktoken==0.6.0</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="학습-스크립트-다운로드">
+<doc-anchor-target id="download-the-training-script">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-스크립트-다운로드">#</doc-anchor-trigger>
-        <span>학습 스크립트 다운로드</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#download-the-training-script">#</doc-anchor-trigger>
+        <span>Download the Training Script</span>
     </h2>
 </doc-anchor-target>
-<p>다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 <code v-pre>tutorial</code> 디렉토리 안에 있는 <code v-pre>train_qwen.py</code> 스크립트를 사용할 것입니다.</p>
+<p>Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the <code v-pre>train_qwen.py</code> script located inside the <code v-pre>tutorial</code> directory.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ sudo apt-get install git
 $ git clone https://github.com/moreh-dev/quickstart.git
@@ -243,15 +243,15 @@ $ cd quickstart
 ~/quickstart$ ls tutorial
 ...  train_qwen.py  ...</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="학습-데이터-다운로드">
+<doc-anchor-target id="download-training-data">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-데이터-다운로드">#</doc-anchor-trigger>
-        <span>학습 데이터 다운로드</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#download-training-data">#</doc-anchor-trigger>
+        <span>Download Training Data</span>
     </h2>
 </doc-anchor-target>
-<p>학습 데이터를 다운로드하기 위해 <code v-pre>dataset</code> 디렉터리 안에 있는 <code v-pre>prepare_qwen_dataset.py</code> 스크립트를 사용하겠습니다. 코드를 실행하면 <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca">python_code_instruction_18k_alpaca</a> 데이터를 다운로드하고 학습에 사용할 수 있도록 전처리를 진행하여 <code v-pre>qwen_dataset.pt</code> 파일로 저장합니다.</p>
+<p>To download the training data, we&#x27;ll use the <code v-pre>prepare_qwen_dataset.py</code> script located in the <strong><code v-pre>dataset</code></strong> directory. When you run the code, it will download the <a href="https://huggingface.co/datasets/cnn_dailymail">cnn_dailymail</a> dataset, preprocess it for training, and save it as <code v-pre>qwen_dataset.pt</code> file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">~/quickstart$ ls dataset
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls dataset
 ...  prepare_qwen_dataset.py ...
 
 ~/quickstart$ python dataset/prepare_qwen_dataset.py
@@ -268,8 +268,8 @@ Dataset saved as ./qwen_dataset.pt
 ~/quickstart$ ls
 ... qwen_dataset.pt ...</code></pre>
 </doc-codeblock></div>
-<p>전처리가 진행된 데이터셋은 <code v-pre>qwen_dataset.pt</code> 로 저장됩니다.</p>
-<p>저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.</p>
+<p>The preprocessed dataset is saved as <code v-pre>qwen_dataset.pt</code>.</p>
+<p>You can then load the stored dataset in your code like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">dataset = torch.load(&quot;./qwen_dataset.pt&quot;)</code></pre>
 </doc-codeblock></div>
@@ -311,7 +311,7 @@ Dataset saved as ./qwen_dataset.pt
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/2.-moreh의-학습-코드-톺아보기/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">2. Moreh의 학습 코드 톺아보기</span>
+                                                <span class="block mt-1">2. Understanding training code</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -355,6 +355,6 @@ Dataset saved as ./qwen_dataset.pt
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "1. Fine-tuning 준비하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "1. Prepare Fine-tuning", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
