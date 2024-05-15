@@ -26,7 +26,7 @@ model = AutoModelForCausalLM.from_pretrained("./llama-2-13b-hf")
 tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
 ```
 
-Load your preprocessed dataset, which you prepared during the [1. Prepare fine-tuning](1_Prepare%20Fine-tuning.md) step, and define your data loaders.
+Load your preprocessed dataset, which you prepared during the [1. Prepare fine-tuning](1_Prepare_Fine-tuning.md) step, and define your data loaders.
 
 
 ```python
