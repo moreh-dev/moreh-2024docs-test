@@ -7,7 +7,7 @@ expanded: false
 
 # Baichuan2 Fine-tuning
 
-This tutorial introduces an example of fine-tuning the open-source Baichuan2 13B model using the MoAI Platform. Through the tutorial, you'll learn how to utilize an AMD GPU cluster with MoAI Platform and discover the benefits of improved performance and automatic parallelization.
+The following tutorial will take you through the steps required to fine-tune [Baichuan2 13B](https://huggingface.co/baichuan-inc/Baichuan2-13B-Base) model with an example dataset, using the MoAI Platform. Through the tutorial, you'll learn how to utilize an AMD GPU cluster with MoAI Platform and discover the benefits of improved performance and automatic parallelization.
 
 ## Overview
 
