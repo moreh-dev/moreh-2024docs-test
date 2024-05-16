@@ -12,8 +12,8 @@
 
    | 
 ---    | ---
- [ **Get started**](Tutorials/index.md) <br> MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [ **AP Guide**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) 기능 사용 안내 
-[ **Moreh Toolkit Guide**](Tutorials/index.md) <br> command line 사용방법 |[ **Support**](/MoAI_guides/Troubleshooting.md) <br> 자주 묻는 질문과 트러블슈팅
+ [ **Get started with fine-tuning**](Tutorials/index.md) <br> MoAI Platform Beginner's Guide for Finetuning| [ **AP Guide**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) Feature Instructions
+[ **Moreh Toolkit Guide**](Tutorials/index.md) <br> Command Line Usage |[ **Support**](/MoAI_guides/Troubleshooting.md) <br> FAQ and Troubleshooting
 
 ### MoAI Documentation for Developers
 
