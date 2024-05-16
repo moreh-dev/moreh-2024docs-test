@@ -8,7 +8,7 @@ order: 40
 
 Now, we will train the model through the following process. 
 
-# **Setting Accelerator Flavor**
+# Setting Accelerator Flavor
 
 In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.
 
@@ -122,7 +122,7 @@ Now you can see that it has been successfully changed to [!badge variant="second
 
 ## Training Execution
 
-Execute the `train_mistral**.py**` script below.
+Execute the `train_mistral.py` script below.
 
 ```bash
 $ cd ~/quickstart

@@ -1,6 +1,7 @@
 ---
 icon: terminal
 tags: [guide]
+expanded: true
 order: 900
 ---
 

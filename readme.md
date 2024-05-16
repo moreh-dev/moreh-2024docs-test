@@ -10,11 +10,13 @@
 
 ### Getting Started
 
+
+
    | 
 ---    | ---
-[!ref **Latest Version Release Notes**](Tutorials/index.md)  가장 최신 버전의 MoAI Platform 릴리즈 노트 | [!ref **AP Guide**](/Supported_Documents/AP/ap_guide.md) Advanced Parallelization (AP) 기능 사용 안내 
-[!ref **Get started**](Tutorials/index.md) MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [!ref **MoAI Platform Administration**](Tutorials/index.md) Platform/클러스터 아키텍처와 클러스터, 환경, 애플리케이션의 기본 사용 안내
-[!ref **Moreh Toolkit Guide**](Tutorials/index.md) command line 사용방법 | [!ref **Support**](/MoAI_guides/Troubleshooting.md) 자주 묻는 질문과 트러블슈팅
+[**Latest Version Release Notes**](Tutorials/index.md)  <br> 가장 최신 버전의 MoAI Platform 릴리즈 노트 | [ **AP Guide**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) 기능 사용 안내 
+[ **Get started**](Tutorials/index.md) <br> MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [ **MoAI Platform Administration**](Tutorials/index.md) <br> Platform/클러스터 아키텍처와 클러스터, 환경, 애플리케이션의 기본 사용 안내
+[ **Moreh Toolkit Guide**](Tutorials/index.md) <br> command line 사용방법 | [ **Support**](/MoAI_guides/Troubleshooting.md) <br> 자주 묻는 질문과 트러블슈팅
 
 ### MoAI Documentation for Developers
 
