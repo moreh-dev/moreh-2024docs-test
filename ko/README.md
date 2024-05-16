@@ -13,7 +13,7 @@
    | 
 ---    | ---
  [ **Fine-tuning 시작하기**](Tutorials/index.md) <br> MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [ **AP(Advanced Parallelization)**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) 기능 사용 안내 
-[ **Moreh Toolkit**](Tutorials/index.md) <br> command line 사용방법 |[ **Support**](/MoAI_guides/Troubleshooting.md) <br> 자주 묻는 질문과 트러블슈팅
+[ **Moreh Toolkit**](Tutorials/index.md) <br> command line 사용방법 |[ **MoAI Platform's Virtualization & Parallelization**](/MoAI_guides/Troubleshooting.md) <br> MoAI Platform의 가상화와 병렬화 기능
 
 ### MoAI Documentation for Developers
 
