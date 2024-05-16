@@ -1,4 +1,10 @@
-## MoAI Platform 병렬화
+---
+icon: note
+tags: [guide]
+order: 200
+---
+
+# MoAI Platform's Parallelization
 
 MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 **다수의 GPU를 어떠한 방식으로 사용하게 될까요?**
 
