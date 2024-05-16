@@ -93,7 +93,8 @@ torch.moreh.option.enable_advanced_parallelization()
 Llama2 13B와 같은 거대 언어 모델은 학습에 많은 양의 GPU가 필요합니다. 따라서 MoAI Platform이 아닌 다른 프레임워크를 사용할 경우, Data Parallelism, Pipeline Parallelism, Tensor Parallelism과 같은 병렬화 기법을 도입하여 학습을 수행해야 합니다.
 
 예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다.
-[https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+
+[!ref https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
 
 
 ```python

@@ -21,7 +21,7 @@ Llama2는 특히 언어 이해 및 생성 작업에 있어서 뛰어난 성능�
 
 MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform 기반으로 운영되는 다음 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
 
-- KT Cloud의 Hyperscale AI Computing (https://cloud.kt.com/solution/hyperscaleAiComputing/)
+[!ref target="blank" text="KT Cloud의 Hyperscale AI Computing"](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
 혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh에 문의하시기 바랍니다.
 

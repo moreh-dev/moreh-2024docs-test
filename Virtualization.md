@@ -61,6 +61,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 위와 같이 pytorch에서 기존 cuda API를 그대로 사용하여 현재 사용 가능한 가속기 갯수를 확인하였을 경우, 1이라는 결과가 나오는 것을 확인할 수 있습니다. 
 
-![moreh_virtual_device.gif](/img/moreh_virtual_device.gif)
+![](/img/moreh_virtual_device.gif)
 
 여기서 알아두셔야 할 것은, 실제 유저가 사용하는 노드(front node)에는 물리적인 GPU가 없다는 사실입니다. 유저가 PyTorch와 같은 딥러닝 프레임워크에서 `.cuda()` 와 같은 API를 통해 GPU 가속기를 사용하고자 하면 MoAI Platform은 유저가 사용할 수 있는 GPU 클러스터를  front node가 사용할 수 있도록 자동으로 할당합니다. 유저가 딥러닝 프레임워크를 사용하여 모델 학습 및 추론 작업을 수행할 시 MoAI Platform에서는 할당된 GPU 클러스터를 단일한 가속기로 간주하여 사용할 수 있도록 병렬화와 같은 기법을 자동으로 적용합니다.
