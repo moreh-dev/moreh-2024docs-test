@@ -10,32 +10,34 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>LLM Fine-tuning parameter guide</title>
-    <meta name="title" content="LLM Fine-tuning parameter guide">
-    <meta name="description" content="이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.">
+    <title>MoAI Platform Overview</title>
+    <meta name="title" content="MoAI Platform Overview">
+    <meta name="description" content="MoAI(Moreh AI appliance for AI accelerators) Platform is a scalable AI platform that enables easy control of thousands of Graphics Processing...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/two-lang-demo/supported_documents/llm_param_guide/">
+    <link rel="canonical" href="/two-lang-demo/about-moai/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/two-lang-demo/supported_documents/llm_param_guide/">
-    <meta property="og:title" content="LLM Fine-tuning parameter guide">
-    <meta property="og:description" content="이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.">
+    <meta property="og:url" content="/two-lang-demo/about-moai/">
+    <meta property="og:title" content="MoAI Platform Overview">
+    <meta property="og:description" content="MoAI(Moreh AI appliance for AI accelerators) Platform is a scalable AI platform that enables easy control of thousands of Graphics Processing...">
+    <meta property="og:image" content="/two-lang-demo/img/overview_01.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/two-lang-demo/supported_documents/llm_param_guide/">
-    <meta property="twitter:title" content="LLM Fine-tuning parameter guide">
-    <meta property="twitter:description" content="이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.">
+    <meta property="twitter:url" content="/two-lang-demo/about-moai/">
+    <meta property="twitter:title" content="MoAI Platform Overview">
+    <meta property="twitter:description" content="MoAI(Moreh AI appliance for AI accelerators) Platform is a scalable AI platform that enables easy control of thousands of Graphics Processing...">
+    <meta property="twitter:image" content="/two-lang-demo/img/overview_01.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769152720238" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.769152720238" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769152720238" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769152720238" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.769152720238" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.769152720238" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +52,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Docs</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">EN</span>
                     </div>
@@ -63,7 +65,7 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../">EN</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">EN</a>
                             </li>
                             <li class="mr-6">
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="ko/">KO</a>
@@ -143,7 +145,7 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../">EN</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">EN</a>
                                     </li>
                                     <li class="mr-6">
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="ko/">KO</a>
@@ -170,566 +172,164 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="llm-fine-tuning-parameter-guide" class="break-words">
+<doc-anchor-target id="moai-platform-overview" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#llm-fine-tuning-parameter-guide">#</doc-anchor-trigger>
-        <span>LLM Fine-tuning parameter guide</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform-overview">#</doc-anchor-trigger>
+        <span>MoAI Platform Overview</span>
     </h1>
 </doc-anchor-target>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.</p>
-        </div>
-    </div>
-</div>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>MoAI Accelerator 에 명시된 명칭은 사용자가 이용하는 CSP에 따라 다를 수 있습니다.</p>
-        </div>
-    </div>
-</div>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>모델명</th>
-<th>MoAI Platform version</th>
-<th>MoAI Accelerator</th>
-<th>Advanced Parallelism 적용 유무</th>
-<th>batch size</th>
-<th>sequence length</th>
-<th>token 갯수</th>
-<th>vram 사용량</th>
-<th>학습 시간</th>
-<th>throughput</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>1024</td>
-<td></td>
-<td>543816 MiB</td>
-<td>872m</td>
-<td>8,934</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>1024</td>
-<td></td>
-<td>749065 MiB</td>
-<td>586m</td>
-<td>11,562</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>1024</td>
-<td></td>
-<td>790454 MiB</td>
-<td>400m</td>
-<td>65,565</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>2048</td>
-<td></td>
-<td>1292886 MiB</td>
-<td>962m</td>
-<td>32,371</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>2048</td>
-<td></td>
-<td>1600235 MiB</td>
-<td>720m</td>
-<td>63,893</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>2048</td>
-<td></td>
-<td>1467646 MiB</td>
-<td>480m</td>
-<td>121,013</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>4096</td>
-<td></td>
-<td>3181616 MiB</td>
-<td>1360m</td>
-<td>62,481</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>4096</td>
-<td></td>
-<td>3143781 MiB</td>
-<td>720m</td>
-<td>125,180</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>4096</td>
-<td></td>
-<td>3013826 MiB</td>
-<td>560m</td>
-<td>238,212</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>256</td>
-<td>1024</td>
-<td>27B</td>
-<td>442,982 MiB</td>
-<td>59m</td>
-<td>15,972</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>512</td>
-<td>1024</td>
-<td></td>
-<td>560,835 MiB</td>
-<td>20m</td>
-<td>32,563</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>1024</td>
-<td>1024</td>
-<td></td>
-<td>790,572 MiB</td>
-<td>17m</td>
-<td>69,840</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>256</td>
-<td>2048</td>
-<td></td>
-<td>1,138,546 MiB</td>
-<td>25m</td>
-<td>62,740</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>512</td>
-<td>2048</td>
-<td></td>
-<td>1,138,546 MiB</td>
-<td>22m</td>
-<td>56,385</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>1024</td>
-<td>2048</td>
-<td></td>
-<td>1,138,546 MiB</td>
-<td>24m</td>
-<td>62,582</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>256</td>
-<td>4096</td>
-<td></td>
-<td>1,800,656 MiB</td>
-<td>36m</td>
-<td>157,859</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>512</td>
-<td>4096</td>
-<td></td>
-<td>1,800,656 MiB</td>
-<td>30m</td>
-<td>144,124</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>1024</td>
-<td>4096</td>
-<td></td>
-<td>1,767,888 MiB</td>
-<td>25m</td>
-<td>163,839</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>1024</td>
-<td></td>
-<td>626,391  MiB</td>
-<td>12m</td>
-<td>24,156</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>1024</td>
-<td></td>
-<td>784,485 MiB</td>
-<td>9m</td>
-<td>47,679</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>1024</td>
-<td></td>
-<td>638,460 MiB</td>
-<td>13m</td>
-<td>15,890</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>2048</td>
-<td></td>
-<td>1,403,047 MiB</td>
-<td>12m</td>
-<td>51,353</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>2048</td>
-<td></td>
-<td>1,122,745 MiB</td>
-<td>8m</td>
-<td>93,165</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>2048</td>
-<td></td>
-<td>1,680,233 MiB</td>
-<td>7m</td>
-<td>194,282</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>4096</td>
-<td></td>
-<td>1,706,797 MiB</td>
-<td>11m</td>
-<td>92,623</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>4096</td>
-<td></td>
-<td>1,651,008 MiB</td>
-<td>8m</td>
-<td>186,353</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>4096</td>
-<td></td>
-<td>2,146,115 MiB</td>
-<td>7m</td>
-<td>376,493</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>1024</td>
-<td></td>
-<td>843,375 MiB</td>
-<td>40m</td>
-<td>26,111</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>1024</td>
-<td></td>
-<td>858,128 MiB</td>
-<td>34m</td>
-<td>50,782</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>1024</td>
-<td></td>
-<td>866,656 MiB</td>
-<td>30m</td>
-<td>99,873</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>2048</td>
-<td></td>
-<td>1403,2189</td>
-<td>38m</td>
-<td>58531</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>2048</td>
-<td></td>
-<td>1489,3</td>
-<td>35m</td>
-<td>109872</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>2048</td>
-<td></td>
-<td>154,12123</td>
-<td>28m</td>
-<td>191605</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>4096</td>
-<td></td>
-<td>2,645,347 MiB</td>
-<td>22m</td>
-<td>172395</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>4096</td>
-<td></td>
-<td>2,800,000 MiB</td>
-<td>20m</td>
-<td>172395</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>4096</td>
-<td></td>
-<td>2,845,656 MiB</td>
-<td>17m</td>
-<td>172395</td>
-</tr>
-<tr>
-<td>Cerebras GPT 13B</td>
-<td>24.2.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>16</td>
-<td>1024</td>
-<td></td>
-<td>1,764,955 MiB</td>
-<td>81m</td>
-<td>6841</td>
-</tr>
-<tr>
-<td>Cerebras GPT 13B</td>
-<td>24.2.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>1024</td>
-<td></td>
-<td>3,460,240 MiB</td>
-<td>62m</td>
-<td>13286</td>
-</tr>
-<tr>
-<td>Cerebras GPT 13B</td>
-<td>24.5.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>16</td>
-<td>2048</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Cerebras GPT 13B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>16</td>
-<td>2048</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Cerebras GPT 13B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>2048</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
+<doc-anchor-target id="what-is-moai-platform">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-moai-platform">#</doc-anchor-trigger>
+        <span>What is MoAI Platform?</span>
+    </h2>
+</doc-anchor-target>
+<p>MoAI(Moreh AI appliance for AI accelerators) Platform is a scalable AI platform that enables easy control of thousands of Graphics Processing Units(GPUs) essential for developing large-scale deep learning models.</p>
+<doc-anchor-target id="core-technologies-of-moai-platform">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-technologies-of-moai-platform">#</doc-anchor-trigger>
+        <span>Core Technologies of MoAI Platform</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="../img/overview_01.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>As deep learning models evolve, they become increasingly complex and require substantial computational resources, with parameters expanding from billions to trillions. Developing large-scale models involves managing and processing an immense number of parameters, which is very challenging and time-consuming.</p>
+<p>The MoAI Platform&#x27;s automatic parallelization addresses these challenges by simultaneously processing multiple tasks, determining the optimal calculation method for large models. This allows users to focus solely on their core AI challenges, regardless of their application scale or processor type. Furthermore, it efficiently utilizes GPU computational resources at a reasonable cost by allocating them only during calculation execution.</p>
+<ol>
+<li><strong><a href="http://localhost:5000/two-lang-demo/about-moai/#1various-accelerators-multi-gpu-support">Various Accelerators, Multi-GPU Support</a></strong></li>
+<li><strong><a href="http://localhost:5000/two-lang-demo/about-moai/#2-gpunpu-virtualization">GPU/NPU Virtualization</a></strong></li>
+<li><strong><a href="">AI Compiler</a></strong></li>
+<li><strong><a href="">Dynamic GPU Allocation</a></strong></li>
+</ol>
+<hr>
+<doc-anchor-target id="1various-accelerators-multi-gpu-support">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1various-accelerators-multi-gpu-support">#</doc-anchor-trigger>
+        <span><strong>1.Various Accelerators, Multi-GPU Support</strong></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-left">
+    <img src="../img/overview_02.png" alt="">
+    <figcaption class="caption caption-float"></figcaption>
+</figure>
+</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ 
+ </p>
+<ul>
+<li>MoAI Platform supports various accelerators capable of executing various types of operations regardless of types of GPUs.</li>
+<li>Users can utilize different accelerators like Intel, AMD, and others alongside NVIDIA without needing to modify their code for deep learning development and model training.</li>
+<li>This compatibility allows for flexible development and training of deep learning models, accommodating multiple and diverse types of GPUs.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ 
+ </li>
+</ul>
+<hr>
+<doc-anchor-target id="2-gpunpu-virtualization">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-gpunpu-virtualization">#</doc-anchor-trigger>
+        <span><strong>2. GPU/NPU Virtualization</strong></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-left">
+    <img src="../img/overview_03.png" alt="">
+    <figcaption class="caption caption-float"></figcaption>
+</figure>
+</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ 
+ </p>
+<ul>
+<li>The MoAI Platform&#x27;s virtualization feature enables thousands of GPUs or NPUs to function as a single, more powerful GPU device.
+<ul>
+<li>This unique approach suggests that instead of managing a lot of individual units, users can handle this collective resource as single entity, considerably simplifying complex tasks.</li>
+</ul>
+</li>
+<li>It simplifies the process of modeling and optimization, providing users with a seamless and efficient experience.
+<ul>
+<li>By abstracting the complexity of utilizing multiple GPUs or NPUs, it enables easier management and deployment of resources for enhanced performance in deep learning tasks.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ 
+ </li>
+</ul>
+</li>
+</ul>
+<hr>
+<doc-anchor-target id="3-ai-compiler">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-ai-compiler">#</doc-anchor-trigger>
+        <span><strong>3. AI Compiler</strong></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="../img/overview_04.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<ul>
+<li>In the era of AI, training and inference of large-scale models such as LLM(Large language Model) and LMM(Large Multimodal Model) require significantly large GPU clusters and effective GPU parallelization.</li>
+<li>Currently, most AI frameworks used with NVIDIA require manual parallelization by AI engineers depending on the size and complexity of the model and the available GPU size/cluster. This setup process is time-consuming, often taking weeks to complete.</li>
+<li>The MoAI Platform offers automatic parallelization can be achieved through a Moreh AI compiler that finds out the optical way to use GPU resources based on the the specific AI model and the size of GPU cluster.</li>
+<li>This can significantly shorten the setup and deployment time for AI models, from several weeks, as with NVIDIA, to only 2-3 days.</li>
+</ul>
+<doc-anchor-target id="4-dynamic-gpu-allocation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-dynamic-gpu-allocation">#</doc-anchor-trigger>
+        <span><strong>4. Dynamic GPU Allocation</strong></span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="../img/overview_05.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<ul>
+<li>On the MoAI platform, AI engineers can begin deep learning training with exactly the amount of GPU resources as needed.</li>
+<li>GPU resources are only allocated during computation execution, allowing for efficient use of GPU resources. This not only reduces software development cost, but also saves time for development and deployment.</li>
+</ul>
+<p>Copyright © 2024 Moreh Corporation</p>
 
-                                
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../tags/guide/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>guide</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/retypeapp/two-lang-demo/blob/main/Supported_Documents/LLM_param_guide.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/retypeapp/two-lang-demo/blob/main/About MoAI.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -737,20 +337,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../supported_documents/kt_hac_models_info/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</span>
+                                                <span class="block mt-1">Mo​AI Platform Guide</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../virtualization/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../tutorials/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">가상화(Virtualization)에 대해서</span>
+                                                <span class="block mt-1">Tutorials</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -794,6 +394,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "LLM Fine-tuning parameter guide", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "MoAI Platform Overview", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
