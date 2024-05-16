@@ -30,9 +30,9 @@ MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니�
 [Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec
 ```
 
-사용자가 다수의 **gpu를 사용하는 목적이 큰 메모리를 사용하기 때문일 경우**는 어떨까요? MoAI Platform은 모델 병렬화와 최적화를 자동으로 지원합니다.
+사용자가 다수의 **GPU를 사용하는 목적이 큰 메모리를 사용하기 때문일 경우**는 어떨까요? MoAI Platform은 모델 병렬화와 최적화를 자동으로 지원합니다.
 
-사용자가 Llama3-8b 모델을 gpu 16개로 batch size 512를 설정하여 돌린다면, 모델 병렬화와 데이터 병렬화가 동시에 이루어져 학습이 진행됩니다.
+사용자가 Llama3-8b 모델을 GPU 16개로 batch size 512를 설정하여 돌린다면, 모델 병렬화와 데이터 병렬화가 동시에 이루어져 학습이 진행됩니다.
 
 ```bash
 ## This snippet is fake

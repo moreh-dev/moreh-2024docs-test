@@ -2,8 +2,12 @@ input: ./
 output: .retype
 url: /two-lang-demo/
 branding:
-  title: Docs
+  title: Moreh Documents 
   label: EN
+  colors:
+  label:                    # Label colors
+    text: "#ff5700"         # Custom color for the label text
+  background: "#ff5700"   # Custom color for the label background
 exclude:
   - "fr"
   - "ko"
@@ -15,4 +19,16 @@ links:
 - text: KO
   link: ko/
 footer:
-  copyright: "&copy; Copyright {{ year }}. All rights reserved." 
+  copyright: "&copy; Copyright {{ 2024 }}. All rights reserved." 
+
+
+branding:
+  title: Moreh Documents              # Your custom website title; keep it short
+  logo: /img/logo-white.png           # Path to a logo file
+  logoDark: /logo-dark.png    # Path to a logo file to use in dark mode
+  logoAlign: right            # Align the logo to the right or the left
+  label: Moreh Documents                 # Optional label
+  colors:
+    label:                    # Label colors
+      text: "#ff5700"         # Custom color for the label text
+      background: "#ff5700"   # Custom color for the label background
