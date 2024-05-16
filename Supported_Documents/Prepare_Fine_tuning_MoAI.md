@@ -132,7 +132,7 @@ $ moreh-smi
 
 
 !!! 
-각 모델별로 MoAI Platform에서 권장하는 Fine-tuning 시 최적의 파라미터는 [LLM Fine-tuning 파라미터 가이드](LLM%20Fine-tuning%20파라미터%20가이드.md) 를 참고하시기 바랍니다.
+각 모델별로 MoAI Platform에서 권장하는 Fine-tuning 시 최적의 파라미터는 [LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md) 를 참고하시기 바랍니다.
 !!!
 
 

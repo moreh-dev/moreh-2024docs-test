@@ -2,11 +2,12 @@ input: ./
 output: .retype
 url: /two-lang-demo/
 branding:
-  title: Moreh Documents 
+  logo: /img/logo.png 
+  logoAlign: left     
   label: EN
   colors:
-  label:                    # Label colors
-    text: "#ff5700"         # Custom color for the label text
+  label: "#ff5700"                 # Label colors
+  text:  "#ff5700"      # Custom color for the label text
   background: "#ff5700"   # Custom color for the label background
 exclude:
   - "fr"
