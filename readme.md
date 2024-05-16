@@ -13,7 +13,7 @@
    | 
 ---    | ---
  [ **Get started with fine-tuning**](Tutorials/index.md) <br> MoAI Platform Beginner's Guide for Finetuning| [ **AP Guide**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) Feature Instructions
-[ **Moreh Toolkit Guide**](Tutorials/index.md) <br> Command Line Usage |[ **Support**](/MoAI_guides/Troubleshooting.md) <br> FAQ and Troubleshooting
+[ **Moreh Toolkit Guide**](Tutorials/index.md) <br> Command Line Usage |[ **MoAI Platform's Virtualization & Parallelization**](/MoAI_guides/Troubleshooting.md) <br> MoAI Platform's Virtualization & Parallelization
 
 
 ## What is MoAI Platform?
