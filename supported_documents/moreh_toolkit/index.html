@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769272268076">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769272639523">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769272268076" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769272639523" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769272268076" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769272639523" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769272268076" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769272268076" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769272639523" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769272639523" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -180,18 +180,12 @@
         <span>MoAI Platform의 toolkit 사용하기</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="moreh-toolkit의-기능">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moreh-toolkit의-기능">#</doc-anchor-trigger>
-        <span>Moreh Toolkit의 기능</span>
-    </h2>
-</doc-anchor-target>
 <p>Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다.  이 도구는 사용자에게 세 가지 명령어 (<code v-pre>moreh-smi</code>, <code v-pre>moreh-switch-model</code>, <code v-pre>update-moreh</code>)를 제공하여 MoAI Accelerator 를 효율적으로 관리하고, 설치된 Moreh 솔루션을 손쉽게 업데이트할 수 있도록 합니다.</p>
 <doc-anchor-target id="주요-기능">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#주요-기능">#</doc-anchor-trigger>
         <span>주요 기능</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Moreh Toolkit의 주요 기능은 다음과 같습니다:</p>
 <ol>
@@ -249,19 +243,19 @@ Processes:
 +-----------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="moai-accelerator-의-multi-accelerator-기능-활용하기">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator-의-multi-accelerator-기능-활용하기">#</doc-anchor-trigger>
         <span>MoAI Accelerator 의 Multi Accelerator 기능 활용하기</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>유저가 별도의 세팅을 하지 않을 경우에는 기본적으로 하나의 SSH 환경에 하나의 MoAI Accelerator 만 존재할 것입니다. 기본적으로 MoAI Accelerator 한 개로는 하나의 프로세스만 실행할 수 있기 때문에, 기본 세팅으로는 하나의 SSH 환경에서 하나의 프로세스 실행만 가능합니다.</p>
 <p>하지만 경우에 따라서는 하나의 SSH 환경에서도 여러 개 MoAI Accelerator 를 활용하여 동시에 여러 개의 프로세스로 학습을 실행하고 싶은 경우도 있을 겁니다. (예: 동일한 소스코드이나 하이퍼 파라미터를 변경해서 여러 개의 학습 실험을 동시에 수행하고 싶은 경우) 이런 경우 <code v-pre>moreh-smi</code> 에서 하나의 토큰 내에 여러 개의 MoAI Accelerator 을 생성하면, 동시에 여러개의 프로세스를 수행할 수 있습니다.</p>
 <p>다음 예제를 통해 AI 가속기를 추가, 변경 삭제해보겠습니다.</p>
 <doc-anchor-target id="ai-가속기-추가하기">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-추가하기">#</doc-anchor-trigger>
         <span>AI 가속기 추가하기</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>먼저 AI 가속기를 추가해보겠습니다. 2개 이상의 AI 가속기를 사용하기 위해서<code v-pre>moreh-smi device --add</code> 커멘드를 입력하면 아래와 같은 인터페이스가 나타납니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -309,10 +303,10 @@ Create device success.
 </code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="ai-가속기-기본값-변경하기">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-기본값-변경하기">#</doc-anchor-trigger>
         <span>AI 가속기 기본값 변경하기</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p><code v-pre>moreh-smi device --switch {Device_ID}</code> 는 기본값으로 설정된 MoAI Accelerator 를 변경할 수 있는 명령어 입니다.</p>
 <p>다음과 같이 사용할 수 있습니다 :</p>
@@ -351,7 +345,7 @@ Switch Current Device success.</code></pre>
 <doc-anchor-target id="ai-가속기-변경하기-moreh-switch-model">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-변경하기-moreh-switch-model">#</doc-anchor-trigger>
-        <span>AI 가속기 변경하기 <strong><code v-pre>moreh-switch-model</code></strong></span>
+        <span>AI 가속기 변경하기 <code v-pre>moreh-switch-model</code></span>
     </h2>
 </doc-anchor-target>
 <p><code v-pre>moreh-switch-model</code> 는 현재 설정된 MoAI Accelerator 의 flavor(가속기 사양)를 변경할 수 있는 툴입니다. MoAI Accelerator 의 flavor를 변경함으로써 GPU 메모리를 얼만큼 사용할 것인지 결정합니다.</p>
@@ -430,10 +424,10 @@ Selection (1-13, q, Q):
 </doc-codeblock></div>
 <p>0번 <code v-pre>Small.64GB</code> 모델 유형의 MoAI Accelerator가 <code v-pre>Large.256GB</code> 모델 유형으로 변경된 것을 확인할 수 있습니다.</p>
 <doc-anchor-target id="ai-가속기-삭제하기">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-삭제하기">#</doc-anchor-trigger>
         <span>AI 가속기 삭제하기</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>이번에는 생성된 디바이스를 <code v-pre>moreh-smi device --rm {Device_ID}</code>커멘드로 특정 디바이스 ID에 해당하는 가속기를 삭제해보겠습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -447,10 +441,10 @@ Remove device success.</code></pre>
 </doc-codeblock></div>
 <p>위와 같은 커멘드를 입력해서 Device ID가 1인 AI 가속기인 <code v-pre>8xLarge.4096GB</code> 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.</p>
 <doc-anchor-target id="그-외의-다양한-옵션-활용하기">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#그-외의-다양한-옵션-활용하기">#</doc-anchor-trigger>
         <span>그 외의 다양한 옵션 활용하기</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p><code v-pre>moreh-smi</code> 는 이외에도 다양한 다양한 옵션을 제공합니다. 다음과 같이 <code v-pre>--help</code> 옵션을 활용하면 어떠한 옵션이 제공되는지 확인할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
