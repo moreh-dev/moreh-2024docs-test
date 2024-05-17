@@ -5,7 +5,7 @@ order: 200
 ---
 
 
-# MoAI Platform's GPU Virtualization
+# GPU 가상화
 
 유저는 MoAI Platform의 가상화 기능을 통해 수백 개의 GPU를 마치 하나의 단일한 가속기를 다루는 것과 같이 사용할 수 있습니다. 유저는 이를 통하여 수백 대의 GPU에 해당하는 자원과 계산 리소스를 사용함과 동시에 복잡한 GPU 클러스터 관리의 부담을 줄일 수 있습니다. 
 
