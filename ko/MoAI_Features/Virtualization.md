@@ -1,5 +1,5 @@
 ---
-icon: note
+icon: cpu
 tags: [guide]
 order: 200
 ---

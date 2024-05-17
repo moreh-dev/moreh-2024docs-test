@@ -1,3 +1,10 @@
+---
+icon: tool
+tags: [guide]
+order: 10
+---
+
+
 # MoAI Platform의 toolkit 사용하기
 
 ## Moreh Toolkit의 기능

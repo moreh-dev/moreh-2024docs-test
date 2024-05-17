@@ -1,3 +1,8 @@
+---
+icon: info
+tags: [guide]
+order: 10
+---
 
 # KT Hyperscale AI Computing (HAC) AI Accelerator Information
 

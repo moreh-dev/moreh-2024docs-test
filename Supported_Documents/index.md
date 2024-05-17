@@ -1,5 +1,5 @@
 ---
-icon: terminal
+icon: book
 tags: [guide]
 order: 10
 expanded: true
