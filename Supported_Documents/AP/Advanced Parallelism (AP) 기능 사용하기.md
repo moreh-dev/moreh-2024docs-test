@@ -2,6 +2,7 @@
 icon: terminal
 tags: [guide]
 order: 50
+expanded: false
 ---
 
 # Advanced Parallelism (AP) 기능 사용하기

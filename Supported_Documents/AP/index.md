@@ -2,6 +2,7 @@
 icon: terminal
 tags: [guide]
 order: 100
+expanded: false
 ---
 
 # Advanced Parallelization (AP)

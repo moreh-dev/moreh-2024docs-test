@@ -1,4 +1,4 @@
-# MoAI Platform Guide
+# MoAI Platform Overview
 
 **MoAI(Moreh AI appliance for AI accelerators)** Platform is a scalable AI platform that enables easy control of thousands of Graphics Processing Units(GPUs) essential for developing large-scale deep learning models.
 
@@ -12,8 +12,8 @@
 
    | 
 ---    | ---
- [ **Get started with fine-tuning**](Tutorials/index.md) <br> MoAI Platform Beginner's Guide for Finetuning| [ **AP Guide**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) Feature Instructions
-[ **Moreh Toolkit Guide**](Tutorials/index.md) <br> Command Line Usage |[ **MoAI Platform Features**](/MoAI_Features/index.md) <br> The virtualization and parallelization features of the MoAI Platform
+ [ **Get started with fine-tuning**](Tutorials/index.md) <br> MoAI Platform Beginner's Guide for Finetuning| [ **AP Guide**](/Supported_Documents/ap/index.md) <br> Advanced Parallelization (AP) Feature Instructions
+[ **Moreh Toolkit Guide**](/Supported_Documents/moreh_toolkit.md) <br> Command Line Usage |[ **MoAI Platform Features**](/MoAI_Features/index.md) <br> The virtualization and parallelization features of the MoAI Platform
 
 
 ## What is MoAI Platform?

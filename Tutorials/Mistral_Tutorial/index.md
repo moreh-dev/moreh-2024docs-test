@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [tutorial, mistral]
-expanded: true
+expanded: false
 order: 900
 ---
 
