@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769249874071">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769250679413">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>MoAI Platform Guide</title>
-    <meta name="title" content="MoAI Platform Guide">
+    <title>MoAI Platform Overview</title>
+    <meta name="title" content="MoAI Platform Overview">
     <meta name="description" content="MoAI(Moreh AI appliance for AI accelerators) 은 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.">
 
     <!-- Canonical -->
@@ -20,22 +20,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/two-lang-demo/ko/">
-    <meta property="og:title" content="MoAI Platform Guide">
+    <meta property="og:title" content="MoAI Platform Overview">
     <meta property="og:description" content="MoAI(Moreh AI appliance for AI accelerators) 은 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.">
+    <meta property="og:image" content="/two-lang-demo/ko/img/overview_01.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/two-lang-demo/ko/">
-    <meta property="twitter:title" content="MoAI Platform Guide">
+    <meta property="twitter:title" content="MoAI Platform Overview">
     <meta property="twitter:description" content="MoAI(Moreh AI appliance for AI accelerators) 은 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.">
+    <meta property="twitter:image" content="/two-lang-demo/ko/img/overview_01.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.769249874071" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.5.0.769250679413" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.769249874071" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.769250679413" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.769249874071" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.769250679413" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,11 +53,10 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="" class="flex items-center leading-snug text-2xl">
-                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                            <span class="grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="img/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="img/logo.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Docs</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">KO</span>
                     </div>
         
@@ -174,10 +175,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="moai-platform-guide" class="break-words">
+<doc-anchor-target id="moai-platform-overview" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform-guide">#</doc-anchor-trigger>
-        <span>MoAI Platform Guide</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform-overview">#</doc-anchor-trigger>
+        <span>MoAI Platform Overview</span>
     </h1>
 </doc-anchor-target>
 <p><strong>MoAI(Moreh AI appliance for AI accelerators)</strong> 은 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.</p>
@@ -208,41 +209,38 @@
 </tr>
 <tr>
 <td><a href="tutorials/"><strong>Moreh Toolkit</strong></a> <br> command line 사용방법</td>
-<td><a href="/moai_guides/troubleshooting.md"><strong>MoAI Platform Features</strong></a> <br> MoAI Platform의 가상화와 병렬화 기능</td>
+<td><a href=""><strong>MoAI Platform Features</strong></a> <br> MoAI Platform의 가상화와 병렬화 기능</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="moai-documentation-for-developers">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-documentation-for-developers">#</doc-anchor-trigger>
-        <span>MoAI Documentation for Developers</span>
-    </h3>
+<doc-anchor-target id="moai-platform이란">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform이란">#</doc-anchor-trigger>
+        <span>MoAI Platform이란?</span>
+    </h2>
 </doc-anchor-target>
-<ul>
-<li><a href="/products/index.md">Products</a>
-<ul>
-<li><a href="/products/model20ai20hub.md">Moreh Model Hub</a></li>
-<li><a href="/products/platform20cloud20service.md">Platform Cloud Service</a></li>
-</ul>
-</li>
-<li><a href="tutorials/">Tutorials</a>
-<ul>
-<li><a href="tutorials/llama2_tutorial/">Llama2 Fine-tuning</a></li>
-<li><a href="tutorials/mistral_tutorial/">Mistral Fine-tuning</a></li>
-<li><a href="tutorials/gpt_tutorial/">GPT Fine-tuning</a></li>
-<li><a href="tutorials/qwen_tutorial/">Qwen Fine-tuning</a></li>
-<li><a href="tutorials/baichuan2_tutorial/">Baichuan2 Fine-tuning</a></li>
-</ul>
-</li>
-<li><a href="supported_documents/">Supported Documents</a>
-<ul>
-<li><a href="supported_documents/llm_param_guide/">LLM Paraemter Guide</a></li>
-<li><a href="supported_documents/kt_hac_models_info/">KT HAC Models Information</a></li>
-<li><a href="supported_documents/prepare_fine_tuning_moai/">Prepare Fine-tuning on MoAI Platform</a></li>
-</ul>
-</li>
-</ul>
+<p>MoAI(Moreh AI appliance for AI accelerators) Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능한 AI 플랫폼으로, 수천 대 이상의 서로 다른 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있습니다.</p>
+<doc-anchor-target id="moai-platform-핵심-기술">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform-핵심-기술">#</doc-anchor-trigger>
+        <span>MoAI Platform 핵심 기술</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="img/overview_01.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>딥러닝 모델이 진화함에 따라 파라미터가 수십억~수백억 단위로 확장되는 등 점점 복잡해지면서 AI 인프라에는 상당히 큰 규모의 컴퓨팅 리소스가 필요합니다. 대규모 모델을 개발시 수동 병렬 처리와 GPU 및 노드 관리를 동반하여 수많은 연산들을 최적화하는 과정이 필요하며 개발자들의 많은 노력과 시간이 많이 소요됩니다.</p>
+<p>또한, 대규모 모델을 학습하고 추론하는 과정에서 GPU 노드 장애, 서버 온도 상승으로 인한 장애, 메모리 한계와 병목 현상 등등 이슈도 종종 발생하여 이를 해결하는 것은 매우 까다로운 작업입니다.</p>
+<p>MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언급한 한계와 어려움을 다음 기능으로 대응하여 대규모 AI 시대에 효율적인 인프라를 제공합니다.</p>
+<ol>
+<li><strong><a href="http://docs.moreh.io/about-moai/#1-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%86%8D%EA%B8%B0-%EB%8B%A4%EC%A4%91-gpu-%EC%A7%80%EC%9B%90">다양한 가속기, 다중 GPU 지원</a></strong></li>
+<li><strong><a href="http://docs.moreh.io/about-moai/#2-gpu-%EA%B0%80%EC%83%81%ED%99%94">GPU 가상화</a></strong></li>
+<li><strong><a href="http://docs.moreh.io/about-moai/#3-%EB%8F%99%EC%A0%81-gpu-%ED%95%A0%EB%8B%B9">동적 GPU 할당</a></strong></li>
+<li><strong><a href="http://docs.moreh.io/about-moai/#4-ai-compiler-%EC%9E%90%EB%8F%99-%EB%B3%91%EB%A0%AC%ED%99%94">AI Compiler 자동 병렬화</a></strong></li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -308,6 +306,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "MoAI Platform Guide", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "MoAI Platform Overview", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
