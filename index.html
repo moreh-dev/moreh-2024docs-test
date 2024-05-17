@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769229360668">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769247591312">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.769229360668" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.5.0.769247591312" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.769229360668" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.769247591312" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.769229360668" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.769247591312" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -241,112 +241,6 @@
 <li><strong><a href="">Dynamic GPU Allocation</a></strong></li>
 </ol>
 <hr>
-<doc-anchor-target id="1various-accelerators-multi-gpu-support">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1various-accelerators-multi-gpu-support">#</doc-anchor-trigger>
-        <span><strong>1.Various Accelerators, Multi-GPU Support</strong></span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-left">
-    <img src="img/overview_02.png" alt="">
-    <figcaption class="caption caption-float"></figcaption>
-</figure>
-</p>
-<p><br />
-<br />
-<br />
-<br />
-<br />
-<br />
- 
- </p>
-<ul>
-<li>MoAI Platform supports various accelerators capable of executing various types of operations regardless of types of GPUs.</li>
-<li>Users can utilize different accelerators like Intel, AMD, and others alongside NVIDIA without needing to modify their code for deep learning development and model training.</li>
-<li>This compatibility allows for flexible development and training of deep learning models, accommodating multiple and diverse types of GPUs.<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
- 
- </li>
-</ul>
-<hr>
-<doc-anchor-target id="2-gpunpu-virtualization">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-gpunpu-virtualization">#</doc-anchor-trigger>
-        <span>2. GPU/NPU Virtualization</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-left">
-    <img src="img/overview_03.png" alt="">
-    <figcaption class="caption caption-float"></figcaption>
-</figure>
-</p>
-<p><br />
-<br />
-<br />
-<br />
-<br />
-<br />
- 
- </p>
-<ul>
-<li>The MoAI Platform&#x27;s virtualization feature enables thousands of GPUs or NPUs to function as a single, more powerful GPU device.
-<ul>
-<li>This unique approach suggests that instead of managing a lot of individual units, users can handle this collective resource as single entity, considerably simplifying complex tasks.</li>
-</ul>
-</li>
-<li>It simplifies the process of modeling and optimization, providing users with a seamless and efficient experience.
-<ul>
-<li>By abstracting the complexity of utilizing multiple GPUs or NPUs, it enables easier management and deployment of resources for enhanced performance in deep learning tasks.
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
- 
- </li>
-</ul>
-</li>
-</ul>
-<hr>
-<doc-anchor-target id="3-ai-compiler">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-ai-compiler">#</doc-anchor-trigger>
-        <span>3. AI Compiler</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="img/overview_04.png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<ul>
-<li>In the era of AI, training and inference of large-scale models such as LLM(Large language Model) and LMM(Large Multimodal Model) require significantly large GPU clusters and effective GPU parallelization.</li>
-<li>Currently, most AI frameworks used with NVIDIA require manual parallelization by AI engineers depending on the size and complexity of the model and the available GPU size/cluster. This setup process is time-consuming, often taking weeks to complete.</li>
-<li>The MoAI Platform offers automatic parallelization can be achieved through a Moreh AI compiler that finds out the optical way to use GPU resources based on the the specific AI model and the size of GPU cluster.</li>
-<li>This can significantly shorten the setup and deployment time for AI models, from several weeks, as with NVIDIA, to only 2-3 days.</li>
-</ul>
-<doc-anchor-target id="4-dynamic-gpu-allocation">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-dynamic-gpu-allocation">#</doc-anchor-trigger>
-        <span>4. Dynamic GPU Allocation</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="img/overview_05.png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<ul>
-<li>On the MoAI platform, AI engineers can begin deep learning training with exactly the amount of GPU resources as needed.</li>
-<li>GPU resources are only allocated during computation execution, allowing for efficient use of GPU resources. This not only reduces software development cost, but also saves time for development and deployment.</li>
-</ul>
 <p>Copyright © 2024 Moreh Corporation</p>
 
                                 
