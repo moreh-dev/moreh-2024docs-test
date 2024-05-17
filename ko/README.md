@@ -13,7 +13,7 @@
    | 
 ---    | ---
  [ **Fine-tuning 시작하기**](Tutorials/index.md) <br> MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [ **AP(Advanced Parallelization)**](/Supported_Documents/AP/ap_guide.md) <br> Advanced Parallelization (AP) 기능 사용 안내 
-[ **Moreh Toolkit**](Tutorials/index.md) <br> command line 사용방법 |[ **MoAI Platform Features**]() <br> MoAI Platform의 가상화와 병렬화 기능
+[ **Moreh Toolkit**](/ko/Supported_Documents/moreh_toolkit.md) <br> command line 사용방법 |[ **MoAI Platform Features**](/MoAI_Features/index.md) <br> MoAI Platform의 가상화와 병렬화 기능
 
 ## MoAI Platform이란?
 MoAI(Moreh AI appliance for AI accelerators) Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능한 AI 플랫폼으로, 수천 대 이상의 서로 다른 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있습니다.
