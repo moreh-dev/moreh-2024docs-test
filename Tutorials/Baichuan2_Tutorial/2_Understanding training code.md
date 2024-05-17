@@ -44,7 +44,7 @@ Load the preprocessed dataset saved during the [Preparing for Fine-tuning](1_Pre
   )
 ```
 
-이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
+Subsequent training proceeds just like any other model training with PyTorch. 
 
 ```python
     # Mask pad tokens for training
@@ -87,9 +87,9 @@ The training script used in this tutorial includes the following additional line
 torch.moreh.option.enable_advanced_parallelization()
 ```
 
-For example, for huge language models like [Baichuan2 13B](https://huggingface.co/baichuan-inc/Baichuan2-13B-Base), it's inevitable to train them using multiple GPUs. In such cases, if you're not using MoAI Platform, you'll need to introduce parallelization techniques like Data Parallel, Pipeline Parallel, and Tensor Parallelism.
+For huge language models like [Baichuan2 13B](https://huggingface.co/baichuan-inc/Baichuan2-13B-Base), it's inevitable to train them using multiple GPUs. In such cases, if you're not using MoAI Platform, you'll need to introduce parallelization techniques like Data Parallel, Pipeline Parallel, and Tensor Parallelism.
 
-예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다. (https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+For instance, if you want to apply DDP in your PyTorch code, you would need to add the following code snippet: (https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
 
 ```python
 ...
