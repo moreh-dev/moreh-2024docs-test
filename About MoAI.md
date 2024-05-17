@@ -55,10 +55,6 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 \
 &nbsp;
 
-
-\
-\
-\
 \
 \
 \
