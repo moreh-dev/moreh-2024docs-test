@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [guide]
+tags: [tutorial, baichuan]
 order: 600
 expanded: false
 ---

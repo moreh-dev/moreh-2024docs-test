@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [guide]
+tags: [tutorial, mistral]
 expanded: true
 order: 900
 ---

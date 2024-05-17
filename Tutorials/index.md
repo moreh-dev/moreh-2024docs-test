@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [component]
+tags: tags: [tutorial]
 order: 100
 expanded: true
 ---
