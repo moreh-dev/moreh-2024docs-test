@@ -34,3 +34,6 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 이러한 �
 4. **[AI Compiler 자동 병렬화](http://docs.moreh.io/about-moai/#4-ai-compiler-자동-병렬화)**
 
 
+---
+
+Copyright © 2024 Moreh Corporation
