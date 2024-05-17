@@ -28,18 +28,12 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 ---
 
 
-## **1.Various Accelerators, Multi-GPU Support**
+## 1.Various Accelerators, Multi-GPU Support
 
 -![](./img/overview_22.png)
-
-
 \
 \
 \
-\
-\
-\
-&nbsp;
 &nbsp;
 
 - MoAI Platform supports various accelerators capable of executing various types of operations regardless of types of GPUs.
@@ -48,17 +42,19 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 \
 &nbsp;
 ------
-
-## **2. GPU/NPU Virtualization**
+## 2. GPU/NPU Virtualization
 
 -![](./img/overview_93.png)
 \
 &nbsp;
-
 \
 \
 \
-&nbsp;
+\
+\
+\
+\
+\
 &nbsp;
 \
 \

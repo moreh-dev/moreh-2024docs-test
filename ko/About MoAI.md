@@ -27,7 +27,7 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 이러한 �
 
 ---
 
-## **1. 다양한 가속기, 다중 GPU 지원**
+## 1. 다양한 가속기, 다중 GPU 지원
 
 -![](./img/overview_22.png)
 
@@ -47,7 +47,7 @@ MoAI 플랫폼은 다양한 AI 가속기를 지원하며, GPU의 종류에 관�
 &nbsp;
 ------
 
-## **2. GPU 가상화**
+## 2. GPU 가상화
 
 -![](./img/overview_93.png)
 
@@ -92,7 +92,7 @@ MoAI Platform은 실제로 연산중일 때만 GPU 사양에 따라 분 단위�
 
 ------
 
-## **3. 동적 GPU 할당**
+## 3. 동적 GPU 할당
 
 
 ![](./img/overview_04.png)
@@ -103,7 +103,7 @@ MoAI 플랫폼에서는 AI 엔지니어가 필요한 만큼의 GPU 자원으로�
 - 간편한 클러스터 셋업: MoAI Platform을 사용하면 동적 할당 기능으로 AI 엔지니어가 GPU 클러스터를 쉽게 설정할 수 있습니다. 일반적으로 딥러닝 개발자가 GPU를 사용하기 위해서는 개발 환경 구축을 위해 PyTorch 또는 Tensorflow를 GPU 클러스터 기기의 백노드와 연결하여 각 프로세스가 다른 프로세스들과 데이터를 통신하도록 설정해야 합니다.
 
 
-## **4. AI Compiler 자동 병렬화**
+## 4. AI Compiler 자동 병렬화
 
 ![](./img/overview_05.png)
 

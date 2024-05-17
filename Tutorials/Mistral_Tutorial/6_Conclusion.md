@@ -10,7 +10,7 @@ From this tutorial, we have seen how to fine-tune the [Mistral 7B](https://mistr
 
 ## Learn more
 
-- *[MoAI Platform의 자동병렬화 기능,  Advanced Parallelization (AP)](/Supported_Documents/)*
+- *[MoAI Platform's Advanced  Parallelization (AP)](/Supported_Documents/)*
 - [Llama2 Fine-tuning](/Tutorials/Llama2_Tutorial/index.md)
 - [GPT Fine-tuning](/Tutorials/GPT_Tutorial/index.md)
 - [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)

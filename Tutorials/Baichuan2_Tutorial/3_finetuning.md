@@ -12,14 +12,12 @@ Now, we will train the model through the following process.
 
 In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.
 
-- ***[KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md)***  
-- [LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md)
+- ***[KT Hyperscale AI Computing (HAC) AI Accelerator Information](/Supported_Documents/KT_HAC_Models_Info.md)***  
+- [LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md)
 
 !!!
 Please refer to the document above or reach out to your infrastructure provider to inquire about the GPU types and quantities corresponding to each flavor.
 !!!
-
-***(모든 문서에 추가될 그림 생성 예정)***
 
 You can choose one of the following flavors to proceed:
 

@@ -15,7 +15,7 @@ In case if you still have any questions regarding this tutorial feel free to ask
 
 ## Learn More
 
-- *[MoAI Platform의 자동병렬화 기능,  Advanced Parallelization (AP)](/Supported_Documents/)*
+- *[MoAI Platform's Advanced Parallelization (AP)](/Supported_Documents/)*
 - [Mistral Fine-tuning](/Tutorials/Mistral_Tutorial/index.md)
 - [GPT Fine-tuning](/Tutorials/GPT_Tutorial/index.md)
 - [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)
