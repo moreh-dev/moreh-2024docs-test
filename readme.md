@@ -29,13 +29,6 @@ As deep learning models evolve, they become increasingly complex and require sub
 
 The MoAI Platform's automatic parallelization addresses these challenges by simultaneously processing multiple tasks, determining the optimal calculation method for large models. This allows users to focus solely on their core AI challenges, regardless of their application scale or processor type. Furthermore, it efficiently utilizes GPU computational resources at a reasonable cost by allocating them only during calculation execution.
 
-
-1. **[Various Accelerators, Multi-GPU Support](http://localhost:5000/two-lang-demo/about-moai/#1various-accelerators-multi-gpu-support)**
-2. **[GPU/NPU Virtualization](http://localhost:5000/two-lang-demo/about-moai/#2-gpunpu-virtualization)**
-3. **[AI Compiler]()**
-4. **[Dynamic GPU Allocation]()**
-
-
 ---
 
 Copyright © 2024 Moreh Corporation

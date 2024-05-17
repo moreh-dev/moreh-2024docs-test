@@ -20,9 +20,9 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 
 
 1. **[Various Accelerators, Multi-GPU Support](http://localhost:5000/two-lang-demo/about-moai/#1various-accelerators-multi-gpu-support)**
-2. **[GPU/NPU Virtualization](http://localhost:5000/two-lang-demo/about-moai/#2-gpunpu-virtualization)**
-3. **[AI Compiler]()**
-4. **[Dynamic GPU Allocation]()**
+2. **[GPU Virtualization](http://localhost:5000/two-lang-demo/about-moai/#2-gpunpu-virtualization)**
+3. **[Dynamic GPU Allocation]()**
+4. **[AI Compiler Automatic Parallelization]()**
 
 
 ---
