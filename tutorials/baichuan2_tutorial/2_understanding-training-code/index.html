@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769269399754">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769269929130">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769269399754" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769269929130" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769269399754" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769269929130" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769269399754" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769269399754" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769269929130" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769269929130" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -210,7 +210,7 @@ tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trus
       drop_last=True,
   )</code></pre>
 </doc-codeblock></div>
-<p>이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다.</p>
+<p>Subsequent training proceeds just like any other model training with PyTorch.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">    # Mask pad tokens for training
     def mask_pads(input_ids, attention_mask, ignore_index = -100):
@@ -252,8 +252,8 @@ tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trus
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">torch.moreh.option.enable_advanced_parallelization()</code></pre>
 </doc-codeblock></div>
-<p>For example, for huge language models like <a href="https://huggingface.co/baichuan-inc/Baichuan2-13B-Base">Baichuan2 13B</a>, it&#x27;s inevitable to train them using multiple GPUs. In such cases, if you&#x27;re not using MoAI Platform, you&#x27;ll need to introduce parallelization techniques like Data Parallel, Pipeline Parallel, and Tensor Parallelism.</p>
-<p>예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다. (<a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html">https://pytorch.org/tutorials/intermediate/ddp_tutorial.html</a>)</p>
+<p>For huge language models like <a href="https://huggingface.co/baichuan-inc/Baichuan2-13B-Base">Baichuan2 13B</a>, it&#x27;s inevitable to train them using multiple GPUs. In such cases, if you&#x27;re not using MoAI Platform, you&#x27;ll need to introduce parallelization techniques like Data Parallel, Pipeline Parallel, and Tensor Parallelism.</p>
+<p>For instance, if you want to apply DDP in your PyTorch code, you would need to add the following code snippet: (<a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html">https://pytorch.org/tutorials/intermediate/ddp_tutorial.html</a>)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">...
 def setup(rank, world_size):
