@@ -4,15 +4,11 @@ tags: [guide]
 order: 10
 ---
 
-
 # MoAI Platform의 toolkit 사용하기
-
-## Moreh Toolkit의 기능
-
 
 Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다.  이 도구는 사용자에게 세 가지 명령어 (`moreh-smi`, `moreh-switch-model`, `update-moreh`)를 제공하여 MoAI Accelerator 를 효율적으로 관리하고, 설치된 Moreh 솔루션을 손쉽게 업데이트할 수 있도록 합니다.
 
-# 주요 기능
+## 주요 기능
 
 Moreh Toolkit의 주요 기능은 다음과 같습니다: 
 
@@ -60,7 +56,7 @@ Processes:
 +-----------------------------------------------------------------------------------+
 ```
 
-### MoAI Accelerator 의 Multi Accelerator 기능 활용하기
+#### MoAI Accelerator 의 Multi Accelerator 기능 활용하기
 
 유저가 별도의 세팅을 하지 않을 경우에는 기본적으로 하나의 SSH 환경에 하나의 MoAI Accelerator 만 존재할 것입니다. 기본적으로 MoAI Accelerator 한 개로는 하나의 프로세스만 실행할 수 있기 때문에, 기본 세팅으로는 하나의 SSH 환경에서 하나의 프로세스 실행만 가능합니다.
 
@@ -68,7 +64,7 @@ Processes:
 
 다음 예제를 통해 AI 가속기를 추가, 변경 삭제해보겠습니다.
 
-### AI 가속기 추가하기
+#### AI 가속기 추가하기
 
 먼저 AI 가속기를 추가해보겠습니다. 2개 이상의 AI 가속기를 사용하기 위해서`moreh-smi device --add` 커멘드를 입력하면 아래와 같은 인터페이스가 나타납니다.
 
@@ -120,7 +116,7 @@ Create device success.
 
 ```
 
-### AI 가속기 기본값 변경하기
+#### AI 가속기 기본값 변경하기
 
 `moreh-smi device --switch {Device_ID}` 는 기본값으로 설정된 MoAI Accelerator 를 변경할 수 있는 명령어 입니다.
 
@@ -161,7 +157,7 @@ Selection (0-4, q, Q): q
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-## AI 가속기 변경하기 **`moreh-switch-model`**
+## AI 가속기 변경하기 `moreh-switch-model`
 
 `moreh-switch-model` 는 현재 설정된 MoAI Accelerator 의 flavor(가속기 사양)를 변경할 수 있는 툴입니다. MoAI Accelerator 의 flavor를 변경함으로써 GPU 메모리를 얼만큼 사용할 것인지 결정합니다. 
 
@@ -251,7 +247,7 @@ Selection (1-13, q, Q):
 
 0번 `Small.64GB` 모델 유형의 MoAI Accelerator가 `Large.256GB` 모델 유형으로 변경된 것을 확인할 수 있습니다. 
 
-### AI 가속기 삭제하기
+#### AI 가속기 삭제하기
 
 이번에는 생성된 디바이스를 `moreh-smi device --rm {Device_ID}`커멘드로 특정 디바이스 ID에 해당하는 가속기를 삭제해보겠습니다.
 
@@ -267,7 +263,7 @@ Remove device success.
 
 위와 같은 커멘드를 입력해서 Device ID가 1인 AI 가속기인 `8xLarge.4096GB` 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
 
-### 그 외의 다양한 옵션 활용하기
+#### 그 외의 다양한 옵션 활용하기
 
 `moreh-smi` 는 이외에도 다양한 다양한 옵션을 제공합니다. 다음과 같이 `--help` 옵션을 활용하면 어떠한 옵션이 제공되는지 확인할 수 있습니다.
 
