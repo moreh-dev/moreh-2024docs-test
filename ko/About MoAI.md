@@ -27,11 +27,9 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 
 ---
 
-# MoAI Platform 특장점
-
 ## **1. 다양한 가속기, 다중 GPU 지원**
 
--![](./img/overview_02.png)
+-![](./img/overview_22.png)
 
 
 \
@@ -61,7 +59,7 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 
 ## **2. GPU 가상화**
 
--![](./img/overview_03.png)
+-![](./img/overview_93.png)
 
 
 \
