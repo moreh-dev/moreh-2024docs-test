@@ -105,6 +105,6 @@ MoAI Platform의 자동 병렬화 기술은 이러한 연산을 최적의 방식
 - 자동 병렬화를 통해 NVIDIA 환경(플랫폼)에서 몇 주가 소요되는 모델 훈련을 2~3일로 대폭 단축할 수 있습니다.
 
 
-
+---
 
 Copyright © 2024 Moreh Corporation

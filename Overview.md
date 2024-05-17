@@ -47,26 +47,6 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 -![](./img/overview_93.png)
 \
 &nbsp;
-\
-\
-\
-\
-\
-\
-\
-\
-&nbsp;
-\
-\
-\
-\
-\
-\
-\
-\
-&nbsp;
-&nbsp;
-
 
 The MoAI Platform’s virtualization feature enables the use of thousands of GPUs as if they were a single GPU. This simplifies the modeling and optimization processes, providing AI engineers with a smooth and efficient experience.
 
