@@ -1,7 +1,7 @@
 ---
 icon: note
 tags: [guide]
-order: 200
+order: 600
 ---
 
 # MoAI Platform Overview
