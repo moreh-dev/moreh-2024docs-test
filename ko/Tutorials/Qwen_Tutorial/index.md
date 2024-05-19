@@ -20,15 +20,12 @@ MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로
 
 혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh에 문의하시기 바랍니다.
 
-***(Moreh 연락처 정보 추가 예정)***
-
-SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다. 만약 이 과정에 문제가 있다면 인프라 제공자에게 문의하시거나 ***(troubleshooting 문서 추가 예정)*** 문서의 가이드를 참고하시기 바랍니다.
-
+SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다. 
 ### MoAI Accelerator 확인
 
 이 튜토리얼에서 안내할 Qwen 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 `moreh-smi` 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다. 
 
-수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 “3. 학습 실행하기”에서 제공하겠습니다.  
+수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 [3. 학습 실행하기](3_학습_실행하기.md) 에서 제공하겠습니다. 
 
 ```jsx
 $ moreh-smi

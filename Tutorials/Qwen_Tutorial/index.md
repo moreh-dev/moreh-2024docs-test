@@ -19,9 +19,7 @@ Be sure to acquire a container or virtual machine on the MoAI Platform from your
 
 If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh.
 
-***(Moreh 연락처 정보 추가 예정)***
-
-After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system. If you encounter any issues during this process, please contact your infrastructure provider or refer to the ***troubleshooting guide*** in the documentation.
+After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system.
 
 
 ### Check MoAI Accelerator
