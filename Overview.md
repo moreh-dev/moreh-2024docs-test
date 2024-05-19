@@ -42,9 +42,27 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 \
 &nbsp;
 ------
-## 2. GPU/NPU Virtualization
+## 2. GPU Virtualization
 
 -![](./img/overview_93.png)
+\
+\
+\
+\
+\
+\
+\
+\
+&nbsp;
+\
+\
+\
+\
+\
+&nbsp;
+\
+\
+\
 \
 &nbsp;
 
