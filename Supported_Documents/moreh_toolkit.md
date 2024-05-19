@@ -1,5 +1,5 @@
 ---
-icon: tool
+icon: tools
 tags: [guide]
 order: 10
 ---

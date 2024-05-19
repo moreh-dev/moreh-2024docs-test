@@ -1,5 +1,5 @@
 ---
-icon: :icon-book:
+icon: cpu
 tags: [features]
 order: 200
 ---
