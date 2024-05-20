@@ -31,5 +31,3 @@ The MoAI Platform's automatic parallelization addresses these challenges by simu
 
 ---
 
-Copyright © 2024 Moreh Corporation
-
