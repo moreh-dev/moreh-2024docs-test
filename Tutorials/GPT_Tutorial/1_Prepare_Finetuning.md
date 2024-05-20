@@ -27,7 +27,7 @@ If you see the message **`conda: command not found`**, if the torch package is n
 
 ## Verifying PyTorch Installation
 
-Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized. If you encounter any issues during this process, please refer to the  (troubleshooting TBA).
+Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized.
 
 ```bash
 $ python

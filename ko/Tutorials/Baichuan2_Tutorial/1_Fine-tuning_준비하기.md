@@ -26,7 +26,7 @@ torch                     1.13.1+cu116.moreh24.3.0          pypi_0    pypi
 
 ## PyTorch 동작 여부 확인하기
 
-다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다. 만약 이 과정에 문제가 생긴다면 ***(troubleshooting 문서 추가 예정)*** 문서에 따라 조치하십시오.
+다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다.
 
 ```bash
 $ python

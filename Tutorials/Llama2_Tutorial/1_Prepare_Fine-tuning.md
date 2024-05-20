@@ -37,7 +37,7 @@ y
 
 ## Verifying PyTorch Installation
 
-Run the following command to confirm that the torch package is properly imported and the MoAI Accelerator is recognized. If you encounter any issues throughout this process, please refer to the  (troubleshooting TBA).
+Run the following command to confirm that the torch package is properly imported and the MoAI Accelerator is recognized.
 
 ```bash
 $ python
