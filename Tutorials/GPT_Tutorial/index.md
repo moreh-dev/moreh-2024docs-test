@@ -23,7 +23,7 @@ Make sure to obtain a container or virtual machine on the MoAI Platform from you
 
 - KT Cloud's Hyperscale AI Computing (https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
-If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh.
+If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh(support@moreh.io).
 
 After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system. 
 

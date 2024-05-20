@@ -10,7 +10,7 @@ From this tutorial, we have seen how to fine-tune [Llama2 13B](https://huggingfa
 
 The availability of large language models like LLaMA 2, fine-tuning techniques, and the MoAI Platform makes it possible for anyone to develop powerful AI applications. So please start repeating the same process outlined here on your own data.
 
-In case if you still have any questions regarding this tutorial feel free to ask Moreh.
+In case if you still have any questions regarding this tutorial feel free to ask Moreh(support@moreh.io).
 
 
 ## Learn More

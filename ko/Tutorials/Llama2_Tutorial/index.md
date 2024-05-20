@@ -23,7 +23,7 @@ MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로
 
 [!ref target="blank" text="KT Cloud의 Hyperscale AI Computing"](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
-혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh에 문의하시기 바랍니다.
+혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh(support@moreh.io)에 문의하시기 바랍니다.
 
 SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다. 
 

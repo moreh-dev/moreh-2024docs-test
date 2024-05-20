@@ -17,7 +17,7 @@ The Qwen1.5 7B model is an open-source LLM released by [Tongyi Qianwen(通义千
 Be sure to acquire a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. For example, you can sign up for the following public cloud service built on the MoAI Platform:
 - KT Cloud’s Hyperscale AI Computing (https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
-If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh.
+If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh(support@moreh.io).
 
 After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system.
 
