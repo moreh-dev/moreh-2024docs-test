@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769495314896">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769496391770">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769495314896" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769496391770" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769495314896" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769496391770" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769495314896" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769495314896" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769496391770" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769496391770" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -182,7 +182,7 @@
 </doc-anchor-target>
 <p>If you&#x27;ve prepared all the training data, let&#x27;s now take a look at the <strong><code v-pre>train_qwen.py</code></strong> script to actually run the fine-tuning process. This script is a standard PyTorch code that executes fine-tuning based on the implementation of the Qwen model available in the Hugging Face Transformers library.</p>
 <p>In this step, you&#x27;ll observe that MoAI Platform is fully compatible with PyTorch, and the training code is exactly the same as standard PyTorch code designed for NVIDIA GPUs. <strong>Moreover, you can also see how efficiently MoAI Platform can implement complex parallelization techniques.</strong></p>
-<p>We recommend starting by using the provided script to complete the tutorial as-is. Afterwards, feel free to modify the script as desired to fine-tune the Qwen1.5 7B model in different ways. Thanks to MoAI Platform&#x27;s full compatibility with PyTorch, such modifications are possible. If needed, refer to the (<a href="../../../supported_documents/llm_param_guide/">LLM Fine-tuning 파라미터 가이드</a>) for assistance.</p>
+<p>We recommend starting by using the provided script to complete the tutorial as-is. Afterwards, feel free to modify the script as desired to fine-tune the Qwen1.5 7B model in different ways. Thanks to MoAI Platform&#x27;s full compatibility with PyTorch, such modifications are possible. If needed, refer to the <a href="../../../supported_documents/llm_param_guide/"><strong>LLM Fine-tuning parameter guide</strong></a> for assistance.</p>
 <doc-anchor-target id="training-code">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#training-code">#</doc-anchor-trigger>
@@ -198,7 +198,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained(&quot;Qwen/Qwen1.5-7B&quot;)</code></pre>
 </doc-codeblock></div>
-<p>Then load the preprocessed dataset saved during the preparation for <a href="../1_fine-tuning_%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0/">1. Prepare Fine-tuning</a> and define the data loaders.</p>
+<p>Then load the preprocessed dataset saved during the preparation for <a href="../1_fine-tuning_%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0/"><strong>1. Prepare Fine-tuning</strong></a> and define the data loaders.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">  dataset = torch.load(&quot;./qwen_dataset.pt&quot;)
 
