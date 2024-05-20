@@ -12,16 +12,16 @@ order: 10
 
 | Model | Physical GPUs | Number of Nodes|
 | --- | --- | --- |
-| Small.64GB | MI250 0.5개 | 1대 |
-| Medium.128GB | MI250 1개 | 1대 |
-| Large.256GB | MI250 2개 | 1대 |
-| xLarge.512GB | MI250 4개 | 1대 |
-| 2xLarge.1024GB | MI250 8개 | 2대 |
-| 3xLarge.1536GB | MI250 12개 | 3대 |
-| 4xLarge.2048GB | MI250 16개 | 4대 |
-| 6xLarge.3072GB | MI250 24개 | 6대 |
-| 8xLarge.4096GB | MI250 32개 | 8대 |
-| 12xLarge.6144GB | MI250 48개 | 12대 |
-| 24xLarge.12288GB | MI250 96개 | 24대 |
-| 48xLarge.24576GB | MI250 192개 | 48대 |
+| Small.64GB | MI250 0.5 | 1 |
+| Medium.128GB | MI250 1 | 1 |
+| Large.256GB | MI250 2 | 1 |
+| xLarge.512GB | MI250 4 | 1 |
+| 2xLarge.1024GB | MI250 8 | 2 |
+| 3xLarge.1536GB | MI250 12 | 3 |
+| 4xLarge.2048GB | MI250 16 | 4 |
+| 6xLarge.3072GB | MI250 24 | 6 |
+| 8xLarge.4096GB | MI250 32 | 8 |
+| 12xLarge.6144GB | MI250 48 | 12 |
+| 24xLarge.12288GB | MI250 96 | 24 |
+| 48xLarge.24576GB | MI250 192 | 48 |
 | … | … | … |
