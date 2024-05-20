@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /two-lang-demo/sitemap.xml.gz
+Sitemap: /moreh/sitemap.xml.gz
