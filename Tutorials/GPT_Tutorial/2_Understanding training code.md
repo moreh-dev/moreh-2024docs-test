@@ -116,9 +116,9 @@ torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
-In addition to these basic settings, users need to understand how Python code behaves in a multiprocessing environment during the process of writing the training script. Especially in a multi-node setup, additional configuration work is required for the nodes used in training. Furthermore, finding the optimal parallelization method considering factors such as the type of model, its size, and the dataset can take a significant amount of time.
+While DDP can be relatively easy to apply, implementing techniques like [pipeline parallelism](https://pytorch.org/docs/stable/pipeline.html) or [tensor parallelism](https://pytorch.org/tutorials/intermediate/TP_tutorial.html) involves quite complex code modifications. To apply optimized parallelization, you need to understand how Python code acts in a multiprocessing environment while writing the training scripts. Especially in multi-node setups, configuring the environment of each node used for training is necessary. Additionally, finding the optimal parallelization method considering factors such as model type, size, and dataset requires a considerable amount of time.
 
-**On the other hand, MoAI Platform's AP feature allows users to proceed with optimized parallelized training with just one line of code added to the training script, without the need for users to apply these additional parallelization techniques themselves.**
+**In contrast, MoAI Platform's AP feature enables users to proceed with optimized parallelized training with just one line of code added to the training script, eliminating the need for users to manually apply additional parallelization techniques.**
 
 ```python
 import torch

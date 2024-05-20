@@ -90,9 +90,9 @@ In the training script used in this tutorial, there is an additional line of cod
 torch.moreh.option.enable_advanced_parallelization()
 ```
 
-Training a massive language model like Llama2 13B requires a significant number of GPUs. Therefore, when not using the MoAI Platform, you would need to introduce parallelization techniques such as Data Parallelism, Pipeline Parallelism, and Tensor Parallelism into your training process.
+Training a large language model like Llama2 13B requires a significant amount of GPUs. Without using the MoAI Platform, you would need to implement parallelization techniques such as data parallelism, pipeline parallelism, and tensor parallelism to perform the training.
 
-For example, if a user wants to apply DDP in their regular PyTorch code, the following code snippet would need to be added (Reference: [https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html))
+(Reference: [https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html))
 
 
 ```python
@@ -123,9 +123,9 @@ torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
-In addition to these basic settings, users need to understand how Python code behaves in a multiprocessing environment during the process of writing training scripts. Especially in multi-node setups, configuring the environment of each node used for training is necessary. Furthermore, finding the optimal parallelization method considering factors such as model type, size, and dataset requires a considerable amount of time.
+While DDP can be relatively easy to apply, implementing techniques like [pipeline parallelism](https://pytorch.org/docs/stable/pipeline.html) or [tensor parallelism](https://pytorch.org/tutorials/intermediate/TP_tutorial.html) involves quite complex code modifications. To apply optimized parallelization, you need to understand how Python code acts in a multiprocessing environment while writing the training scripts. Especially in multi-node setups, configuring the environment of each node used for training is necessary. Additionally, finding the optimal parallelization method considering factors such as model type, size, and dataset requires a considerable amount of time.
 
-**On the other hand, MoAI Platform's AP feature allows users to proceed with optimized parallelized training with just one line of code added to the training script, without the need for users to apply these additional parallelization techniques themselves.**
+**In contrast, MoAI Platform's AP feature enables users to proceed with optimized parallelized training with just one line of code added to the training script, eliminating the need for users to manually apply additional parallelization techniques.**
 
 
 ```bash
@@ -137,4 +137,5 @@ model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
 ...
 ```
 
-MoAI Platform's Advanced Parallelization (AP) provides optimization and automation features that are difficult to experience in other frameworks. Through the AP feature, users can experience **the best distributed parallel processing**. By leveraging AP, users can easily configure the optimal parameters and environment variables for Pipeline Parallelism and Tensor Parallelism required for training large-scale models with **just a single line of code**.
+MoAI Platform's Advanced Parallelization (AP) provides optimization and automation features that are difficult to experience in other frameworks. 
+With the AP feature, you can easily configure the optimal parameters and environment variables for Pipeline Parallelism and Tensor Parallelism which are typically required for large-scale model training, with **just a single line of code**.

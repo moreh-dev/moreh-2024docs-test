@@ -112,5 +112,3 @@ Currently, common AI frameworks used with NVIDIA require AI engineers to manuall
 - The MoAI Platform provides Advanced Parallelization through the Moreh AI compiler, which optimally utilizes GPU resources based on the specific AI model and GPU cluster size.
 - With MoAI Platform’s Advanced Parallelization, the setup and deployment time for AI models, typically weeks long, can be  dramatically reduced to approximately 2-3 days.
 
-
-Copyright © 2024 Moreh Corporation
