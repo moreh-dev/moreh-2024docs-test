@@ -17,7 +17,8 @@ Switch the accelerator type using the **`moreh-switch-model`** tool. For instruc
 $ moreh-switch-model
 ```
 
-Please contact your infrastructure provider and choose one of the following options before proceeding.   ([KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/Supported_Documents/KT_HAC_Models_Info.md))
+Please contact your infrastructure provider and choose one of the following options before proceeding.  
+[KT Hyperscale AI Computing (HAC) AI Accelerator Information](/Supported_Documents/KT_HAC_Models_Info.md)
 
 - AMD MI250 GPU with 32 units
     - When using Moreh's trial container: select [!badge variant="secondary" text="8xlarge"]

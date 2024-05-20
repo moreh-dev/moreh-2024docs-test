@@ -74,9 +74,9 @@ You can enter the number to switch to a different flavor.
 
 In this tutorial, we will use a 2048GB-sized MoAI Accelerator.
 
-Therefore, after switching from the initially set [!badge variant="secondary" text=“Small.64GB”] flavor to [!badge variant="secondary" text=“4xLarge.2048GB”], we will use the **`moreh-smi`** command to confirm that the change has been successfully applied.
+Therefore, after switching from the initially set [!badge variant="secondary" text=Small.64GB] flavor to [!badge variant="secondary" text=4xLarge.2048GB], we will use the **`moreh-smi`** command to confirm that the change has been successfully applied.
 
-Enter 8 to use [!badge variant="secondary" text=“4xLarge.2048GB”].
+Enter 8 to use [!badge variant="secondary" text=4xLarge.2048GB].
 
 ```bash
 Selection (1-13, q, Q): 8
@@ -115,7 +115,7 @@ $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-Now you can see that it has been successfully changed to [!badge variant="secondary" text=“4xLarge.2048GB”].
+Now you can see that it has been successfully changed to [!badge variant="secondary" text=4xLarge.2048GB].
 
 
 

@@ -10,13 +10,13 @@ Let's rerun the fine-tuning task with a different number of GPUs. MoAI Platform 
 
 ## Changing the Accelerator type
 
-Switch the accelerator type using the **`moreh-switch-model`** tool. For instructions on changing the accelerator, please refer to the [3. Model fine-tuning](3_fine_tuning.md) 
+Switch the accelerator type using the **`moreh-switch-model`** tool. For instructions on changing the accelerator, please refer to the [**3. Model fine-tuning**](3_fine_tuning.md) 
 
 ```bash
 $ moreh-switch-model
 ```
 
-Please contact your infrastructure provider and choose one of the following options before proceeding. [(HAC) AI Accelerator Information](/Supported_Documents/KT_HAC_Models_Info.md)
+Please contact your infrastructure provider and choose one of the following options before proceeding. [**KT HAC AI Accelerator Information**](/Supported_Documents/KT_HAC_Models_Info.md)
 
 - AMD MI250 GPU with 32 units
     - When using Moreh's trial container: select [!badge variant="secondary" text=8xlarge] 

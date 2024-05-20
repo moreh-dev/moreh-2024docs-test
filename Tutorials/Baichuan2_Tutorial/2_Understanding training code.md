@@ -7,9 +7,9 @@ order: 40
 # 2. Understanding training code
 
 
-If you've prepared all the training data, let's now take a look at the contents of `train_baichuan2_13b.py` script for the actual fine-tuning process. **In this step, you'll notice that MoAI Platform ensures full compatibility with PyTorch, confirming that the training code is identical to the typical PyTorch code for NVIDIA GPUs. Additionally, you'll explore how efficiently MoAI Platform implements complex parallelization techniques beyond this.**
+If you've prepared all the training data, let's now take a look at the contents of `train_baichuan2_13b.py` script for the actual fine-tuning process. **In this step, you'll notice that MoAI Platform ensures full compatibility with PyTorch, confirming that the training code is identical to the typical PyTorch code for NVIDIA GPUs.** Additionally, you'll explore how efficiently MoAI Platform implements complex parallelization techniques beyond this.
 
-**First and foremost, it's recommended to proceed with the tutorial using the provided script as is until the end.** Afterwards, you can modify the script as you wish to fine-tune the Baichuan model in different ways. If needed, refer to the MoAI Platform Application Guide ([LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md))
+**First and foremost, it's recommended to proceed with the tutorial using the provided script as is until the end.** Afterwards, you can modify the script as you wish to fine-tune the Baichuan model in different ways. If needed, refer to the [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md).
 
 
 # Training Code
@@ -29,7 +29,7 @@ model = AutoModelForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', t
 tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 ```
 
-Load the preprocessed dataset saved during the [Preparing for Fine-tuning](1_Prepare_Finetuning.md) and define the data loader.
+Load the preprocessed dataset saved during the [**1. Preparing for Fine-tuning**](1_Prepare_Finetuning.md) and define the data loader.
 
 
 ```python

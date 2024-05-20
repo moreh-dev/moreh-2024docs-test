@@ -13,7 +13,7 @@ The following tutorial will take you through the steps required to fine-tune [Ba
 
 Baichuan2 is a large-scale multilingual language model developed by [Baichuan Intelligent Technology](https://github.com/baichuan-inc). This model offers configurations with 70 billion and 130 billion parameters trained on vast datasets consisting of 2.6 trillion tokens.
 
-In this tutorial, we'll fine-tune the Baichuan2 13B model using the MoAI Platform with the[Bitext-customer-support-llm-chatbot-training-dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset), a text-generation e-commerce dataset.
+In this tutorial, we'll fine-tune the Baichuan2 13B model using the MoAI Platform with the [Bitext-customer-support-llm-chatbot-training-dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset), a text-generation e-commerce dataset.
 
 ## Before You Start
 
@@ -30,7 +30,7 @@ After connecting via SSH, run the `moreh-smi` command to ensure that the MoAI Ac
 
 To train models like the Llama2 model outlined in this tutorial, you need to select an appropriate size MoAI Accelerator. Start by using the `moreh-smi` command to check the currently used MoAI Accelerator.
 
-Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [3. Model fine-tuning.](3_finetuning.md)
+Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [**3. Model fine-tuning**](3_finetuning.md).
 
 ```bash
 $ moreh-smi

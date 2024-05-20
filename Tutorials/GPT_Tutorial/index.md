@@ -32,7 +32,7 @@ After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoA
 
 To train sLLMs like the GPT model we'll be guiding you through in this tutorial, you need to select an appropriate size MoAI Accelerator. First, use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 
-Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [3. Finetuning Model](3_finetuning.md)
+Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [**3. Finetuning Model**](3_finetuning.md)
 
 
 ```bash

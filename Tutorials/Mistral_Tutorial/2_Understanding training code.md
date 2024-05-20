@@ -7,7 +7,7 @@ order: 40
 
 Once you have prepared all the training data, let's delve into the contents of the **`train_mistral.py`** script to execute the actual fine-tuning process. In this step, you will confirm MoAI Platform's full compatibility with PyTorch, ensuring that the training code is identical to general PyTorch code for Nvidia GPUs. Moreover, you'll explore how efficiently MoAI Platform implements complex parallelization techniques beyond the conventional scope.
 
-**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide [LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md) provided by Moreh.
+**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md) provided by Moreh.
 
 
 ## Training Code
@@ -26,7 +26,7 @@ Load the model configuration and checkpoint publicly available on Hugging Face.
 model = AutoModelForCausalLM.from_pretrained("./mistral-7b")
 ```
 
-Then load the preprocessed dataset saved during the preparation for [1. Prepare Fine-tuning](1_Prepare%20Fine-tuning.md)  and define the data loaders. 
+Then load the preprocessed dataset saved during the preparation for [**1. Prepare Fine-tuning**](1_Prepare_Fine-tuning.md)  and define the data loaders. 
 
 ```python
   dataset = torch.load("mistral_dataset.pt")
