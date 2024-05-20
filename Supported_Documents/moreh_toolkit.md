@@ -4,24 +4,25 @@ tags: [guide]
 order: 10
 ---
 
-# MoAI Platform의 toolkit 사용하기
+# Moreh Toolkit Guide
 
-Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다.  이 도구는 사용자에게 세 가지 명령어 (`moreh-smi`, `moreh-switch-model`, `update-moreh`)를 제공하여 MoAI Accelerator 를 효율적으로 관리하고, 설치된 Moreh 솔루션을 손쉽게 업데이트할 수 있도록 합니다.
+The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (**`moreh-smi`**, **`moreh-switch-model`**, **`update-moreh`**), users can effectively manage MoAI Accelerators and easily update MoAI Platform.
 
-## 주요 기능
+## Key Features
 
-Moreh Toolkit의 주요 기능은 다음과 같습니다: 
+The main features of the Moreh Toolkit are as follows:
 
-1. **MoAI Accelerator의 모니터링:**
-    - **`moreh-smi`** 명령어를 사용하여 메모리 사용량 및 프로세스 현황을 실시간으로 확인할 수 있습니다.
-2. **AI 가속기 변경:**
-    - **`moreh-switch-model`** 명령어를 사용하여 AI 가속기를 변경하고 최적의 성능을 얻기 위한 프로세스를 실행할 수 있습니다.
-3.  **MoAI Platform 솔루션 업데이트 및 롤백:**
-    - **`update-moreh`** 명령어를 통해 Moreh 솔루션을 최신 버전으로 업데이트하거나 필요시 이전 버전으로 롤백할 수 있습니다.
+1. **Monitoring MoAI Accelerators:**
+    - Use the **`moreh-smi`** command to monitor memory usage and process status in real-time.
+2. **Switching AI Accelerators:**
+    - Use the **`moreh-switch-model`** command to change AI accelerators and execute processes to achieve optimal performance.
+3. **Updating and Rolling Back MoAI Platform:**
+    - Use the **`update-moreh`** command to update Moreh solutions to the latest version or roll back to a previous version if needed.
 
-## **MoAI Accelerator의 모니터링:** `moreh-smi`
 
-`moreh-smi`는 사용자가 MoAI Accelerator를 관리하고 모니터링할 수 있는 명령어 입니다. MoAI Platform Pytorch가 설치된 conda 환경에서 다음과 같이 실행할 수 있습니다.
+## Monitoring MoAI Accelerators: `moreh-smi`
+
+The **`moreh-smi`** command allows users to manage and monitor MoAI Accelerators. You can run it in a conda environment where MoAI Platform PyTorch is installed.
 
 ```jsx
 $ moreh-smi
@@ -35,7 +36,7 @@ $ moreh-smi
 +----------------------------------------------------------------------------------------------+
 ```
 
-현재 MoAI Accelerator 를 사용하여 학습을 진행하고 있다면, 다른 터미널 세션을 활용하여 `moreh-smi` 을 실행할 경우 실행중인 프로세스 정보를 다음과 같은 화면을 보실 수 있습니다. 또한 `moreh-smi` 을 활용하면 현재 본인의 Job ID 를 확인할 수 있으므로, MoAI Platform 에서 학습 또는 추론에 문제가 생길 경우 해당 Job ID 와 함께 고객지원을 문의하면 더 빠르게 응답을 받으실 수 있습니다.
+If you are currently running training using the MoAI Accelerator, executing **`moreh-smi`** in a separate terminal session will display information about the running processes. Additionally, by using **`moreh-smi`**, you can quickly identify your Job ID. If you encounter any issues during training or inference on the MoAI Platform, providing your Job ID when contacting customer support will facilitate a faster response.
 
 ```jsx
 $ moreh-smi
@@ -56,17 +57,18 @@ Processes:
 +-----------------------------------------------------------------------------------+
 ```
 
-#### MoAI Accelerator 의 Multi Accelerator 기능 활용하기
+#### Utilizing Multi-Accelerator Feature
 
-유저가 별도의 세팅을 하지 않을 경우에는 기본적으로 하나의 SSH 환경에 하나의 MoAI Accelerator 만 존재할 것입니다. 기본적으로 MoAI Accelerator 한 개로는 하나의 프로세스만 실행할 수 있기 때문에, 기본 세팅으로는 하나의 SSH 환경에서 하나의 프로세스 실행만 가능합니다.
+By default, if users do not make any additional settings, there will be only one MoAI Accelerator in a single SSH environment. Typically, with one MoAI Accelerator, only one process can be executed at a time, allowing for only one process to run in a single SSH environment.
 
-하지만 경우에 따라서는 하나의 SSH 환경에서도 여러 개 MoAI Accelerator 를 활용하여 동시에 여러 개의 프로세스로 학습을 실행하고 싶은 경우도 있을 겁니다. (예: 동일한 소스코드이나 하이퍼 파라미터를 변경해서 여러 개의 학습 실험을 동시에 수행하고 싶은 경우) 이런 경우 `moreh-smi` 에서 하나의 토큰 내에 여러 개의 MoAI Accelerator 을 생성하면, 동시에 여러개의 프로세스를 수행할 수 있습니다.
+However, there may be scenarios where users want to leverage multiple MoAI Accelerators within the same SSH environment to run multiple processes simultaneously (e.g., running multiple training experiments concurrently with the same source code but different hyperparameters). In such cases, using **`moreh-smi`** to create multiple MoAI Accelerators within a single token enables running multiple processes concurrently.
 
-다음 예제를 통해 AI 가속기를 추가, 변경 삭제해보겠습니다.
+Let's go through an example of adding, changing, and removing AI accelerators.
 
-#### AI 가속기 추가하기
+#### Adding AI Accelerators
 
-먼저 AI 가속기를 추가해보겠습니다. 2개 이상의 AI 가속기를 사용하기 위해서`moreh-smi device --add` 커멘드를 입력하면 아래와 같은 인터페이스가 나타납니다.
+
+First, let's add an AI accelerator. To use two or more AI accelerators, you can enter the **`moreh-smi device --add`** command, which will display the following interface.
 
 ```bash
 (moreh) ubuntu@vm:~$ moreh-smi device --add
@@ -87,9 +89,9 @@ Processes:
 Selection (1-13, q, Q):
 ```
 
-1~13 중 사용할 모델에 해당하는 정수를 입력하면 “Create device success.” 메시지와 함께 입력된 디바이스 번호에 해당하는 AI 가속기가 생성됩니다. 하나의 VM 내에서는 최대 5개 AI가속기를 생성할 수 있습니다.
+Enter an integer corresponding to the model you want to use from 1 to 13, and a message "Create device success." will appear, indicating that the AI accelerator corresponding to the entered device number has been created. Up to 5 AI accelerators can be created within a single VM.
 
-아래 예제에서는 10번 `8xLarge.4096GB` AI 가속기를 추가해 보겠습니다.
+In the example below, let's add the **`8xLarge.4096GB`** AI accelerator with model number 10.
 
 ```bash
 Selection (1-13, q, Q): 10
@@ -116,11 +118,11 @@ Create device success.
 
 ```
 
-#### AI 가속기 기본값 변경하기
+#### Changing Default AI Accelerator
 
-`moreh-smi device --switch {Device_ID}` 는 기본값으로 설정된 MoAI Accelerator 를 변경할 수 있는 명령어 입니다.
+The **`moreh-smi device --switch {Device_ID}`** command allows you to change the default MoAI Accelerator.
 
-다음과 같이 사용할 수 있습니다 : 
+Here's how to use it:
 
 ```bash
 (moreh) ubuntu@vm:~$ moreh-smi device --switch 1
@@ -137,7 +139,8 @@ Create device success.
 Switch Current Device success.
 ```
 
- 현재 기본값으로 설정된 MoAI Accelerator가 1번 가속기로 변경된 것을 확인할 수 있습니다.
+You can see that the default MoAI Accelerator has been changed to accelerator #1 in the example above.
+
 
 ```bash
 Selection (0-4, q, Q): q
@@ -157,13 +160,15 @@ Selection (0-4, q, Q): q
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-## AI 가속기 변경하기 `moreh-switch-model`
+## Changing AI Accelerators with `moreh-switch-model`
 
-`moreh-switch-model` 는 현재 설정된 MoAI Accelerator 의 flavor(가속기 사양)를 변경할 수 있는 툴입니다. MoAI Accelerator 의 flavor를 변경함으로써 GPU 메모리를 얼만큼 사용할 것인지 결정합니다. 
+**`moreh-switch-model`** is a tool that allows you to change the flavor (specification) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.
 
-다음과 같이 사용할 수 있습니다 : 
+Here's how to use it:
 
-예를 들어, `moreh-smi` 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 `Small.64GB` 모델”이라는 의미입니다. 
+For example, if the result of the **`moreh-smi`** command is as follows, it means "The currently configured MoAI Accelerator is accelerator 0, and the type of this MoAI Accelerator is the **`Small.64GB`** model."
+
+Here's how to use it:
 
 ```jsx
 +-----------------------------------------------------------------------------------------------------+
@@ -178,7 +183,7 @@ Selection (0-4, q, Q): q
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-`moreh-switch-model` 명령어를 사용하면 아래와 같은 입력창이 나타납니다.
+When you use the **`moreh-switch-model`** command, an input prompt will appear like below:
 
 ```bash
 (moreh) ubuntu@vm:~$ moreh-switch-model
@@ -202,9 +207,9 @@ Selection (1-13, q, Q):
 
 ```
 
-1~13 중 사용할 모델에 해당하는 정수(디바이스 번호)를 입력하면 “The MoAI Platform AI Accelerator model is successfully switched to {model_id}.” 메시지와 함께 입력된 디바이스 번호에 해당하는 MoAI Accelerator로 변경됩니다. 
+Enter an integer (device number) corresponding to the model you want to use from 1 to 13, and the MoAI Accelerator will be switched to the MoAI Accelerator corresponding to the entered device number with the message "The MoAI Platform AI Accelerator model is successfully switched to {model_id}."
 
-지금은 3번 `Large.256GB` 로 MoAI Accelerator를 변경해보겠습니다.
+Let's change the MoAI Accelerator to the **`Large.256GB`** model with device number 3.
 
 ```bash
 Selection (1-13, q, Q): 3
@@ -228,9 +233,10 @@ Selection (1-13, q, Q):
 
 ```
 
-변경을 계속하거나 `q` 또는 `Q`를 통해 MoAI Accelerator 변경을 종료할 수 있습니다.
+You can continue the change or exit the MoAI Accelerator change by entering **`q`** or **`Q`**.
 
-변경이 완료된 후 다시 `moreh-smi` 를 사용하여 확인한 결과는 다음과 같습니다. 
+After the change is complete, when you use **`moreh-smi`** again to check, the result will be as follows:
+
 
 ```jsx
 +-----------------------------------------------------------------------------------------------------+
@@ -245,11 +251,11 @@ Selection (1-13, q, Q):
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-0번 `Small.64GB` 모델 유형의 MoAI Accelerator가 `Large.256GB` 모델 유형으로 변경된 것을 확인할 수 있습니다. 
+You can see that the MoAI Accelerator type has been changed from the **`Small.64GB`** model to the **`Large.256GB`** model.
 
-#### AI 가속기 삭제하기
+#### Removing AI Accelerators
 
-이번에는 생성된 디바이스를 `moreh-smi device --rm {Device_ID}`커멘드로 특정 디바이스 ID에 해당하는 가속기를 삭제해보겠습니다.
+Next, let's try deleting the accelerator corresponding to a specific device ID using the command **`moreh-smi device --rm {Device_ID}`**.
 
 ```bash
 (moreh) ubuntu@vm:~$ moreh-smi --rm 1
@@ -261,11 +267,11 @@ Selection (1-13, q, Q):
 Remove device success.
 ```
 
-위와 같은 커멘드를 입력해서 Device ID가 1인 AI 가속기인 `8xLarge.4096GB` 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
+By entering the command above, the AI accelerator **`8xLarge.4096GB`** with Device ID 1 has been deleted. To confirm, run **`moreh-smi`** again to see that the device has been removed.
 
-#### 그 외의 다양한 옵션 활용하기
+#### Utilizing Various Other Options
 
-`moreh-smi` 는 이외에도 다양한 다양한 옵션을 제공합니다. 다음과 같이 `--help` 옵션을 활용하면 어떠한 옵션이 제공되는지 확인할 수 있습니다.
+Besides, **`moreh-smi`** provides various other options. By using the **`--help`** option, you can see what options are available:
 
 ```jsx
 $ moreh-smi --help
@@ -297,35 +303,37 @@ Device Example:
   moreh-smi -i 2
 ```
 
-1. `moreh-smi -p` -  MoAI Accelerator 상세 하드웨어 상태 모니터링하기
-2. `moreh-smi -t` -  MoAI Accelerator 토큰 정보 확인하기
-3. `moreh-smi --reset` -  MoAI Accelerator 프로세스 종료하기
+1. **`moreh-smi -p`** - Monitor detailed hardware status of MoAI Accelerators.
+2. **`moreh-smi -t`** - Check MoAI Accelerator token information.
+3. **`moreh-smi --reset`** - Terminate MoAI Accelerator processes.
 
-## MoAI Platform 업데이트 하기 `update-moreh`
+## Updating MoAI Platform with `update-moreh`
 
-`update-moreh`는 conda 환경을 새롭게 생성하고 그 위에 모레 솔루션을 설치하거나, 이미 conda 환경에 설치된 모레 솔루션의 버전을 업데이트할 수 있는 명령어입니다. 다음과 같은 상황에서 `update-moreh` 를 사용할 수 있습니다. 
+**`update-moreh`** is a command that allows you to create a new conda environment and install Moreh solutions on it or update the version of Moreh solutions already installed in the conda environment. You can use **`update-moreh`** in the following situations:
 
-- 새롭게 conda 환경을 생성한 경우 아직 모레 솔루션에 필요한 Python 패키지 설치가 필요합니다. 이 경우에는 `update-moreh` 명령어를 통해서 최신 버전의 모레 솔루션을 간단하게 설치할 수 있습니다.
+- When you create a new conda environment, you need to install the required Python packages for Moreh solutions. In this case, you can easily install the latest version of Moreh solutions using the **`update-moreh`** command.
 
 ```jsx
 $ conda create --name my_env python=3.8
 $ update-moreh
 ```
 
-- 이미 모레 솔루션이 설치된 conda 환경 내에서도 최신 버전의 모레 솔루션을 사용하고자 할 때, `update-moreh` 명령어를 단독으로 사용하여 현재 사용 중인 모레 솔루션을 최신버전으로 업데이트 할 수 있습니다.
+- If you want to use the latest version of Moreh solutions in an already installed conda environment, you can update the currently installed Moreh solutions to the latest version using the **`update-moreh`** command alone.
 
-```jsx
-$ update-moreh # Latest 버전으로 업데이트
+```bash
+$ update-moreh #update to latest version
 ```
 
-- 필요에 따라 특정 버전의 모레 솔루션을 설치해야 할 경우가 있습니다. 이 경우에는 `--target` 옵션을 사용하여 사용자가 설치하고 싶은 특정 버전을 지정할 수 있습니다.
+- Sometimes, you may need to install a specific version of Moreh solutions. In this case, you can use the `--target` option to specify the specific version you want to install.
 
-```jsx
-update-moreh --target 24.5.301 # 24.5.301 버전으로 설치
-update-moreh --target 24.5.302 # 24.5.302 버전으로 설치
+```bash
+update-moreh --target 24.5.301 # Install version 24.5.301 
+update-moreh --target 24.5.302 # Install version 24.5.302
 ```
 
 - conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 모레 솔루션이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 모레 솔루션 복구를 위하여 `update-moreh` 를 사용할 수 있습니다. 후자의 경우 `--force` 옵션을 사용하여 환경 재구성이 가능합니다. (`—-target` 옵션과 같이 사용 가능)
+
+- If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use **`update-moreh`** to restore the Moreh solutions in the conda environment. In the latter case, you can use the `--force` option to rebuild the environment. (Can be used with the `--target` option as well)
 
 ```bash
 update-moreh --force --target 24.5.301
