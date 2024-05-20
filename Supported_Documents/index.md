@@ -14,6 +14,5 @@ expanded: true
 
 - [Prepare Fine-tuning on MoAI Platform](Prepare_Fine_tuning_MoAI.md)
 
-
 - [LLM Fine-tuning parameter guide](LLM_param_guide.md)
 
