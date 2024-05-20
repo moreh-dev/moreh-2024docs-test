@@ -10,16 +10,16 @@ order: 50
 
 
 !!!primary 
-이 가이드는 MoAI Platform에서 제공하는 최적의 파라미터이며 사용자 학습시 참고 정보로만 사용해주시기 바랍니다.
+This guide provides optimal parameters offered by the MoAI Platform and should be used solely as a helpful reference during the training.
 !!!
 
 !!!secondary 
-MoAI Accelerator 에 명시된 명칭은 사용자가 이용하는 CSP에 따라 다를 수 있습니다.
+Keep in mind that the name of the MoAI Accelerator mentioned here might differ based on the CSP utilized by user.
 !!!
 
 
 
-| 모델명 | MoAI Platform version | MoAI Accelerator | Advanced Parallelism 적용 유무 | batch size | sequence length | token 갯수 | vram 사용량 | 학습 시간 | throughput |
+| Model | MoAI Platform version | MoAI Accelerator | Advanced Parallelism is applied | batch size | sequence length |  Number of Tokens | VRAM Usage | Training Time | throughput |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Llama2 13B | 24.3.0 | 2xlarge | True | 32 | 1024 |  | 543816 MiB | 872m | 8,934 |
 | Llama2 13B | 24.3.0 | 2xlarge | True | 64 | 1024 |  | 749065 MiB | 586m | 11,562 |

@@ -10,7 +10,7 @@ order: 10
 
 - The current HAC service is powered by AMD MI250 GPUs. While performance may vary depending on the model/application, you can generally expect the AMD MI250 to deliver performance comparable to that of a single NVIDIA A100.
 
-| Model | 실제 물리 GPU | 노드 수 |
+| Model | Physical GPUs | Number of Nodes|
 | --- | --- | --- |
 | Small.64GB | MI250 0.5개 | 1대 |
 | Medium.128GB | MI250 1개 | 1대 |
