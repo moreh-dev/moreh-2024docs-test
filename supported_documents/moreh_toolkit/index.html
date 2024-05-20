@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/moreh">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769510817774">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769520629442">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>MoAI Platform의 toolkit 사용하기</title>
-    <meta name="title" content="MoAI Platform의 toolkit 사용하기">
-    <meta name="description" content="Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다. 이 도구는 사용자에게 세 가지 명령어 (">
+    <title>Moreh Toolkit Guide</title>
+    <meta name="title" content="Moreh Toolkit Guide">
+    <meta name="description" content="The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (">
 
     <!-- Canonical -->
     <link rel="canonical" href="/moreh/supported_documents/moreh_toolkit/">
@@ -20,23 +20,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/moreh/supported_documents/moreh_toolkit/">
-    <meta property="og:title" content="MoAI Platform의 toolkit 사용하기">
-    <meta property="og:description" content="Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다. 이 도구는 사용자에게 세 가지 명령어 (">
+    <meta property="og:title" content="Moreh Toolkit Guide">
+    <meta property="og:description" content="The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/moreh/supported_documents/moreh_toolkit/">
-    <meta property="twitter:title" content="MoAI Platform의 toolkit 사용하기">
-    <meta property="twitter:description" content="Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다. 이 도구는 사용자에게 세 가지 명령어 (">
+    <meta property="twitter:title" content="Moreh Toolkit Guide">
+    <meta property="twitter:description" content="The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769510817774" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769520629442" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769510817774" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769520629442" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769510817774" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769510817774" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769520629442" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769520629442" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,44 +174,44 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="moai-platform의-toolkit-사용하기" class="break-words">
+<doc-anchor-target id="moreh-toolkit-guide" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform의-toolkit-사용하기">#</doc-anchor-trigger>
-        <span>MoAI Platform의 toolkit 사용하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moreh-toolkit-guide">#</doc-anchor-trigger>
+        <span>Moreh Toolkit Guide</span>
     </h1>
 </doc-anchor-target>
-<p>Moreh Toolkit은 MoAI Platform 상에서 MoAI Accelerator를 관리하거나 모니터링할 때 유용한 command line 도구입니다.  이 도구는 사용자에게 세 가지 명령어 (<code v-pre>moreh-smi</code>, <code v-pre>moreh-switch-model</code>, <code v-pre>update-moreh</code>)를 제공하여 MoAI Accelerator 를 효율적으로 관리하고, 설치된 Moreh 솔루션을 손쉽게 업데이트할 수 있도록 합니다.</p>
-<doc-anchor-target id="주요-기능">
+<p>The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (<strong><code v-pre>moreh-smi</code></strong>, <strong><code v-pre>moreh-switch-model</code></strong>, <strong><code v-pre>update-moreh</code></strong>), users can effectively manage MoAI Accelerators and easily update MoAI Platform.</p>
+<doc-anchor-target id="key-features">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#주요-기능">#</doc-anchor-trigger>
-        <span>주요 기능</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-features">#</doc-anchor-trigger>
+        <span>Key Features</span>
     </h2>
 </doc-anchor-target>
-<p>Moreh Toolkit의 주요 기능은 다음과 같습니다:</p>
+<p>The main features of the Moreh Toolkit are as follows:</p>
 <ol>
-<li><strong>MoAI Accelerator의 모니터링:</strong>
+<li><strong>Monitoring MoAI Accelerators:</strong>
 <ul>
-<li><strong><code v-pre>moreh-smi</code></strong> 명령어를 사용하여 메모리 사용량 및 프로세스 현황을 실시간으로 확인할 수 있습니다.</li>
+<li>Use the <strong><code v-pre>moreh-smi</code></strong> command to monitor memory usage and process status in real-time.</li>
 </ul>
 </li>
-<li><strong>AI 가속기 변경:</strong>
+<li><strong>Switching AI Accelerators:</strong>
 <ul>
-<li><strong><code v-pre>moreh-switch-model</code></strong> 명령어를 사용하여 AI 가속기를 변경하고 최적의 성능을 얻기 위한 프로세스를 실행할 수 있습니다.</li>
+<li>Use the <strong><code v-pre>moreh-switch-model</code></strong> command to change AI accelerators and execute processes to achieve optimal performance.</li>
 </ul>
 </li>
-<li><strong>MoAI Platform 솔루션 업데이트 및 롤백:</strong>
+<li><strong>Updating and Rolling Back MoAI Platform:</strong>
 <ul>
-<li><strong><code v-pre>update-moreh</code></strong> 명령어를 통해 Moreh 솔루션을 최신 버전으로 업데이트하거나 필요시 이전 버전으로 롤백할 수 있습니다.</li>
+<li>Use the <strong><code v-pre>update-moreh</code></strong> command to update Moreh solutions to the latest version or roll back to a previous version if needed.</li>
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="moai-accelerator의-모니터링-moreh-smi">
+<doc-anchor-target id="monitoring-moai-accelerators-moreh-smi">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator의-모니터링-moreh-smi">#</doc-anchor-trigger>
-        <span><strong>MoAI Accelerator의 모니터링:</strong> <code v-pre>moreh-smi</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#monitoring-moai-accelerators-moreh-smi">#</doc-anchor-trigger>
+        <span>Monitoring MoAI Accelerators: <code v-pre>moreh-smi</code></span>
     </h2>
 </doc-anchor-target>
-<p><code v-pre>moreh-smi</code>는 사용자가 MoAI Accelerator를 관리하고 모니터링할 수 있는 명령어 입니다. MoAI Platform Pytorch가 설치된 conda 환경에서 다음과 같이 실행할 수 있습니다.</p>
+<p>The <strong><code v-pre>moreh-smi</code></strong> command allows users to manage and monitor MoAI Accelerators. You can run it in a conda environment where MoAI Platform PyTorch is installed.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
 15:51:25 April 29, 2024 
@@ -223,7 +223,7 @@
 |  * 0     |  MoAI Accelerator   |  4xlarge  |  -             |  -             |  -            |
 +----------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<p>현재 MoAI Accelerator 를 사용하여 학습을 진행하고 있다면, 다른 터미널 세션을 활용하여 <code v-pre>moreh-smi</code> 을 실행할 경우 실행중인 프로세스 정보를 다음과 같은 화면을 보실 수 있습니다. 또한 <code v-pre>moreh-smi</code> 을 활용하면 현재 본인의 Job ID 를 확인할 수 있으므로, MoAI Platform 에서 학습 또는 추론에 문제가 생길 경우 해당 Job ID 와 함께 고객지원을 문의하면 더 빠르게 응답을 받으실 수 있습니다.</p>
+<p>If you are currently running training using the MoAI Accelerator, executing <strong><code v-pre>moreh-smi</code></strong> in a separate terminal session will display information about the running processes. Additionally, by using <strong><code v-pre>moreh-smi</code></strong>, you can quickly identify your Job ID. If you encounter any issues during training or inference on the MoAI Platform, providing your Job ID when contacting customer support will facilitate a faster response.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
 17:58:15 April 29, 2024 
@@ -242,22 +242,22 @@ Processes:
 |       0  |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
 +-----------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="moai-accelerator-의-multi-accelerator-기능-활용하기">
+<doc-anchor-target id="utilizing-multi-accelerator-feature">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator-의-multi-accelerator-기능-활용하기">#</doc-anchor-trigger>
-        <span>MoAI Accelerator 의 Multi Accelerator 기능 활용하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-multi-accelerator-feature">#</doc-anchor-trigger>
+        <span>Utilizing Multi-Accelerator Feature</span>
     </h4>
 </doc-anchor-target>
-<p>유저가 별도의 세팅을 하지 않을 경우에는 기본적으로 하나의 SSH 환경에 하나의 MoAI Accelerator 만 존재할 것입니다. 기본적으로 MoAI Accelerator 한 개로는 하나의 프로세스만 실행할 수 있기 때문에, 기본 세팅으로는 하나의 SSH 환경에서 하나의 프로세스 실행만 가능합니다.</p>
-<p>하지만 경우에 따라서는 하나의 SSH 환경에서도 여러 개 MoAI Accelerator 를 활용하여 동시에 여러 개의 프로세스로 학습을 실행하고 싶은 경우도 있을 겁니다. (예: 동일한 소스코드이나 하이퍼 파라미터를 변경해서 여러 개의 학습 실험을 동시에 수행하고 싶은 경우) 이런 경우 <code v-pre>moreh-smi</code> 에서 하나의 토큰 내에 여러 개의 MoAI Accelerator 을 생성하면, 동시에 여러개의 프로세스를 수행할 수 있습니다.</p>
-<p>다음 예제를 통해 AI 가속기를 추가, 변경 삭제해보겠습니다.</p>
-<doc-anchor-target id="ai-가속기-추가하기">
+<p>By default, if users do not make any additional settings, there will be only one MoAI Accelerator in a single SSH environment. Typically, with one MoAI Accelerator, only one process can be executed at a time, allowing for only one process to run in a single SSH environment.</p>
+<p>However, there may be scenarios where users want to leverage multiple MoAI Accelerators within the same SSH environment to run multiple processes simultaneously (e.g., running multiple training experiments concurrently with the same source code but different hyperparameters). In such cases, using <strong><code v-pre>moreh-smi</code></strong> to create multiple MoAI Accelerators within a single token enables running multiple processes concurrently.</p>
+<p>Let&#x27;s go through an example of adding, changing, and removing AI accelerators.</p>
+<doc-anchor-target id="adding-ai-accelerators">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-추가하기">#</doc-anchor-trigger>
-        <span>AI 가속기 추가하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-ai-accelerators">#</doc-anchor-trigger>
+        <span>Adding AI Accelerators</span>
     </h4>
 </doc-anchor-target>
-<p>먼저 AI 가속기를 추가해보겠습니다. 2개 이상의 AI 가속기를 사용하기 위해서<code v-pre>moreh-smi device --add</code> 커멘드를 입력하면 아래와 같은 인터페이스가 나타납니다.</p>
+<p>First, let&#x27;s add an AI accelerator. To use two or more AI accelerators, you can enter the <strong><code v-pre>moreh-smi device --add</code></strong> command, which will display the following interface.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi device --add
 1. Small.64GB
@@ -276,8 +276,8 @@ Processes:
 
 Selection (1-13, q, Q):</code></pre>
 </doc-codeblock></div>
-<p>1~13 중 사용할 모델에 해당하는 정수를 입력하면 “Create device success.” 메시지와 함께 입력된 디바이스 번호에 해당하는 AI 가속기가 생성됩니다. 하나의 VM 내에서는 최대 5개 AI가속기를 생성할 수 있습니다.</p>
-<p>아래 예제에서는 10번 <code v-pre>8xLarge.4096GB</code> AI 가속기를 추가해 보겠습니다.</p>
+<p>Enter an integer corresponding to the model you want to use from 1 to 13, and a message &quot;Create device success.&quot; will appear, indicating that the AI accelerator corresponding to the entered device number has been created. Up to 5 AI accelerators can be created within a single VM.</p>
+<p>In the example below, let&#x27;s add the <strong><code v-pre>8xLarge.4096GB</code></strong> AI accelerator with model number 10.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 10
 +---------------------------------------------------+
@@ -302,14 +302,14 @@ Create device success.
 13. 48xLarge.24576GB
 </code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="ai-가속기-기본값-변경하기">
+<doc-anchor-target id="changing-default-ai-accelerator">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-기본값-변경하기">#</doc-anchor-trigger>
-        <span>AI 가속기 기본값 변경하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-default-ai-accelerator">#</doc-anchor-trigger>
+        <span>Changing Default AI Accelerator</span>
     </h4>
 </doc-anchor-target>
-<p><code v-pre>moreh-smi device --switch {Device_ID}</code> 는 기본값으로 설정된 MoAI Accelerator 를 변경할 수 있는 명령어 입니다.</p>
-<p>다음과 같이 사용할 수 있습니다 :</p>
+<p>The <strong><code v-pre>moreh-smi device --switch {Device_ID}</code></strong> command allows you to change the default MoAI Accelerator.</p>
+<p>Here&#x27;s how to use it:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi device --switch 1
 
@@ -324,7 +324,7 @@ Create device success.
 +---------------------------------------------------+
 Switch Current Device success.</code></pre>
 </doc-codeblock></div>
-<p>현재 기본값으로 설정된 MoAI Accelerator가 1번 가속기로 변경된 것을 확인할 수 있습니다.</p>
+<p>You can see that the default MoAI Accelerator has been changed to accelerator #1 in the example above.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (0-4, q, Q): q
 
@@ -342,15 +342,16 @@ Switch Current Device success.</code></pre>
 |    4     |  KT AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="ai-가속기-변경하기-moreh-switch-model">
+<doc-anchor-target id="changing-ai-accelerators-with-moreh-switch-model">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-변경하기-moreh-switch-model">#</doc-anchor-trigger>
-        <span>AI 가속기 변경하기 <code v-pre>moreh-switch-model</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-ai-accelerators-with-moreh-switch-model">#</doc-anchor-trigger>
+        <span>Changing AI Accelerators with <code v-pre>moreh-switch-model</code></span>
     </h2>
 </doc-anchor-target>
-<p><code v-pre>moreh-switch-model</code> 는 현재 설정된 MoAI Accelerator 의 flavor(가속기 사양)를 변경할 수 있는 툴입니다. MoAI Accelerator 의 flavor를 변경함으로써 GPU 메모리를 얼만큼 사용할 것인지 결정합니다.</p>
-<p>다음과 같이 사용할 수 있습니다 :</p>
-<p>예를 들어, <code v-pre>moreh-smi</code> 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 <code v-pre>Small.64GB</code> 모델”이라는 의미입니다.</p>
+<p><strong><code v-pre>moreh-switch-model</code></strong> is a tool that allows you to change the flavor (specification) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.</p>
+<p>Here&#x27;s how to use it:</p>
+<p>For example, if the result of the <strong><code v-pre>moreh-smi</code></strong> command is as follows, it means &quot;The currently configured MoAI Accelerator is accelerator 0, and the type of this MoAI Accelerator is the <strong><code v-pre>Small.64GB</code></strong> model.&quot;</p>
+<p>Here&#x27;s how to use it:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">+-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
@@ -363,7 +364,7 @@ Switch Current Device success.</code></pre>
 |    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<p><code v-pre>moreh-switch-model</code> 명령어를 사용하면 아래와 같은 입력창이 나타납니다.</p>
+<p>When you use the <strong><code v-pre>moreh-switch-model</code></strong> command, an input prompt will appear like below:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-switch-model
 Current AI Accelerator: Medium.128GB
@@ -385,8 +386,8 @@ Current AI Accelerator: Medium.128GB
 Selection (1-13, q, Q):
 </code></pre>
 </doc-codeblock></div>
-<p model_id="">1~13 중 사용할 모델에 해당하는 정수(디바이스 번호)를 입력하면 “The MoAI Platform AI Accelerator model is successfully switched to .” 메시지와 함께 입력된 디바이스 번호에 해당하는 MoAI Accelerator로 변경됩니다.</p>
-<p>지금은 3번 <code v-pre>Large.256GB</code> 로 MoAI Accelerator를 변경해보겠습니다.</p>
+<p model_id="">Enter an integer (device number) corresponding to the model you want to use from 1 to 13, and the MoAI Accelerator will be switched to the MoAI Accelerator corresponding to the entered device number with the message &quot;The MoAI Platform AI Accelerator model is successfully switched to .&quot;</p>
+<p>Let&#x27;s change the MoAI Accelerator to the <strong><code v-pre>Large.256GB</code></strong> model with device number 3.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 3
 The AI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.
@@ -408,8 +409,8 @@ The AI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.
 Selection (1-13, q, Q):
 </code></pre>
 </doc-codeblock></div>
-<p>변경을 계속하거나 <code v-pre>q</code> 또는 <code v-pre>Q</code>를 통해 MoAI Accelerator 변경을 종료할 수 있습니다.</p>
-<p>변경이 완료된 후 다시 <code v-pre>moreh-smi</code> 를 사용하여 확인한 결과는 다음과 같습니다.</p>
+<p>You can continue the change or exit the MoAI Accelerator change by entering <strong><code v-pre>q</code></strong> or <strong><code v-pre>Q</code></strong>.</p>
+<p>After the change is complete, when you use <strong><code v-pre>moreh-smi</code></strong> again to check, the result will be as follows:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">+-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
@@ -422,14 +423,14 @@ Selection (1-13, q, Q):
 |    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<p>0번 <code v-pre>Small.64GB</code> 모델 유형의 MoAI Accelerator가 <code v-pre>Large.256GB</code> 모델 유형으로 변경된 것을 확인할 수 있습니다.</p>
-<doc-anchor-target id="ai-가속기-삭제하기">
+<p>You can see that the MoAI Accelerator type has been changed from the <strong><code v-pre>Small.64GB</code></strong> model to the <strong><code v-pre>Large.256GB</code></strong> model.</p>
+<doc-anchor-target id="removing-ai-accelerators">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-가속기-삭제하기">#</doc-anchor-trigger>
-        <span>AI 가속기 삭제하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#removing-ai-accelerators">#</doc-anchor-trigger>
+        <span>Removing AI Accelerators</span>
     </h4>
 </doc-anchor-target>
-<p>이번에는 생성된 디바이스를 <code v-pre>moreh-smi device --rm {Device_ID}</code>커멘드로 특정 디바이스 ID에 해당하는 가속기를 삭제해보겠습니다.</p>
+<p>Next, let&#x27;s try deleting the accelerator corresponding to a specific device ID using the command <strong><code v-pre>moreh-smi device --rm {Device_ID}</code></strong>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi --rm 1
 +---------------------------------------------------+
@@ -439,14 +440,14 @@ Selection (1-13, q, Q):
 +---------------------------------------------------+
 Remove device success.</code></pre>
 </doc-codeblock></div>
-<p>위와 같은 커멘드를 입력해서 Device ID가 1인 AI 가속기인 <code v-pre>8xLarge.4096GB</code> 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.</p>
-<doc-anchor-target id="그-외의-다양한-옵션-활용하기">
+<p>By entering the command above, the AI accelerator <strong><code v-pre>8xLarge.4096GB</code></strong> with Device ID 1 has been deleted. To confirm, run <strong><code v-pre>moreh-smi</code></strong> again to see that the device has been removed.</p>
+<doc-anchor-target id="utilizing-various-other-options">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#그-외의-다양한-옵션-활용하기">#</doc-anchor-trigger>
-        <span>그 외의 다양한 옵션 활용하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-various-other-options">#</doc-anchor-trigger>
+        <span>Utilizing Various Other Options</span>
     </h4>
 </doc-anchor-target>
-<p><code v-pre>moreh-smi</code> 는 이외에도 다양한 다양한 옵션을 제공합니다. 다음과 같이 <code v-pre>--help</code> 옵션을 활용하면 어떠한 옵션이 제공되는지 확인할 수 있습니다.</p>
+<p>Besides, <strong><code v-pre>moreh-smi</code></strong> provides various other options. By using the <strong><code v-pre>--help</code></strong> option, you can see what options are available:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi --help
 
@@ -477,39 +478,42 @@ Device Example:
   moreh-smi -i 2</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><code v-pre>moreh-smi -p</code> -  MoAI Accelerator 상세 하드웨어 상태 모니터링하기</li>
-<li><code v-pre>moreh-smi -t</code> -  MoAI Accelerator 토큰 정보 확인하기</li>
-<li><code v-pre>moreh-smi --reset</code> -  MoAI Accelerator 프로세스 종료하기</li>
+<li><strong><code v-pre>moreh-smi -p</code></strong> - Monitor detailed hardware status of MoAI Accelerators.</li>
+<li><strong><code v-pre>moreh-smi -t</code></strong> - Check MoAI Accelerator token information.</li>
+<li><strong><code v-pre>moreh-smi --reset</code></strong> - Terminate MoAI Accelerator processes.</li>
 </ol>
-<doc-anchor-target id="moai-platform-업데이트-하기-update-moreh">
+<doc-anchor-target id="updating-moai-platform-with-update-moreh">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform-업데이트-하기-update-moreh">#</doc-anchor-trigger>
-        <span>MoAI Platform 업데이트 하기 <code v-pre>update-moreh</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updating-moai-platform-with-update-moreh">#</doc-anchor-trigger>
+        <span>Updating MoAI Platform with <code v-pre>update-moreh</code></span>
     </h2>
 </doc-anchor-target>
-<p><code v-pre>update-moreh</code>는 conda 환경을 새롭게 생성하고 그 위에 모레 솔루션을 설치하거나, 이미 conda 환경에 설치된 모레 솔루션의 버전을 업데이트할 수 있는 명령어입니다. 다음과 같은 상황에서 <code v-pre>update-moreh</code> 를 사용할 수 있습니다.</p>
+<p><strong><code v-pre>update-moreh</code></strong> is a command that allows you to create a new conda environment and install Moreh solutions on it or update the version of Moreh solutions already installed in the conda environment. You can use <strong><code v-pre>update-moreh</code></strong> in the following situations:</p>
 <ul>
-<li>새롭게 conda 환경을 생성한 경우 아직 모레 솔루션에 필요한 Python 패키지 설치가 필요합니다. 이 경우에는 <code v-pre>update-moreh</code> 명령어를 통해서 최신 버전의 모레 솔루션을 간단하게 설치할 수 있습니다.</li>
+<li>When you create a new conda environment, you need to install the required Python packages for Moreh solutions. In this case, you can easily install the latest version of Moreh solutions using the <strong><code v-pre>update-moreh</code></strong> command.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">$ conda create --name my_env python=3.8
 $ update-moreh</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>이미 모레 솔루션이 설치된 conda 환경 내에서도 최신 버전의 모레 솔루션을 사용하고자 할 때, <code v-pre>update-moreh</code> 명령어를 단독으로 사용하여 현재 사용 중인 모레 솔루션을 최신버전으로 업데이트 할 수 있습니다.</li>
+<li>If you want to use the latest version of Moreh solutions in an already installed conda environment, you can update the currently installed Moreh solutions to the latest version using the <strong><code v-pre>update-moreh</code></strong> command alone.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ update-moreh # Latest 버전으로 업데이트</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh #update to latest version</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>필요에 따라 특정 버전의 모레 솔루션을 설치해야 할 경우가 있습니다. 이 경우에는 <code v-pre>--target</code> 옵션을 사용하여 사용자가 설치하고 싶은 특정 버전을 지정할 수 있습니다.</li>
+<li>Sometimes, you may need to install a specific version of Moreh solutions. In this case, you can use the <code v-pre>--target</code> option to specify the specific version you want to install.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">update-moreh --target 24.5.301 # 24.5.301 버전으로 설치
-update-moreh --target 24.5.302 # 24.5.302 버전으로 설치</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">update-moreh --target 24.5.301 # Install version 24.5.301 
+update-moreh --target 24.5.302 # Install version 24.5.302</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 모레 솔루션이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 모레 솔루션 복구를 위하여 <code v-pre>update-moreh</code> 를 사용할 수 있습니다. 후자의 경우 <code v-pre>--force</code> 옵션을 사용하여 환경 재구성이 가능합니다. (<code v-pre>—-target</code> 옵션과 같이 사용 가능)</li>
+<li><p>conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 모레 솔루션이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 모레 솔루션 복구를 위하여 <code v-pre>update-moreh</code> 를 사용할 수 있습니다. 후자의 경우 <code v-pre>--force</code> 옵션을 사용하여 환경 재구성이 가능합니다. (<code v-pre>—-target</code> 옵션과 같이 사용 가능)</p>
+</li>
+<li><p>If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use <strong><code v-pre>update-moreh</code></strong> to restore the Moreh solutions in the conda environment. In the latter case, you can use the <code v-pre>--force</code> option to rebuild the environment. (Can be used with the <code v-pre>--target</code> option as well)</p>
+</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">update-moreh --force --target 24.5.301</code></pre>
@@ -584,6 +588,6 @@ update-moreh --target 24.5.302 # 24.5.302 버전으로 설치</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "MoAI Platform의 toolkit 사용하기", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Moreh Toolkit Guide", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
