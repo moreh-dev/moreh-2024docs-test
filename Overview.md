@@ -70,7 +70,7 @@ On the MoAI Platform, AI engineers can start deep learning training and inferenc
 - **Easy Cluster Setup**: With the MoAI Platform's dynamic allocation feature, AI engineers can easily set up GPU clusters. Typically, deep learning developers need to configure their development environment by connecting PyTorch or TensorFlow to the back nodes of GPU cluster devices, ensuring that each process can communicate with others.
 
 ## 4. AI Compiler Automatic Parallelization
-![](img_ov/ap.png)
+![](img_ov/ap_1.png)
 
 !!!info What is Automatic Parallelization?
 Deep learning models consist of multiple layers, each containing numerous computations. These layers can be trained independently, allowing for parallel processing. GPU automatic parallelization is a technology that automates the parallelization of training and inference in deep learning models.
