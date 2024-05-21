@@ -81,7 +81,7 @@ Subsequently, the training proceeds similarly to regular PyTorch model training.
             model.zero_grad(set_to_none=True)
 ```
 
-**With MoAI Platform, you can seamlessly use your existing PyTorch scripts without any modifications.**
+In this way, you can write code in MoAI Platform using the same approach as with standard PyTorch code.
 
 # About Advanced Parallelism
 
