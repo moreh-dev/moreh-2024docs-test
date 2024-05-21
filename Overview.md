@@ -12,7 +12,7 @@ The MoAI Platform is a scalable AI platform designed for developing large-scale 
 
 ## Core Technologies of MoAI Platform
 
-![](./img/overview_01.png)
+![](img_ov/ov_1.png)
 
 As deep learning models evolve, they become increasingly complex and require substantial computational resources, with parameters expanding from billions to trillions. Developing large-scale models involves managing and processing an immense number of parameters, which is very challenging and time-consuming.
 
@@ -30,11 +30,7 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 
 ## 1. Various Accelerators, Multi-GPU Support
 
--![](./img/overview_22.png)
-\
-\
-\
-&nbsp;
+-![](img_ov/m_4.png)
 
 - MoAI Platform supports various accelerators capable of executing various types of operations regardless of types of GPUs.
 - Users can utilize different accelerators like Intel, AMD, and others alongside NVIDIA without needing to modify their code for deep learning development and model training.
@@ -44,35 +40,14 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 ------
 ## 2. GPU Virtualization
 
--![](./img/overview_93.png)
-\
-\
-\
-\
-\
-\
-\
-\
-&nbsp;
-\
-\
-\
-\
-\
-&nbsp;
-\
-\
-\
-\
-&nbsp;
-
+-![](img_ov/v_3.png)
 The MoAI Platform’s virtualization feature enables the use of thousands of GPUs as if they were a single GPU. This simplifies the modeling and optimization processes, providing AI engineers with a smooth and efficient experience.
 
 - **Flexible Scalability**: You can scale GPU resources up or down as needed, enhancing the scalability of your services.
 - **Simplified Management and Deployment**: By abstracting the complexity of using multiple GPUs, the platform makes it easier to manage and deploy resources to improve performance in deep learning tasks.
 - **Cost Savings**: GPU infrastructure managers can reduce hardware costs by efficiently utilizing virtualized GPUs.
 
-The MoAI Platform is designed with a fully usage-based billing model, where charges are applied per minute of GPU usage only during actual computations. This approach allows for significant cost savings compared to traditional cloud services, which often tie GPUs to specific virtual machines (VMs) using a passthrough method.
+The MoAI Platform is designed with a fully usage-based billing model, where charges are applied per minute of GPU usage only during actual computations. This approach allows for significant cost savings compared to traditional cloud services, which often tie GPUs to specific virtual machines(VMs) using a passthrough method.
 
 - **Comparison Examples**:
     - **Google Cloud**: Google Cloud charges on a per-second basis for each machine. However, resources are fixed, making it difficult to change virtual machines once selected.
@@ -81,12 +56,13 @@ The MoAI Platform is designed with a fully usage-based billing model, where char
 \
 &nbsp;
 
+
 ------
 
 ## 3. Dynamic GPU Allocation
 
 
-![](./img/overview_04.png)
+![](img_ov/d_3.png)
 
 On the MoAI Platform, AI engineers can start deep learning training and inference with only the necessary amount of GPU resources.
 
@@ -94,14 +70,11 @@ On the MoAI Platform, AI engineers can start deep learning training and inferenc
 - **Easy Cluster Setup**: With the MoAI Platform's dynamic allocation feature, AI engineers can easily set up GPU clusters. Typically, deep learning developers need to configure their development environment by connecting PyTorch or TensorFlow to the back nodes of GPU cluster devices, ensuring that each process can communicate with others.
 
 ## 4. AI Compiler Automatic Parallelization
-
-
-![](./img/overview_05.png)
+![](img_ov/ap.png)
 
 !!!info What is Automatic Parallelization?
 Deep learning models consist of multiple layers, each containing numerous computations. These layers can be trained independently, allowing for parallel processing. GPU automatic parallelization is a technology that automates the parallelization of training and inference in deep learning models.
 !!!
-
 
 The MoAI Platform's Advanced Parallelization technology optimally distributes and parallelizes these computations, maximizing hardware resource utilization.
 

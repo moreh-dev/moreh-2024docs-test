@@ -16,7 +16,6 @@ Keep in mind that the name of the MoAI Accelerator mentioned here might differ b
 !!!
 
 
-
 | Model | MoAI Platform version | MoAI Accelerator | Advanced Parallelism is applied | batch size | sequence length |  Number of Tokens | VRAM Usage | Training Time | throughput |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Llama2 13B | 24.3.0 | 2xlarge | True | 32 | 1024 |  | 543816 MiB | 872m | 8,934 |
