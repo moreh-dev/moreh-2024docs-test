@@ -24,7 +24,6 @@ Please contact your infrastructure provider and choose one of the following opti
 - AMD MI210 GPU with 64 units
 - AMD MI300X GPU with 16 units
 
-s
 ## Training Parameters
 
 Run the **`train_gpt.py`** script again.
