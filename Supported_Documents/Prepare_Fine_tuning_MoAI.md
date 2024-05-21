@@ -57,7 +57,7 @@ For optimal parameters recommended for fine-tuning each model on the MoAI Platfo
 
 
 !!! 
-For detailed usage of the moreh toolkit, including moreh-smi and moreh-switch-mode, please refer to the Using the [MoAI Platform Toolkit ](/Supported_Documents/moreh_toolkit.md)
+For detailed usage of the moreh toolkit, including `moreh-smi` and `moreh-switch-model`, please refer to the Using the [MoAI Platform Toolkit ](/Supported_Documents/moreh_toolkit.md)
 !!!
 
 

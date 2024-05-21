@@ -5,17 +5,18 @@ order: 50
 expanded: false
 ---
 
-# Advanced Parallelism (AP) 기능 사용하기
+# Advanced Parallelism(AP)
 
-기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다. 가속기 사이즈에 대한 세부 정보는 [KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](https://www.notion.so/KT-Hyperscale-AI-Computing-HAC-ee3383b7a8bb4943af82cba81b8321cd?pvs=21) 참고해주시기 바랍니다. 
+By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP. Before proceeding with the AP feature, please review your current accelerator information using the guide below. For detailed information on accelerator sizes, refer to the [KT Hyperscale AI Computing (HAC) Service Accelerator Model Information](/Supported_Documents/KT_HAC_Models_Info.md).
 
-### AP 기능 적용 방법
 
-AP 기능은 두가지 방식으로 적용할 수 있습니다. 
+### How to Apply AP
 
-1. 코드 한줄 추가하기
+There are two ways to apply the AP feature:
+
+1. Add a single line of code.
     
-    실행 코드에 다음 한줄을 추가하여 AP 기능을 킬 수 있습니다. (이를 주석처리하면 끌 수 있습니다.)
+  실행 코드에 다음 한줄을 추가하여 AP 기능을 킬 수 있습니다. (이를 주석처리하면 끌 수 있습니다.)
     
 
 ```python
@@ -24,7 +25,7 @@ torch.moreh.option.enable_advanced_parallelization()
 
 1. 환경 변수로 입력하기
     
-    다음과 같이 터미널 세션의 환경변수로 AP 기능을 킬 수 있습니다. ( 0으로 설정하면 끌 수 있습니다.)
+  다음과 같이 터미널 세션의 환경변수로 AP 기능을 킬 수 있습니다. ( 0으로 설정하면 끌 수 있습니다.)
     
 
 ```bash

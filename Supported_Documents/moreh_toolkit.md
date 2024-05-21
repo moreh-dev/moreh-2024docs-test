@@ -91,7 +91,7 @@ Selection (1-13, q, Q):
 
 Enter an integer corresponding to the model you want to use from 1 to 13, and a message "Create device success." will appear, indicating that the AI accelerator corresponding to the entered device number has been created. Up to 5 AI accelerators can be created within a single VM.
 
-In the example below, let's add the **`8xLarge.4096GB`** AI accelerator with model number 10.
+In the example below, let's add the [!badge variant="secondary" text=8xLarge.4096GB] AI accelerator with model number 10.
 
 ```bash
 Selection (1-13, q, Q): 10
@@ -209,7 +209,7 @@ Selection (1-13, q, Q):
 
 Enter an integer (device number) corresponding to the model you want to use from 1 to 13, and the MoAI Accelerator will be switched to the MoAI Accelerator corresponding to the entered device number with the message "The MoAI Platform AI Accelerator model is successfully switched to {model_id}."
 
-Let's change the MoAI Accelerator to the **`Large.256GB`** model with device number 3.
+Let's change the MoAI Accelerator to the [!badge variant="secondary" text=Large.256GB] model with device number 3.
 
 ```bash
 Selection (1-13, q, Q): 3
@@ -251,7 +251,7 @@ After the change is complete, when you use **`moreh-smi`** again to check, the r
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-You can see that the MoAI Accelerator type has been changed from the **`Small.64GB`** model to the **`Large.256GB`** model.
+You can see that the MoAI Accelerator type has been changed from the [!badge variant="secondary" text=Small.64GB] model to the [!badge variant="secondary" text=Large.256GB] model.
 
 #### Removing AI Accelerators
 
@@ -267,7 +267,7 @@ Next, let's try deleting the accelerator corresponding to a specific device ID u
 Remove device success.
 ```
 
-By entering the command above, the AI accelerator **`8xLarge.4096GB`** with Device ID 1 has been deleted. To confirm, run **`moreh-smi`** again to see that the device has been removed.
+By entering the command above, the AI accelerator [!badge variant="secondary" text=8xLarge.4096GB] with Device ID 1 has been deleted. To confirm, run **`moreh-smi`** again to see that the device has been removed.
 
 #### Utilizing Various Other Options
 
@@ -330,8 +330,6 @@ $ update-moreh #update to latest version
 update-moreh --target 24.5.301 # Install version 24.5.301 
 update-moreh --target 24.5.302 # Install version 24.5.302
 ```
-
-- conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 모레 솔루션이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 모레 솔루션 복구를 위하여 `update-moreh` 를 사용할 수 있습니다. 후자의 경우 `--force` 옵션을 사용하여 환경 재구성이 가능합니다. (`—-target` 옵션과 같이 사용 가능)
 
 - If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use **`update-moreh`** to restore the Moreh solutions in the conda environment. In the latter case, you can use the `--force` option to rebuild the environment. (Can be used with the `--target` option as well)
 

@@ -12,6 +12,10 @@ MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니�
 
 예시를 들어서 만약 사용자가 llama3-8b 모델을 fine-tuning할 때, gpu 4개 사용하는 flavor를 선택하고, batch size를 16로 설정한다면 각 gpu당 4개로 아래와 같은 throughput이 나올 것입니다.
 
+![](img/moreh_virtual_device.gif)
+
+
+
 ```bash
 # Llama3-8b-base fine-tuning, batch-size 16, gpu 4
 [Step 4/17944] | Loss: 2.03125 | Duration: 1.27 | Throughput: 12882.87 tokens/sec
