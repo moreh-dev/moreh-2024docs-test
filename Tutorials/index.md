@@ -11,6 +11,7 @@ We will walk through the steps to finetune these large language models (LLMs) wi
 ## Fine-tuning Tutorials
 
 - [Llama2](/Tutorials/Llama2_Tutorial/index.md)
+- [Llama3 8B](/Tutorials/Llama38B_Tutorial/index.md)
 - [Mistral](/Tutorials/Mistral_Tutorial/index.md)
 - [GPT](/Tutorials/GPT_Tutorial/index.md)
 - [Qwen](/Tutorials/Qwen_Tutorial/index.md)
