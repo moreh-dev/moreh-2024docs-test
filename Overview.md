@@ -27,7 +27,6 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 
 ---
 
-
 ## 1. Various Accelerators, Multi-GPU Support
 
 -![](img_ov/m_4.png)
