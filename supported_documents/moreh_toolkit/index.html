@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/moreh">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769520942382">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769580243694">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769520942382" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769580243694" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769520942382" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769580243694" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769520942382" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769520942382" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769580243694" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769580243694" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -277,7 +277,9 @@ Processes:
 Selection (1-13, q, Q):</code></pre>
 </doc-codeblock></div>
 <p>Enter an integer corresponding to the model you want to use from 1 to 13, and a message &quot;Create device success.&quot; will appear, indicating that the AI accelerator corresponding to the entered device number has been created. Up to 5 AI accelerators can be created within a single VM.</p>
-<p>In the example below, let&#x27;s add the <strong><code v-pre>8xLarge.4096GB</code></strong> AI accelerator with model number 10.</p>
+<p>In the example below, let&#x27;s add the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span> AI accelerator with model number 10.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 10
 +---------------------------------------------------+
@@ -387,7 +389,9 @@ Selection (1-13, q, Q):
 </code></pre>
 </doc-codeblock></div>
 <p model_id="">Enter an integer (device number) corresponding to the model you want to use from 1 to 13, and the MoAI Accelerator will be switched to the MoAI Accelerator corresponding to the entered device number with the message &quot;The MoAI Platform AI Accelerator model is successfully switched to .&quot;</p>
-<p>Let&#x27;s change the MoAI Accelerator to the <strong><code v-pre>Large.256GB</code></strong> model with device number 3.</p>
+<p>Let&#x27;s change the MoAI Accelerator to the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Large.256GB</span>
+</span> model with device number 3.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 3
 The AI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.
@@ -423,7 +427,11 @@ Selection (1-13, q, Q):
 |    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<p>You can see that the MoAI Accelerator type has been changed from the <strong><code v-pre>Small.64GB</code></strong> model to the <strong><code v-pre>Large.256GB</code></strong> model.</p>
+<p>You can see that the MoAI Accelerator type has been changed from the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Small.64GB</span>
+</span> model to the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Large.256GB</span>
+</span> model.</p>
 <doc-anchor-target id="removing-ai-accelerators">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#removing-ai-accelerators">#</doc-anchor-trigger>
@@ -440,7 +448,9 @@ Selection (1-13, q, Q):
 +---------------------------------------------------+
 Remove device success.</code></pre>
 </doc-codeblock></div>
-<p>By entering the command above, the AI accelerator <strong><code v-pre>8xLarge.4096GB</code></strong> with Device ID 1 has been deleted. To confirm, run <strong><code v-pre>moreh-smi</code></strong> again to see that the device has been removed.</p>
+<p>By entering the command above, the AI accelerator <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span> with Device ID 1 has been deleted. To confirm, run <strong><code v-pre>moreh-smi</code></strong> again to see that the device has been removed.</p>
 <doc-anchor-target id="utilizing-various-other-options">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-various-other-options">#</doc-anchor-trigger>
@@ -510,10 +520,7 @@ $ update-moreh</code></pre>
 update-moreh --target 24.5.302 # Install version 24.5.302</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><p>conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 모레 솔루션이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 모레 솔루션 복구를 위하여 <code v-pre>update-moreh</code> 를 사용할 수 있습니다. 후자의 경우 <code v-pre>--force</code> 옵션을 사용하여 환경 재구성이 가능합니다. (<code v-pre>—-target</code> 옵션과 같이 사용 가능)</p>
-</li>
-<li><p>If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use <strong><code v-pre>update-moreh</code></strong> to restore the Moreh solutions in the conda environment. In the latter case, you can use the <code v-pre>--force</code> option to rebuild the environment. (Can be used with the <code v-pre>--target</code> option as well)</p>
-</li>
+<li>If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use <strong><code v-pre>update-moreh</code></strong> to restore the Moreh solutions in the conda environment. In the latter case, you can use the <code v-pre>--force</code> option to rebuild the environment. (Can be used with the <code v-pre>--target</code> option as well)</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">update-moreh --force --target 24.5.301</code></pre>

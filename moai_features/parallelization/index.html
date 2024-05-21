@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/moreh">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769520942382">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769580243694">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769520942382" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769580243694" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769520942382" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769580243694" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769520942382" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769520942382" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769580243694" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769580243694" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -183,6 +183,11 @@
 <p>MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 <strong>다수의 GPU를 어떠한 방식으로 사용하게 될까요?</strong></p>
 <p>사용자가 다수의 GPU를 사용하는 flavor를 선택하게 된다면 MoAI Platform은 자동화된 데이터 병렬화를 제공합니다. 예를 들어 사용자가 8 device를 포함하는 flavor를 선택한다면, 전체 batch size를 8등분하여 모든 device에 나누고, 이를 동시에 처리하여 훨씬 빠른 학습 속도를 보일 수 있습니다.</p>
 <p>예시를 들어서 만약 사용자가 llama3-8b 모델을 fine-tuning할 때, gpu 4개 사용하는 flavor를 선택하고, batch size를 16로 설정한다면 각 gpu당 4개로 아래와 같은 throughput이 나올 것입니다.</p>
+<p><figure class="content-center">
+    <img src="img/moreh_virtual_device.gif" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 16, gpu 4
 [Step 4/17944] | Loss: 2.03125 | Duration: 1.27 | Throughput: 12882.87 tokens/sec
