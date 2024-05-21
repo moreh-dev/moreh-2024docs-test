@@ -4,7 +4,7 @@ tags: [guide]
 order: 200
 ---
 
-# GPU 가상화
+# GPU Virtualization
 
 MoAI Platform의 가상화 기능을 통해 사용자는 수백 개의 GPU를 단일 가속기처럼 사용할 수 있습니다. 
 

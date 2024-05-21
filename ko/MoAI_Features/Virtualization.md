@@ -4,7 +4,6 @@ tags: [guide]
 order: 200
 ---
 
-
 # GPU 가상화
 
 MoAI Platform의 가상화 기능을 통해 사용자는 수백 개의 GPU를 단일 가속기처럼 사용할 수 있습니다. 
@@ -55,7 +54,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 아래 그림은 사용자가 MoAI Accelerator를 사용할 때 사용 중인 노드와 실제로 할당된 GPU 클러스터 간의 관계를 보여줍니다.
 
-![](img_ov/v_3.png)
+--![](/img_ov/v_3.png)
 
 MoAI Accelerator를 구성하는 물리적인 GPU의 사용 현황은 moreh-smi -p 명령어를 통해 확인할 수 있습니다.
 
