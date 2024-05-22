@@ -20,7 +20,9 @@ links:
 - text: KO
   link: https://moreh-dev.github.io/moreh-2024docs-test/ko/about-moai/
 - text: KO 
-  link: ../ko/about-moai
+  link: ../ko/moai_features/
+
+
 
 
 footer:
