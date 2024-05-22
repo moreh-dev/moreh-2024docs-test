@@ -5,10 +5,10 @@ order: 500
 expanded: true
 ---
 
-This guide is for anyone who wants to fine-tune powerful language models such as Llama2, Mistral, and etc for their own projects.
-We will walk through the steps to finetune these large language models (LLMs) with MoAI Platform.
+# Fine-tuning Tutorials
 
-## Fine-tuning Tutorials
+This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.
+We will walk through the steps to finetune these large language models (LLMs) with MoAI Platform.
 
 - [Llama2](/Tutorials/Llama2_Tutorial/index.md)
 - [Llama3 8B](/Tutorials/Llama38B_Tutorial/index.md)
@@ -20,13 +20,15 @@ We will walk through the steps to finetune these large language models (LLMs) wi
 
 Fine-tuning in machine learning involves adjusting a pre-trained machine learning model's weight on new data to enhance task-specific performance. Essentially, when you want to apply an AI model to a new task, you take an existing model and optimize it with new datasets. This allows you to customize the model to meet your specific needs and domain requirements.
 
-Typically, fine-tuning a pre-trained model involves a model with a large number of parameters designed for general-purpose use, and effectively fine-tuning such a large model requires hundreds to thousands of examples.
+A pre-trained model has a large number of parameters designed for general-purpose use, and effectively fine-tuning such a large model requires a sufficient amount of training data.
 
 With the MoAI Platform, you can easily apply optimized parallelization techniques that consider the GPU's memory size, significantly reducing the time and effort needed before starting training.
 
 
-What you will learn here:
 
-1. How to find and prep datasets
-2. Turning datasets into ChatML format for training
-3. Choosing the right training settings
+#### What you will learn here:
+
+1. Loading datasets, models, and tokenizers
+2. Running training and checking results
+3. Applying automatic parallelization
+4. Choosing the right training environment and AI accelerators
