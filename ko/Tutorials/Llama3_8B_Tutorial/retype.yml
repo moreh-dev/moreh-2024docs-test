@@ -16,10 +16,9 @@ edit:
   repo: #https://github.com/retypeapp/two-lang-demo
 links: 
 - text: EN
-  link: ../../
-- text: KO 
-  link: ../ko/moai_features/
-
+  link: /
+- text: KO
+  link: ../../ko/tutorials/llama3_8b_tutorial/
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 

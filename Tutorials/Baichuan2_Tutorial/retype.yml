@@ -18,7 +18,9 @@ links:
 - text: EN
   link: /
 - text: KO
-  link: /ko/tutorials/baichuan2_tutorial/
+  link: ../../ko/tutorials/baichuan2_tutorial/
+
+
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
