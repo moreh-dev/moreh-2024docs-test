@@ -10,7 +10,7 @@ Let's rerun the fine-tuning task with a different number of GPUs. MoAI Platform 
 
 ## Changing the Accelerator type
 
-Switch the accelerator type using the `moreh-switch-model` tool. For instructions on changing the accelerator, please refer to the [**3. Model fine-tuning**](3_학습_실행하기.md) 
+Switch the accelerator type using the `moreh-switch-model` tool. For instructions on changing the accelerator, please refer to the [**3. Model fine-tuning**](3_fine_tuning.md) 
 
 ```bash
 $ moreh-switch-model

@@ -26,7 +26,7 @@ After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoA
 
 To train models like the Llama2 model outlined in this tutorial, you need to select an appropriate size MoAI Accelerator. Start by using the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 
-Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [**3. Model fine-tuning**](3_학습_실행하기.md)
+Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [**3. Model fine-tuning**](3_fine_tuning.md)
 
 
 ```jsx

@@ -29,7 +29,7 @@ Load the model configuration and checkpoint publicly available on Hugging Face.
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
 ```
 
-Then load the preprocessed dataset saved during the preparation for [**1. Prepare Fine-tuning**](1_Fine-tuning_준비하기.md) and define the data loaders.
+Then load the preprocessed dataset saved during the preparation for [**1. Prepare Fine-tuning**](1_Prepare_Fine-tuning.md) and define the data loaders.
 
 
 ```python
