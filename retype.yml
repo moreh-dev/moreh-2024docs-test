@@ -19,6 +19,12 @@ links:
   link: /
 - text: KO
   link: ko/
+- text: KO
+  link: /moreh-2024docs-test/ko/
+- text: KO
+  link: /ko/
+- text: KO
+  link: ./ko/
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
