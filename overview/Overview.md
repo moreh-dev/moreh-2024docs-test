@@ -31,7 +31,7 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 
 -![](img_ov/m_4.png)
 
-- MoAI Platform supports various accelerators capable of executing various types of operations regardless of types of GPUs.
+MoAI Platform supports various accelerators capable of executing various types of operations regardless of types of GPUs.
 - Users can utilize different accelerators like Intel, AMD, and others alongside NVIDIA without needing to modify their code for deep learning development and model training.
 - This compatibility allows for flexible development and training of deep learning models, accommodating multiple and diverse types of GPUs.\
 \
@@ -39,7 +39,7 @@ Additionally, issues such as GPU node failures, memory limitations, and bottlene
 ------
 ## 2. GPU Virtualization
 
--![](img_ov/v_3.png)
+-![](img_ov/virt1.png)
 The MoAI Platform’s virtualization feature enables the use of thousands of GPUs as if they were a single GPU. This simplifies the modeling and optimization processes, providing AI engineers with a smooth and efficient experience.
 
 - **Flexible Scalability**: You can scale GPU resources up or down as needed, enhancing the scalability of your services.
