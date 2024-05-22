@@ -15,6 +15,8 @@ exclude:
 edit:
   repo: #https://github.com/retypeapp/two-lang-demo
 links: 
+- text: EN
+  link: /
 - text: KO
   link: ../../ko/tutorials/gpt_tutorial/
 footer:
