@@ -15,7 +15,7 @@ edit:
   base: ko
 links:
 - text: EN
-  link: ../
+  link: ../../
 - text: KO
   link: /
 footer:
