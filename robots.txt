@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /moreh/sitemap.xml.gz
+Sitemap: https://docs.moreh.io/sitemap.xml.gz
