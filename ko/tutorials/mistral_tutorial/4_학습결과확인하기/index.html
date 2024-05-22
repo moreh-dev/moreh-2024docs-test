@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769687732154">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769688913091">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>5. GPU 개수 변경하기</title>
-    <meta name="title" content="5. GPU 개수 변경하기">
-    <meta name="description" content="앞과 동일한 fine tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
+    <title>4. 학습 결과 확인하기</title>
+    <meta name="title" content="4. 학습 결과 확인하기">
+    <meta name="description" content="앞 장과 같이 train_mistral.py 스크립트를 실행하면 결과 모델이 mistral_code_generation 디렉터리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/two-lang-demo/ko/tutorials/qwen_tutorial/5.-gpu-개수-변경하기/">
+    <link rel="canonical" href="/two-lang-demo/ko/tutorials/mistral_tutorial/4_학습결과확인하기/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/two-lang-demo/ko/tutorials/qwen_tutorial/5.-gpu-개수-변경하기/">
-    <meta property="og:title" content="5. GPU 개수 변경하기">
-    <meta property="og:description" content="앞과 동일한 fine tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
+    <meta property="og:url" content="/two-lang-demo/ko/tutorials/mistral_tutorial/4_학습결과확인하기/">
+    <meta property="og:title" content="4. 학습 결과 확인하기">
+    <meta property="og:description" content="앞 장과 같이 train_mistral.py 스크립트를 실행하면 결과 모델이 mistral_code_generation 디렉터리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/two-lang-demo/ko/tutorials/qwen_tutorial/5.-gpu-개수-변경하기/">
-    <meta property="twitter:title" content="5. GPU 개수 변경하기">
-    <meta property="twitter:description" content="앞과 동일한 fine tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
+    <meta property="twitter:url" content="/two-lang-demo/ko/tutorials/mistral_tutorial/4_학습결과확인하기/">
+    <meta property="twitter:title" content="4. 학습 결과 확인하기">
+    <meta property="twitter:description" content="앞 장과 같이 train_mistral.py 스크립트를 실행하면 결과 모델이 mistral_code_generation 디렉터리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769687732154" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769688913091" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769687732154" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769688913091" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769687732154" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769687732154" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769688913091" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769688913091" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,94 +174,48 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="5-gpu-개수-변경하기" class="break-words">
+<doc-anchor-target id="4-학습-결과-확인하기" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-gpu-개수-변경하기">#</doc-anchor-trigger>
-        <span>5. GPU 개수 변경하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-학습-결과-확인하기">#</doc-anchor-trigger>
+        <span>4. 학습 결과 확인하기</span>
     </h1>
 </doc-anchor-target>
-<p>앞과 동일한 fine tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다. 그러므로 GPU 개수를 변경하더라도 PyTorch 스크립트를 수정할 필요가 전혀 없습니다.</p>
-<doc-anchor-target id="가속기-flavor-변경">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#가속기-flavor-변경">#</doc-anchor-trigger>
-        <span>가속기 Flavor 변경</span>
-    </h2>
-</doc-anchor-target>
-<p><code v-pre>moreh-switch-model</code> 툴을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 <a href="../3_%ED%95%99%EC%8A%B5_%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/">3. 학습 실행하기</a> 문서를 한번 더 참고해주시기 바랍니다.</p>
+<p>앞 장과 같이 <code v-pre>train_mistral.py</code> 스크립트를 실행하면 결과 모델이 <code v-pre>mistral_code_generation</code> 디렉터리에 저장됩니다. 이는 순수한 PyTorch 모델 파라미터 파일로 MoAI Platform이 아닌 일반 GPU 서버에서도 100% 호환됩니다.</p>
+<p>미리 다운로드한 GitHub 레포지토리의 <code v-pre>tutorial</code> 디렉토리 아래에 있는 <code v-pre>inference_mistral.py</code> 스크립트로 학습된 모델을 테스트해 볼 수 있습니다. 테스트에는 ‘주어진 문자열 리스트를 입력 받아 공백으로 결합하는 함수를 만들어’라는 프롬프트가 사용되었습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model</code></pre>
-</doc-codeblock></div>
-<p>인프라 제공자에게 문의하여 다음 중 하나를 선택한 다음 계속 진행하십시오.  (<a href="../../../supported_documents/kt_hac_models_info/">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</a>)</p>
-<ul>
-<li>AMD MI250 GPU 32개 사용
-<ul>
-<li>Moreh의 체험판 컨테이너 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xlarge</span>
-</span> 선택</li>
-<li>KT Cloud의 Hyperscale AI Computing 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xLarge.4096GB</span>
-</span> 선택</li>
-</ul>
-</li>
-<li>AMD MI210 GPU 64개 사용</li>
-<li>AMD MI300X GPU 16개 사용</li>
-</ul>
-<doc-anchor-target id="학습-실행">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-실행">#</doc-anchor-trigger>
-        <span>학습 실행</span>
-    </h2>
-</doc-anchor-target>
-<p>다시 별도의 배치 사이즈 변경 없이 <code v-pre>train_qwen.py</code> 스크립트를 실행합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/train_qwen.py</code></pre>
-</doc-codeblock></div>
-<p>학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">2024-04-19 03:07:02,942 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmp7rrxrdcb
-2024-04-19 03:07:02,943 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmp7rrxrdcb/_remote_module_non_scriptable.py
-Downloading shards: 100%|██████████| 4/4 [00:00&lt;00:00, 14425.81it/s]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:06&lt;00:00,  1.54s/it][2024-04-19 03:07:40.492] [info] Got DBs from backend for auto config.
-[2024-04-19 03:07:42.126] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-19 03:07:42.136] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-19 03:07:47.316] [info] [1/8] Connecting to resources on the server (192.168.110.10:24155)...
-[2024-04-19 03:07:47.328] [info] [2/8] Connecting to resources on the server (192.168.110.12:24155)...
-[2024-04-19 03:07:47.336] [info] [3/8] Connecting to resources on the server (192.168.110.26:24155)...
-[2024-04-19 03:07:47.342] [info] [4/8] Connecting to resources on the server (192.168.110.32:24155)...
-[2024-04-19 03:07:47.349] [info] [5/8] Connecting to resources on the server (192.168.110.51:24155)...
-[2024-04-19 03:07:47.356] [info] [6/8] Connecting to resources on the server (192.168.110.78:24155)...
-[2024-04-19 03:07:47.362] [info] [7/8] Connecting to resources on the server (192.168.110.96:24155)...
-[2024-04-19 03:07:47.369] [info] [8/8] Connecting to resources on the server (192.168.110.97:24155)...
-[2024-04-19 03:07:47.378] [info] Establishing links to the resources...
-[2024-04-19 03:07:48.249] [info] MoAI Accelerator is ready to use.
-[2024-04-19 03:07:48.619] [info] The number of candidates is 22.
-[2024-04-19 03:07:48.619] [info] Parallel Graph Compile start...
-[2024-04-19 03:08:17.031] [info] Elapsed Time to compile all candidates = 28411 [ms]
-[2024-04-19 03:08:17.031] [info] Parallel Graph Compile finished.
-[2024-04-19 03:08:17.031] [info] The number of possible candidates is 4.
-[2024-04-19 03:08:17.031] [info] SelectBestGraphFromCandidates start...
-[2024-04-19 03:08:17.693] [info] Elapsed Time to compute cost for survived candidates = 661 [ms]
-[2024-04-19 03:08:17.693] [info] SelectBestGraphFromCandidates finished.
-[2024-04-19 03:08:17.693] [info] Configuration for parallelism is selected.
-[2024-04-19 03:08:17.693] [info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
-[2024-04-19 03:08:17.694] [info] train: true
-
-2024-04-19 03:09:13.571 | INFO     | __main__:main:154 - [Step 1/144] | Loss: 1.03125 | Duration: 39.51 | Throughput: 13270.26 tokens/sec
-2024-04-19 03:09:23.458 | INFO     | __main__:main:154 - [Step 2/144] | Loss: 1.0859375 | Duration: 4.37 | Throughput: 119959.56 tokens/sec
-2024-04-19 03:09:33.195 | INFO     | __main__:main:154 - [Step 3/144] | Loss: 0.8984375 | Duration: 4.44 | Throughput: 118024.31 tokens/sec
-2024-04-19 03:09:43.861 | INFO     | __main__:main:154 - [Step 4/144] | Loss: 0.85546875 | Duration: 5.30 | Throughput: 99006.09 tokens/sec
-2024-04-19 03:09:54.854 | INFO     | __main__:main:154 - [Step 5/144] | Loss: 0.890625 | Duration: 5.72 | Throughput: 91618.65 tokens/sec
+<pre class="language-python"><code v-pre class="language-python"># tutorial/inference_mistral.py
 ...
-2024-04-19 03:33:00.158 | INFO     | __main__:main:154 - [Step 141/144] | Loss: 0.46875 | Duration: 5.28 | Throughput: 99212.01 tokens/sec
-2024-04-19 03:33:09.622 | INFO     | __main__:main:154 - [Step 142/144] | Loss: 0.45703125 | Duration: 4.35 | Throughput: 120536.34 tokens/sec
-2024-04-19 03:33:19.308 | INFO     | __main__:main:154 - [Step 143/144] | Loss: 0.451171875 | Duration: 4.35 | Throughput: 120554.52 tokens/sec
-2024-04-19 03:33:28.985 | INFO     | __main__:main:154 - [Step 144/144] | Loss: 0.443359375 | Duration: 4.41 | Throughput: 118957.15 tokens/sec
-...</code></pre>
+input_text = &quot;&quot;&quot;Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a function to join given list of strings with space.
+
+### Input:\n['I', 'love', 'you']
+
+### Output:
+&quot;&quot;&quot;</code></pre>
 </doc-codeblock></div>
-<p>앞서 GPU 개수가 절반이었을 때 실행한 결과와 비교해 동일하게 학습이 이루어지며 throughput이 향상되었음을 확인할 수 있습니다.</p>
-<ul>
-<li>AMD MI250 GPU 16 → 32개 사용 시: 약 59,000 tokens/sec → 105,000 tokens/sec</li>
-</ul>
+<p>코드를 실행합니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">~/quickstart$ python tutorial/inference_mistral.py</code></pre>
+</doc-codeblock></div>
+<p>출력값을 확인해보면 모델이 프롬프트 내용대로 적절한 함수를 생성한 것을 확인할 수 있습니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">Mistral: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a function to join given list of strings with space.
+
+### Input:
+['I', 'love', 'Moreh']
+
+### Output:
+def join_strings(string_list):
+		return ' '.join(string_list)
+
+result = join_strings(['I', 'love', 'Moreh'])
+print(result)</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -281,20 +235,20 @@ Loading checkpoint shards: 100%|██████████| 4/4 [00:06&lt;00
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/4.-학습-결과-확인하기/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/mistral_tutorial/3_학습_실행하기/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">이전</span>
-                                                <span class="block mt-1">4. 학습 결과 확인하기</span>
+                                                <span class="block mt-1">3. 학습 실행하기</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/6.-마무리/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/mistral_tutorial/5_gpu개수변경하기/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">다음</span>
-                                                <span class="block mt-1">6. 마무리</span>
+                                                <span class="block mt-1">5. GPU 개수 변경하기</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -338,6 +292,6 @@ Loading checkpoint shards: 100%|██████████| 4/4 [00:06&lt;00
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "5. GPU 개수 변경하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "4. 학습 결과 확인하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
