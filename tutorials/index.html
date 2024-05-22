@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/moreh">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769603385675">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769669313244">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tutorials</title>
-    <meta name="title" content="Tutorials">
-    <meta name="description" content="This guide is for anyone who wants to fine-tune powerful language models such as Llama2, Mistral, and etc for their own projects.">
+    <title>Fine-tuning Tutorials</title>
+    <meta name="title" content="Fine-tuning Tutorials">
+    <meta name="description" content="This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/moreh/tutorials/">
@@ -20,22 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/moreh/tutorials/">
-    <meta property="og:title" content="Tutorials">
-    <meta property="og:description" content="This guide is for anyone who wants to fine-tune powerful language models such as Llama2, Mistral, and etc for their own projects.">
+    <meta property="og:title" content="Fine-tuning Tutorials">
+    <meta property="og:description" content="This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/moreh/tutorials/">
-    <meta property="twitter:title" content="Tutorials">
-    <meta property="twitter:description" content="This guide is for anyone who wants to fine-tune powerful language models such as Llama2, Mistral, and etc for their own projects.">
+    <meta property="twitter:title" content="Fine-tuning Tutorials">
+    <meta property="twitter:description" content="This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.769603385675" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.769669313244" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.769603385675" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.769669313244" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.769603385675" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.769669313244" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,20 +173,14 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tutorials" class="break-words">
+<doc-anchor-target id="fine-tuning-tutorials" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tutorials">#</doc-anchor-trigger>
-        <span>Tutorials</span>
-    </h1>
-</doc-anchor-target>
-<p>This guide is for anyone who wants to fine-tune powerful language models such as Llama2, Mistral, and etc for their own projects.
-We will walk through the steps to finetune these large language models (LLMs) with MoAI Platform.</p>
-<doc-anchor-target id="fine-tuning-tutorials">
-    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#fine-tuning-tutorials">#</doc-anchor-trigger>
         <span>Fine-tuning Tutorials</span>
-    </h2>
+    </h1>
 </doc-anchor-target>
+<p>This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.
+We will walk through the steps to finetune these large language models (LLMs) with MoAI Platform.</p>
 <ul>
 <li><a href="llama2_tutorial/">Llama2</a></li>
 <li><a href="llama38b_tutorial/">Llama3 8B</a></li>
@@ -196,13 +190,19 @@ We will walk through the steps to finetune these large language models (LLMs) wi
 <li><a href="baichuan2_tutorial/">Baichuan2</a></li>
 </ul>
 <p>Fine-tuning in machine learning involves adjusting a pre-trained machine learning model&#x27;s weight on new data to enhance task-specific performance. Essentially, when you want to apply an AI model to a new task, you take an existing model and optimize it with new datasets. This allows you to customize the model to meet your specific needs and domain requirements.</p>
-<p>Typically, fine-tuning a pre-trained model involves a model with a large number of parameters designed for general-purpose use, and effectively fine-tuning such a large model requires hundreds to thousands of examples.</p>
+<p>A pre-trained model has a large number of parameters designed for general-purpose use, and effectively fine-tuning such a large model requires a sufficient amount of training data.</p>
 <p>With the MoAI Platform, you can easily apply optimized parallelization techniques that consider the GPU&#x27;s memory size, significantly reducing the time and effort needed before starting training.</p>
-<p>What you will learn here:</p>
+<doc-anchor-target id="what-you-will-learn-here">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-you-will-learn-here">#</doc-anchor-trigger>
+        <span>What you will learn here:</span>
+    </h4>
+</doc-anchor-target>
 <ol>
-<li>How to find and prep datasets</li>
-<li>Turning datasets into ChatML format for training</li>
-<li>Choosing the right training settings</li>
+<li>Loading datasets, models, and tokenizers</li>
+<li>Running training and checking results</li>
+<li>Applying automatic parallelization</li>
+<li>Choosing the right training environment and AI accelerators</li>
 </ol>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
@@ -280,6 +280,6 @@ We will walk through the steps to finetune these large language models (LLMs) wi
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tutorials", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Fine-tuning Tutorials", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

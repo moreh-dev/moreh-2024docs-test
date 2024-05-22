@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/two-lang-demo/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769603381035">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769669308719">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tutorials</title>
-    <meta name="title" content="Tutorials">
-    <meta name="description" content="Fine-tuning은 미리 학습된 기계 학습 모델을 새로운 데이터나 특정 작업에 재조정하는 행위를 의미합니다. 즉, AI 모델을 새로운 작업에 적용하고자 할 때, 기존 모델에 새로운 데이터 셋을 학습 시켜 최적화 해나가는 과정인데요.">
+    <title>Fine-tuning Tutorials</title>
+    <meta name="title" content="Fine-tuning Tutorials">
+    <meta name="description" content="이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델 6종을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/two-lang-demo/ko/tutorials/">
@@ -20,22 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/two-lang-demo/ko/tutorials/">
-    <meta property="og:title" content="Tutorials">
-    <meta property="og:description" content="Fine-tuning은 미리 학습된 기계 학습 모델을 새로운 데이터나 특정 작업에 재조정하는 행위를 의미합니다. 즉, AI 모델을 새로운 작업에 적용하고자 할 때, 기존 모델에 새로운 데이터 셋을 학습 시켜 최적화 해나가는 과정인데요.">
+    <meta property="og:title" content="Fine-tuning Tutorials">
+    <meta property="og:description" content="이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델 6종을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/two-lang-demo/ko/tutorials/">
-    <meta property="twitter:title" content="Tutorials">
-    <meta property="twitter:description" content="Fine-tuning은 미리 학습된 기계 학습 모델을 새로운 데이터나 특정 작업에 재조정하는 행위를 의미합니다. 즉, AI 모델을 새로운 작업에 적용하고자 할 때, 기존 모델에 새로운 데이터 셋을 학습 시켜 최적화 해나가는 과정인데요.">
+    <meta property="twitter:title" content="Fine-tuning Tutorials">
+    <meta property="twitter:description" content="이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델 6종을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.769603381035" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.769669308719" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.769603381035" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.769669308719" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.769603381035" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.769669308719" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,43 +173,35 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tutorials" class="break-words">
+<doc-anchor-target id="fine-tuning-tutorials" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tutorials">#</doc-anchor-trigger>
-        <span>Tutorials</span>
-    </h1>
-</doc-anchor-target>
-<p>Fine-tuning은 미리 학습된 기계 학습 모델을 새로운 데이터나 특정 작업에 재조정하는 행위를 의미합니다. 즉, AI 모델을 새로운 작업에 적용하고자 할 때, 기존 모델에 새로운 데이터 셋을 학습 시켜 최적화 해나가는 과정인데요. Fine-tuning을 통해 기존 모델을 가져와서 사용자의 필요 및 특정 도메인에 맞게 특화시킬 수 있습니다.</p>
-<p>일반적으로 사전학습된 모델을 미세조정(Fine-tuning) 하는데 사전학습된 모델은 범용성을 고려한 매우 큰 파라미터를 가지는 모델이며 큰 모델을 효과적으로 fine-tuning하려면 수백 개에서 수천 개의 예제가 필요합니다.</p>
-<p>MoAI Platform에서는 GPU의 메모리 사이즈를 고려해 최적화된 병렬화 기법을 손쉽게 적용할 수 있어 학습 시작 전에 소요되는 시간과 노력을 획기적으로 줄일 수 있습니다.</p>
-<p>이 튜토리얼에서는 다음 5종의 모델을 fine-tuning 과정을 배우고, MoAI Platform 을 사용하여 직접 손쉽게 구현하는 방법에 대해 알아보겠습니다.</p>
-<doc-anchor-target id="fine-tuning-tutorials">
-    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#fine-tuning-tutorials">#</doc-anchor-trigger>
         <span>Fine-tuning Tutorials</span>
-    </h2>
+    </h1>
 </doc-anchor-target>
+<p>이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델 6종을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.</p>
 <ul>
-<li><a href="llama2_tutorial/">Llama2</a></li>
-<li><a href="mistral_tutorial/">Mistral</a></li>
-<li><a href="gpt_tutorial/">GPT</a></li>
-<li><a href="qwen_tutorial/">Qwen</a></li>
-<li><a href="baichuan2_tutorial/">Baichuan2</a></li>
+<li><a href="/ko/tutorials/llama2_tutorial/index.md">Llama2</a></li>
+<li><a href="/ko//tutorials/llama3_8b_tutorial/index.md">Llama3 8B</a></li>
+<li><a href="/ko/tutorials/mistral_tutorial/index.md">Mistral</a></li>
+<li><a href="/ko//tutorials/gpt_tutorial/index.md">GPT</a></li>
+<li><a href="/ko/tutorials/qwen_tutorial/index.md">Qwen</a></li>
+<li><a href="/ko/tutorials/baichuan2_tutorial/index.md">Baichuan2</a></li>
 </ul>
-<doc-anchor-target id="fine-tuning-방법">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fine-tuning-방법">#</doc-anchor-trigger>
-        <span>Fine-Tuning 방법</span>
-    </h3>
+<p>머신러닝에서 미세 조정(fine-tuning)이란 사전 학습된 모델의 매개변수를 새로운 데이터로 조정하여 특정 작업의 성능을 향상시키는 것을 의미합니다. 즉, 기존 모델을 새로운 작업에 적용하고자 할 때, 새로운 데이터셋으로 모델을 최적화하여 특정 요구와 도메인에 맞게 커스터마이징하는 과정입니다.</p>
+<p>사전학습된 모델은 범용성을 고려한 매우 큰 파라미터를 가지는 모델이며 큰 모델을 효과적으로 fine-tuning하려면 충분한 양의 학습 데이터가 필요합니다.</p>
+<p>MoAI Platform에서는 GPU의 메모리 사이즈를 고려해 최적화된 병렬화 기법을 손쉽게 적용할 수 있어 학습 시작 전에 소요되는 시간과 노력을 획기적으로 줄일 수 있습니다.</p>
+<doc-anchor-target id="이-튜토리얼에서-배우게-될-내용">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#이-튜토리얼에서-배우게-될-내용">#</doc-anchor-trigger>
+        <span>이 튜토리얼에서 배우게 될 내용:</span>
+    </h4>
 </doc-anchor-target>
-<p>모델을 Fine-tuning 과정은 다음과 같습니다:</p>
 <ol>
-<li>사전 학습된 모델과 작업에 특화된 데이터셋을 준비합니다.</li>
-<li>데이터셋의 예제를 모델에 전달하고 모델의 출력을 수집합니다.</li>
-<li>모델의 출력과 예상 출력 간의 손실을 계산합니다.</li>
-<li>경사 하강법과 역전파를 사용하여 손실을 줄이기 위해 모델 파라미터를 업데이트합니다.</li>
-<li>모델이 수렴될 때까지 여러 epoch에 대해 단계 3-5를 반복합니다.</li>
-<li>Fine-tuned 모델은 이제 새로운 데이터에 대한 추론을 위해 배포될 수 있는 상태가 됩니다.</li>
+<li>데이터셋, 모델, 토크나이저 로드하기</li>
+<li>학습 실행 및 결과 확인하기</li>
+<li>자동 병렬화 기능 적용하기</li>
+<li>적절한 학습 환경 및 AI 가속기 선택 방법</li>
 </ol>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
@@ -236,17 +228,17 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../moai_features/parallelization/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../about-moai/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">이전</span>
-                                                <span class="block mt-1">Mo​AI Platform 병렬화</span>
+                                                <span class="block mt-1">Mo​AI Platform 개요</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../tutorials/llama3_tutorial/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../tutorials/llama3_8b_tutorial/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">다음</span>
                                                 <span class="block mt-1">Llama​2 Fine-​tuning</span>
@@ -293,6 +285,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tutorials", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Fine-tuning Tutorials", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
