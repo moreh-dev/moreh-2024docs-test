@@ -1,6 +1,6 @@
 input: ./
 output: .retype
-url: /moreh/
+url: docs.moreh.io
 branding:
   logo: /img/logo.png 
   logoAlign: left     
@@ -14,7 +14,7 @@ exclude:
   - "ko"
 edit:
   repo: #https://github.com/retypeapp/two-lang-demo
-links:
+links: 
 - text: EN
   link: /
 - text: KO
@@ -33,3 +33,5 @@ branding:
     label:                    # Label colors
       text: "#ff5700"         # Custom color for the label text
       background: "#ff5700"   # Custom color for the label background
+
+poweredByRetype: false
