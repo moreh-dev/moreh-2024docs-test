@@ -15,7 +15,7 @@ edit:
   base: ko
 links:
 - text: EN
-  link: ../
+  link: https://moreh-dev.github.io/moreh-2024docs-test/
 - text: KO
   link: /
 footer:
