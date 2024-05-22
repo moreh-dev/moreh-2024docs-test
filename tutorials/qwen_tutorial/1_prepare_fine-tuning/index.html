@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769683369966">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769683756284">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>5. Changing the Number of GPUs</title>
-    <meta name="title" content="5. Changing the Number of GPUs">
-    <meta name="description" content="Let's rerun the fine-tuning task with a different number of GPUs.">
+    <title>1. Prepare Fine-tuning</title>
+    <meta name="title" content="1. Prepare Fine-tuning">
+    <meta name="description" content="Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/tutorials/qwen_tutorial/5.-gpu-개수-변경하기/">
+    <link rel="canonical" href="https://docs.moreh.io/tutorials/qwen_tutorial/1_prepare_fine-tuning/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/tutorials/qwen_tutorial/5.-gpu-개수-변경하기/">
-    <meta property="og:title" content="5. Changing the Number of GPUs">
-    <meta property="og:description" content="Let's rerun the fine-tuning task with a different number of GPUs.">
+    <meta property="og:url" content="https://docs.moreh.io/tutorials/qwen_tutorial/1_prepare_fine-tuning/">
+    <meta property="og:title" content="1. Prepare Fine-tuning">
+    <meta property="og:description" content="Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/tutorials/qwen_tutorial/5.-gpu-개수-변경하기/">
-    <meta property="twitter:title" content="5. Changing the Number of GPUs">
-    <meta property="twitter:description" content="Let's rerun the fine-tuning task with a different number of GPUs.">
+    <meta property="twitter:url" content="https://docs.moreh.io/tutorials/qwen_tutorial/1_prepare_fine-tuning/">
+    <meta property="twitter:title" content="1. Prepare Fine-tuning">
+    <meta property="twitter:description" content="Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769683369966" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769683756284" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769683369966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769683756284" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769683369966" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769683369966" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769683756284" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769683756284" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,95 +173,108 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="5-changing-the-number-of-gpus" class="break-words">
+<doc-anchor-target id="1-prepare-fine-tuning" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-changing-the-number-of-gpus">#</doc-anchor-trigger>
-        <span>5. Changing the Number of GPUs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-prepare-fine-tuning">#</doc-anchor-trigger>
+        <span>1. Prepare Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>Let&#x27;s rerun the fine-tuning task with a different number of GPUs. MoAI Platform abstracts GPU resources into a single accelerator and automatically performs parallel processing. Therefore, there is no need to modify the PyTorch script even when changing the number of GPUs.</p>
-<doc-anchor-target id="changing-the-accelerator-type">
+<p>Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.</p>
+<doc-anchor-target id="checking-pytorch-installation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-the-accelerator-type">#</doc-anchor-trigger>
-        <span>Changing the Accelerator type</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checking-pytorch-installation">#</doc-anchor-trigger>
+        <span>Checking PyTorch Installation</span>
     </h2>
 </doc-anchor-target>
-<p>Switch the accelerator type using the <code v-pre>moreh-switch-model</code> tool. For instructions on changing the accelerator, please refer to the <a href="../3_%ED%95%99%EC%8A%B5_%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/"><strong>3. Model fine-tuning</strong></a></p>
+<p>After connecting to the container via SSH, run the following command to check if PyTorch is installed in the current conda environment:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model</code></pre>
-</doc-codeblock></div>
-<p>Please contact your infrastructure provider and choose one of the following options before proceeding.<br />
-<a href="../../../supported_documents/kt_hac_models_info/"><strong>KT Hyperscale AI Computing (HAC) AI Accelerator Information</strong></a></p>
-<ul>
-<li>AMD MI250 GPU with 32 units
-<ul>
-<li>When using Moreh&#x27;s trial container: select <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xlarge</span>
-</span></li>
-<li>When using KT Cloud&#x27;s Hyperscale AI Computing: select <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xLarge.4096GB</span>
-</span></li>
-</ul>
-</li>
-<li>AMD MI210 GPU with 64 units</li>
-<li>AMD MI300X GPU with 16 units</li>
-</ul>
-<doc-anchor-target id="training-parameters">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#training-parameters">#</doc-anchor-trigger>
-        <span>Training Parameters</span>
-    </h2>
-</doc-anchor-target>
-<p>Run the <code v-pre>train_qwen.py</code> script again without changing the batch size.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/train_qwen.py</code></pre>
-</doc-codeblock></div>
-<p>If the training proceeds normally, you should see the following logs:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">2024-04-19 03:07:02,942 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmp7rrxrdcb
-2024-04-19 03:07:02,943 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmp7rrxrdcb/_remote_module_non_scriptable.py
-Downloading shards: 100%|██████████| 4/4 [00:00&lt;00:00, 14425.81it/s]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:06&lt;00:00,  1.54s/it][2024-04-19 03:07:40.492] [info] Got DBs from backend for auto config.
-[2024-04-19 03:07:42.126] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-19 03:07:42.136] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-19 03:07:47.316] [info] [1/8] Connecting to resources on the server (192.168.110.10:24155)...
-[2024-04-19 03:07:47.328] [info] [2/8] Connecting to resources on the server (192.168.110.12:24155)...
-[2024-04-19 03:07:47.336] [info] [3/8] Connecting to resources on the server (192.168.110.26:24155)...
-[2024-04-19 03:07:47.342] [info] [4/8] Connecting to resources on the server (192.168.110.32:24155)...
-[2024-04-19 03:07:47.349] [info] [5/8] Connecting to resources on the server (192.168.110.51:24155)...
-[2024-04-19 03:07:47.356] [info] [6/8] Connecting to resources on the server (192.168.110.78:24155)...
-[2024-04-19 03:07:47.362] [info] [7/8] Connecting to resources on the server (192.168.110.96:24155)...
-[2024-04-19 03:07:47.369] [info] [8/8] Connecting to resources on the server (192.168.110.97:24155)...
-[2024-04-19 03:07:47.378] [info] Establishing links to the resources...
-[2024-04-19 03:07:48.249] [info] MoAI Accelerator is ready to use.
-[2024-04-19 03:07:48.619] [info] The number of candidates is 22.
-[2024-04-19 03:07:48.619] [info] Parallel Graph Compile start...
-[2024-04-19 03:08:17.031] [info] Elapsed Time to compile all candidates = 28411 [ms]
-[2024-04-19 03:08:17.031] [info] Parallel Graph Compile finished.
-[2024-04-19 03:08:17.031] [info] The number of possible candidates is 4.
-[2024-04-19 03:08:17.031] [info] SelectBestGraphFromCandidates start...
-[2024-04-19 03:08:17.693] [info] Elapsed Time to compute cost for survived candidates = 661 [ms]
-[2024-04-19 03:08:17.693] [info] SelectBestGraphFromCandidates finished.
-[2024-04-19 03:08:17.693] [info] Configuration for parallelism is selected.
-[2024-04-19 03:08:17.693] [info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
-[2024-04-19 03:08:17.694] [info] train: true
-
-2024-04-19 03:09:13.571 | INFO     | __main__:main:154 - [Step 1/144] | Loss: 1.03125 | Duration: 39.51 | Throughput: 13270.26 tokens/sec
-2024-04-19 03:09:23.458 | INFO     | __main__:main:154 - [Step 2/144] | Loss: 1.0859375 | Duration: 4.37 | Throughput: 119959.56 tokens/sec
-2024-04-19 03:09:33.195 | INFO     | __main__:main:154 - [Step 3/144] | Loss: 0.8984375 | Duration: 4.44 | Throughput: 118024.31 tokens/sec
-2024-04-19 03:09:43.861 | INFO     | __main__:main:154 - [Step 4/144] | Loss: 0.85546875 | Duration: 5.30 | Throughput: 99006.09 tokens/sec
-2024-04-19 03:09:54.854 | INFO     | __main__:main:154 - [Step 5/144] | Loss: 0.890625 | Duration: 5.72 | Throughput: 91618.65 tokens/sec
+<pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
 ...
-2024-04-19 03:33:00.158 | INFO     | __main__:main:154 - [Step 141/144] | Loss: 0.46875 | Duration: 5.28 | Throughput: 99212.01 tokens/sec
-2024-04-19 03:33:09.622 | INFO     | __main__:main:154 - [Step 142/144] | Loss: 0.45703125 | Duration: 4.35 | Throughput: 120536.34 tokens/sec
-2024-04-19 03:33:19.308 | INFO     | __main__:main:154 - [Step 143/144] | Loss: 0.451171875 | Duration: 4.35 | Throughput: 120554.52 tokens/sec
-2024-04-19 03:33:28.985 | INFO     | __main__:main:154 - [Step 144/144] | Loss: 0.443359375 | Duration: 4.41 | Throughput: 118957.15 tokens/sec
+# Name                    Version                   Build  Channel
+torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 ...</code></pre>
 </doc-codeblock></div>
-<p>Compared to the previous execution results when the number of GPUs was half, you can see that the learning is the same and the throughput has improved.</p>
-<ul>
-<li>When using AMD MI250 GPU 16 → 32 : approximately 59,000 tokens/sec → 105,000 tokens/sec</li>
-</ul>
+<p>The version name includes both the PyTorch version and the version of MoAI required to run it. In the example above, it indicates that version 24.2.0 of MoAI, which runs PyTorch version 1.13.1+cu116, is installed.</p>
+<p>If you see the message <strong><code v-pre>conda: command not found</code></strong>, if the torch package is not listed, or if the torch package exists but does not include &quot;moreh&quot; in the version name, please follow the instructions in the <strong><a href="../../../supported_documents/prepare_fine_tuning_moai/">Prepare Fine-tuning on MoAI Platform</a></strong> document to create a conda environment.</p>
+<doc-anchor-target id="verifying-pytorch-installation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#verifying-pytorch-installation">#</doc-anchor-trigger>
+        <span>Verifying PyTorch Installation</span>
+    </h2>
+</doc-anchor-target>
+<p>Run the following command to ensure that the torch package is imported correctly and the MoAI Accelerator is recognized.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ python
+Python 3.8.19 (default, Sep 11 2023, 13:40:15)
+[GCC 11.2.0] :: Anaconda, Inc. on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import torch
+...
+&gt;&gt;&gt; torch.cuda.device_count()
+1
+&gt;&gt;&gt; torch.cuda.get_device_name()
+[2024-04-16 19:17:45.714] [info] Requesting resources for MoAI Accelerator from the server...
+[2024-04-16 19:17:45.752] [info] Initializing the worker daemon for MoAI Accelerator
+[2024-04-16 19:17:47.409] [info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
+[2024-04-16 19:17:47.452] [info] Establishing links to the resources...
+[2024-04-16 19:17:47.636] [info] MoAI Accelerator is ready to use.
+'MoAI Accelerator'
+&gt;&gt;&gt; quit()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="install-required-python-packages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-required-python-packages">#</doc-anchor-trigger>
+        <span>Install Required Python Packages</span>
+    </h2>
+</doc-anchor-target>
+<p>Execute the following command to install third-party Python packages required for script execution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ pip install transformers==4.40.1 datasets==2.18.0 loguru==0.7.2 tiktoken==0.6.0</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="download-the-training-script">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#download-the-training-script">#</doc-anchor-trigger>
+        <span>Download the Training Script</span>
+    </h2>
+</doc-anchor-target>
+<p>Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the <code v-pre>train_qwen.py</code> script located inside the <code v-pre>tutorial</code> directory.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ sudo apt-get install git
+$ git clone https://github.com/moreh-dev/quickstart.git
+$ cd quickstart
+~/quickstart$ ls tutorial
+...  train_qwen.py  ...</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="download-training-data">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#download-training-data">#</doc-anchor-trigger>
+        <span>Download Training Data</span>
+    </h2>
+</doc-anchor-target>
+<p>To download the training data, we&#x27;ll use the <code v-pre>prepare_qwen_dataset.py</code> script located in the <strong><code v-pre>dataset</code></strong> directory. When you run the code, it will download the <a href="https://huggingface.co/datasets/cnn_dailymail">cnn_dailymail</a> dataset, preprocess it for training, and save it as <code v-pre>qwen_dataset.pt</code> file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls dataset
+...  prepare_qwen_dataset.py ...
+
+~/quickstart$ python dataset/prepare_qwen_dataset.py
+2024-04-19 03:27:05,865 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
+2024-04-19 03:27:05,866 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
+2024-04-19 03:27:24,010 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+Loading Tokenizer...
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Downloading dataset...
+Preprocessing dataset...
+Saving datset into torch format...
+Dataset saved as ./qwen_dataset.pt
+
+~/quickstart$ ls
+... qwen_dataset.pt ...</code></pre>
+</doc-codeblock></div>
+<p>The preprocessed dataset is saved as <code v-pre>qwen_dataset.pt</code>.</p>
+<p>You can then load the stored dataset in your code like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">dataset = torch.load(&quot;./qwen_dataset.pt&quot;)</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -284,20 +297,20 @@ Loading checkpoint shards: 100%|██████████| 4/4 [00:06&lt;00
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/4.-학습-결과-확인하기/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">4. Checking Training Results</span>
+                                                <span class="block mt-1">Qwen Fine-​tuning</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/6.-마무리/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/qwen_tutorial/2_understanding-training-code/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">6. Conclusion</span>
+                                                <span class="block mt-1">2. Understanding training code</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -341,6 +354,6 @@ Loading checkpoint shards: 100%|██████████| 4/4 [00:06&lt;00
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "5. Changing the Number of GPUs", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "1. Prepare Fine-tuning", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
