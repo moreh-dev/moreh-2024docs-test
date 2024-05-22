@@ -17,6 +17,6 @@ links:
 - text: EN
   link: /
 - text: KO
-  link: ../ko/overview
+  link: https://moreh-dev.github.io/moreh-2024docs-test/ko/overview/
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
