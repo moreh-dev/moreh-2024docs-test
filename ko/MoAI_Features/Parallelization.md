@@ -1,7 +1,7 @@
 ---
 icon: note
 tags: [guide]
-order: 200
+order: 5
 ---
 
 # MoAI Platform 병렬화

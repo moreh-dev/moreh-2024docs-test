@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [tutorial]
-order: 500
+order: 90
 expanded: true
 ---
 

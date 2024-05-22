@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [component]
-order: 100
+order: 80
 expanded: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: note
 tags: [features]
-order: 200
+order: 5
 ---
 
 # Automatic Parallelization

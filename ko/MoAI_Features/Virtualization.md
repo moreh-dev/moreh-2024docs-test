@@ -1,7 +1,7 @@
 ---
 icon: cpu
 tags: [guide]
-order: 200
+order: 10
 ---
 
 # GPU 가상화
