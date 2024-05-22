@@ -18,9 +18,11 @@ links:
 - text: EN
   link: /
 - text: KO
-  link: /moreh-2024docs-test/ko/tutorials/
+  link: ../ko
 - text: KO
-  link: /ko/tutorials/
+  link: ./ko/
+- text: KO
+  link: https://moreh-dev.github.io/moreh-2024docs-test/ko/tutorials/
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
