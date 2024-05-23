@@ -19,10 +19,10 @@ As deep learning models evolve, they become increasingly complex and require sub
 Additionally, issues such as GPU node failures, memory limitations, and bottlenecks frequently arise during the training and inference of large-scale models, making the resolution of these problems particularly challenging. The MoAI Platform addresses these limitations and challenges with its GPU virtualization and automatic parallelization features, providing an efficient infrastructure for the era of large-scale AI.
 
 
-1. **[Various Accelerators, Multi-GPU Support](http://localhost:5000/two-lang-demo/about-moai/#1various-accelerators-multi-gpu-support)**
-2. **[GPU Virtualization](http://localhost:5000/two-lang-demo/about-moai/#2-gpunpu-virtualization)**
-3. **[Dynamic GPU Allocation]()**
-4. **[AI Compiler Automatic Parallelization]()**
+1. **[Various Accelerators, Multi-GPU Support](https://moreh-dev.github.io/moreh-2024docs-test/overview/#1-various-accelerators-multi-gpu-support)**
+2. **[GPU Virtualization](https://moreh-dev.github.io/moreh-2024docs-test/overview/#2-gpu-virtualization)**
+3. **[Dynamic GPU Allocation](https://moreh-dev.github.io/moreh-2024docs-test/overview/#3-dynamic-gpu-allocation)**
+4. **[AI Compiler Automatic Parallelization](https://moreh-dev.github.io/moreh-2024docs-test/overview/#4-ai-compiler-automatic-parallelization)**
 
 
 ---
