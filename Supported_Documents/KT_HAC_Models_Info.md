@@ -1,6 +1,5 @@
 ---
-icon: info
-tags: [guide]
+icon: server
 order: 10
 ---
 

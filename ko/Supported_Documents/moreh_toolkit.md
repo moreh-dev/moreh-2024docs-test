@@ -1,7 +1,7 @@
 ---
 icon: tools
 tags: [guide]
-order: 50
+order: 110
 ---
 
 # MoAI Platform의 toolkit 사용하기

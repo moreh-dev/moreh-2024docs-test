@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [guide]
-order: 100
+order: 90
 expanded: false
 ---
 
