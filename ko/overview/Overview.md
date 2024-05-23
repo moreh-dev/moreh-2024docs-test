@@ -41,7 +41,7 @@ MoAI 플랫폼은 다양한 AI 가속기를 지원하며, GPU의 종류에 관�
 
 ## 2. GPU 가상화
 
--![](virt.png)
+-![](v.png)
 \
 &nbsp;
 &nbsp;
