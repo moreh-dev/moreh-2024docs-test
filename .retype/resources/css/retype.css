@@ -1,9 +1,9 @@
 /*! Retype v3.5.0 | retype.com | Copyright 2024. Object.NET, Inc. All rights reserved. */
 
 :root {
-  --logoLabel-text: #ccc;
+  --logoLabel-text: #1f7aff;
   --logoLabel-background: #e1edff;
-  --sidebar-background: #eee;
+  --sidebar-background: #1f7aff;
   --sidebar-border: #ccc;
   --sidebar-link: #333;
   --sidebar-linkHover: #444;
