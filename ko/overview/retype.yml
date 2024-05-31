@@ -18,7 +18,7 @@ links:
 - text: EN
   link: ../../overview/
 - text: KO
-  link: /ko/
+  link: https://moreh.io
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
