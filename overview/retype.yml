@@ -17,6 +17,6 @@ links:
 - text: EN
   link: /overview/
 - text: KO
-  link: /ko/overview/
+  link: /tutorials/
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
