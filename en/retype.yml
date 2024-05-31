@@ -1,9 +1,9 @@
 input: ./
-output: .retype/ko
-locale: ko
-url: /two-lang-demo/ko
+output: .retype/en
+locale: en
+url: /two-lang-demo/en
 branding:
-  label: KO
+  label: EN
   logo: /img/logo.png
   logoAlign: left     
   colors:
@@ -12,8 +12,8 @@ branding:
   background: "#ff5700"   # Custom color for the label background
 links:
 - text: EN
-  link: https://moreh-dev.github.io/moreh-2024docs-test/
+  link: /en/
 - text: KO
-  link: https://moreh-dev.github.io/moreh-2024docs-test/ko/
+  link: /ko/
 footer:
   copyright: "&copy; Copyright Moreh {{ year }}. All rights reserved."
