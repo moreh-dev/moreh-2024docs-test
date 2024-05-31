@@ -11,6 +11,7 @@ branding:
   background: "#ff5700"   # Custom color for the label background
 exclude:
   - "fr"
+  - "ko"
 links: 
 - text: EN
   link: /
