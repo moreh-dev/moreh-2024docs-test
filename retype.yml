@@ -15,7 +15,7 @@ exclude:
 links: 
 - text: EN
   link: /ko/
-- text: KO1
+- text: KO
   link: /ko/
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
