@@ -20,9 +20,9 @@ exclude:
 
 links: 
 - text: EN
-  link: https://docs.moreh.io/
+  link: https://moreh-dev.github.io/moreh-2024docs-test/
 - text: KO
-  link: https://docs.moreh.io/ko
+  link: https://moreh-dev.github.io/moreh-2024docs-test/ko
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 

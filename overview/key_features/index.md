@@ -1,5 +1,5 @@
 ---
-icon: note
+icon: cpu
 order: 60
 ---
 

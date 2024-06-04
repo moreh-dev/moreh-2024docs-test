@@ -1,5 +1,5 @@
 ---
-icon: cpu
+
 order: 100
 ---
 

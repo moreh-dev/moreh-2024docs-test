@@ -1,5 +1,5 @@
 ---
-icon: note
+icon: terminal
 order: 30
 ---
 

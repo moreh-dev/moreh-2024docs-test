@@ -1,6 +1,5 @@
 ---
-icon: terminal
-tags: [guide]
+
 order: 17
 expanded: false
 ---

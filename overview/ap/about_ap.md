@@ -1,5 +1,5 @@
 ---
-icon: terminal
+
 tags: [guide]
 order: 20
 expanded: false
