@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="eng" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770467064358">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770802247461">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>3. Model fine-tuning</title>
-    <meta name="title" content="3. Model fine-tuning">
+    <title>3. Model Fine-tuning</title>
+    <meta name="title" content="3. Model Fine-tuning">
     <meta name="description" content="Now, we will train the model through the following process.">
 
     <!-- Canonical -->
@@ -19,23 +19,25 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/tutorials/llama2_tutorial/3_fine_tuning/">
-    <meta property="og:title" content="3. Model fine-tuning">
+    <meta property="og:title" content="3. Model Fine-tuning">
     <meta property="og:description" content="Now, we will train the model through the following process.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/tutorials/llama2_tutorial/3_fine_tuning/">
-    <meta property="twitter:title" content="3. Model fine-tuning">
+    <meta property="twitter:title" content="3. Model Fine-tuning">
     <meta property="twitter:description" content="Now, we will train the model through the following process.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770467064358" rel="stylesheet">
+    <link href="../../../static/favicon.png" rel="icon">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770802247461" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770467064358" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770467064358" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770467064358" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770802247461" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -55,7 +57,7 @@
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo.png">
                             </span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">EN</span>
+                        </a>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -66,10 +68,10 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../ko/">EN</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/">EN</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../ko/">KO</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                             </li>
         
                         </ul>
@@ -146,10 +148,10 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../ko/">EN</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/">EN</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../ko/">KO</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                                     </li>
             
                                 </ul>
@@ -176,7 +178,7 @@
 <doc-anchor-target id="3-model-fine-tuning" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#3-model-fine-tuning">#</doc-anchor-trigger>
-        <span>3. Model fine-tuning</span>
+        <span>3. Model Fine-tuning</span>
     </h1>
 </doc-anchor-target>
 <p>Now, we will train the model through the following process.</p>
@@ -186,11 +188,7 @@
         <span>Setting Accelerator Flavor</span>
     </h2>
 </doc-anchor-target>
-<p>In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator&#x27;s flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.</p>
-<ul>
-<li><strong><a href="../../../supported_documents/kt_hac_models_info/">KT Hyperscale AI Computing (HAC) AI Accelerator Information</a></strong></li>
-<li><strong><a href="../../../supported_documents/llm_param_guide/">LLM Fine-tuning Parameter Guide</a></strong></li>
-</ul>
+<p>In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator&#x27;s flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. If needed, please refer to the <a href="../../../supported_documents/llm_param_guide/">LLM Fine-tuning Parameter Guide</a> to select the accelerator Flavor that aligns with your training objectives.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -223,18 +221,17 @@
 <li>AMD MI210 GPU with 32 units.</li>
 <li>AMD MI300X GPU with 8 units.</li>
 </ul>
-<p>Remember when we checked the MoAI Accelerator in the <a href="../1_prepare_fine-tuning/">1. Prepare Fine-tuning</a>? Now let&#x27;s set up the accelerator needed for learning.</p>
+<p>Remember when we checked the MoAI Accelerator in the <a href="../1_prepare_fine-tuning/"><strong>Llama2 13B Fine-tuning - Getting Started</strong></a>? Now let&#x27;s set up the accelerator needed for learning.</p>
 <p>First, we&#x27;ll use the <strong><code v-pre>moreh-smi</code></strong> command to check the currently used MoAI Accelerator.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-11:40:36 April 16, 2024
-+-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+=================================================================================================+
++---------------------------------------------------------------------------------------------------+
+|                                                  Current Version: 24.5.0  Latest Version: 24.5.0  |
++---------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
++===================================================================================================+
 |  * 0     |   MoAI Accelerator  |  xLarge.512GB  |  -             |  -             |  -            |
-+-------------------------------------------------------------------------------------------------+</code></pre>
++---------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <p>The current MoAI Accelerator in use has a memory size of 512GB.</p>
 <p>You can utilize the <code v-pre>moreh-switch-model</code> command to review the available accelerator flavors on the current system. For seamless model training, consider using the <code v-pre>moreh-switch-model</code>command to switch to a MoAI Accelerator with larger memory capacity.</p>
@@ -290,9 +287,8 @@ Selection (1-13, q, Q): q </code></pre>
 <p>To confirm that the changes have been successfully applied, use the <strong><code v-pre>moreh-smi</code></strong> command again to check the currently used MoAI Accelerator.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-23:56:17 April 18, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -308,45 +304,40 @@ Selection (1-13, q, Q): q </code></pre>
         <span>Training Execution</span>
     </h2>
 </doc-anchor-target>
-<p>Execute the given <strong><code v-pre>train_gpt.py</code></strong> script.</p>
+<p>Execute the given <strong><code v-pre>train_llama2.py</code></strong> script.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ cd ~/quickstart
 ~/quickstart$ python tutorial/train_llama2.py</code></pre>
 </doc-codeblock></div>
 <p>If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It&#x27;s worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">2024-04-24 13:51:32,884 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpypapv6uq
-2024-04-24 13:51:32,886 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpypapv6uq/_remote_module_non_scriptable.py
-2024-04-24 13:51:50,046 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
-...
-Loading checkpoint shards: 100%|██████████| 11/11 [00:11&lt;00:00,  1.02s/it]
-[2024-04-24 13:52:20.806] [info] Got DBs from backend for auto config.
-[2024-04-24 13:52:25.469] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-24 13:52:25.481] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-24 13:52:30.967] [info] [1/4] Connecting to resources on the server (192.168.110.1:24159)...
-[2024-04-24 13:52:30.982] [info] [2/4] Connecting to resources on the server (192.168.110.21:24159)...
-[2024-04-24 13:52:30.989] [info] [3/4] Connecting to resources on the server (192.168.110.22:24159)...
-[2024-04-24 13:52:30.995] [info] [4/4] Connecting to resources on the server (192.168.110.44:24159)...
-[2024-04-24 13:52:31.035] [info] Establishing links to the resources...
-[2024-04-24 13:52:31.906] [info] MoAI Accelerator is ready to use.
-[2024-04-24 13:52:32.407] [info] The number of candidates is 22.
-[2024-04-24 13:52:32.407] [info] Parallel Graph Compile start...
-[2024-04-24 13:53:05.235] [info] Elapsed Time to compile all candidates = 32827 [ms]
-[2024-04-24 13:53:05.235] [info] Parallel Graph Compile finished.
-[2024-04-24 13:53:05.235] [info] The number of possible candidates is 4.
-[2024-04-24 13:53:05.235] [info] SelectBestGraphFromCandidates start...
-[2024-04-24 13:53:06.328] [info] Elapsed Time to compute cost for survived candidates = 1093 [ms]
-[2024-04-24 13:53:06.328] [info] SelectBestGraphFromCandidates finished.
-[2024-04-24 13:53:06.328] [info] Configuration for parallelism is selected.
-[2024-04-24 13:53:06.328] [info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
-[2024-04-24 13:53:06.328] [info] train: true
-
-2024-04-23 11:29:22.533 | INFO     | __main__:main:131 - [Step 2/1121] | Loss: 1.78125 | Duration: 16.31 | Throughput: 32150.92 tokens/sec
-2024-04-23 11:30:29.368 | INFO     | __main__:main:131 - [Step 4/1121] | Loss: 1.7109375 | Duration: 15.65 | Throughput: 33494.69 tokens/sec
-2024-04-23 11:31:36.496 | INFO     | __main__:main:131 - [Step 6/1121] | Loss: 1.75 | Duration: 15.68 | Throughput: 33444.54 tokens/sec
-2024-04-23 11:32:40.688 | INFO     | __main__:main:131 - [Step 8/1121] | Loss: 1.609375 | Duration: 13.80 | Throughput: 37988.52 tokens/sec
-2024-04-23 11:33:44.980 | INFO     | __main__:main:131 - [Step 10/1121] | Loss: 1.640625 | Duration: 16.25 | Throughput: 32272.10 tokens/sec
-2024-04-23 11:34:52.182 | INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
+<pre class="language-none"><code v-pre class="language-none">...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/4] Connecting to resources on the server (192.168.110.1:24169)...
+[info] [2/4] Connecting to resources on the server (192.168.110.26:24169)...
+[info] [3/4] Connecting to resources on the server (192.168.110.61:24169)...
+[info] [4/4] Connecting to resources on the server (192.168.110.88:24169)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977753
+[info] The number of candidates is 54.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 80292 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 37.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 49599 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] No PP, No TP, recomputation : default(1), distribute_param : true, distribute_low_prec_param : true
+[info] train: true
+| INFO     | __main__:main:136 - [Step 2/1121] | Loss: 1.84375 | Duration: 2.37 | Throughput: 110643.89 tokens/sec
+| INFO     | __main__:main:136 - [Step 4/1121] | Loss: 1.78125 | Duration: 1.66 | Throughput: 158266.52 tokens/sec
+| INFO     | __main__:main:136 - [Step 6/1121] | Loss: 1.71875 | Duration: 1.70 | Throughput: 154598.70 tokens/sec
+| INFO     | __main__:main:136 - [Step 8/1121] | Loss: 1.734375 | Duration: 1.82 | Throughput: 143925.00 tokens/sec
 ...
 
 Training Done
@@ -356,11 +347,11 @@ Model saved in ./llama2_summarization</code></pre>
 <p>You can verify that the training is proceeding smoothly by checking the training logs.</p>
 <p>The throughput displayed during training indicates how many tokens are being trained per second through the PyTorch script.</p>
 <ul>
-<li>Throughput when using 16 AMD MI250 GPUs: Approximately 35,000 tokens/sec</li>
+<li>Throughput when using 16 AMD MI250 GPUs: Approximately 150,000 tokens/sec</li>
 </ul>
-<p>Here are the approximate training times based on the type and number of GPUs:</p>
+<p>Here are the approximate training times based on the type and number of GPUs.</p>
 <ul>
-<li>Training time when using 16 AMD MI250 GPUs: Approximately 10 hours</li>
+<li>Training time when using 16 AMD MI250 GPUs: Approximately 4 hours</li>
 </ul>
 <doc-anchor-target id="checking-accelerator-status-during-training">
     <h2>
@@ -372,12 +363,19 @@ Model saved in ./llama2_summarization</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    100%        |
-+-----------------------------------------------------------------------------------------------------+</code></pre>
+|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1354751 MiB   |  2096640 MiB   |     100%      |
++-----------------------------------------------------------------------------------------------------+
+
+Processes:
++--------------------------------------------------------------------------------------+
+|  Device  |  Job ID  |    PID    |             Process               |  Memory Usage  |
++======================================================================================+
+|       0  |  977753  |  2200972  |  python tutorial/train_llama2.py  |  1354751 MiB   |
++--------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
@@ -405,7 +403,7 @@ Model saved in ./llama2_summarization</code></pre>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">2. Understanding training code</span>
+                                                <span class="block mt-1">2. Understanding Training Code</span>
                                             </span>
                                         </a>
                                     </div>
@@ -458,6 +456,6 @@ Model saved in ./llama2_summarization</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "3. Model fine-tuning", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "3. Model Fine-tuning", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

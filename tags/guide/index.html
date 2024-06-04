@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="eng" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770467064358">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770802247461">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -27,11 +27,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770467064358" rel="stylesheet">
+    <link href="../../static/favicon.png" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.5.0.770802247461" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770467064358" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770467064358" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,7 +53,7 @@
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../img/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../img/logo.png">
                             </span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">EN</span>
+                        </a>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -62,10 +64,10 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../ko/">EN</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/">EN</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../ko/">KO</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                             </li>
         
                         </ul>
@@ -142,10 +144,10 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../ko/">EN</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/">EN</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../ko/">KO</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                                     </li>
             
                                 </ul>
@@ -181,15 +183,8 @@
         <img class="absolute object-cover w-full h-full" src="../../overview/img_ov/ov_1.png">
     </div>
     <div class="p-6">
-        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">MoAI Platform Overview</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The MoAI Platform is a scalable AI platform designed for developing large-scale deep learning models.</p></div>
-    </div>
-</a>
-<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../moai_features/virtualization/">
-    <div class="p-6">
-        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">MoAI Platform Features</div>
-        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">GPU Virtualization</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">MoAI Platform의 가상화 기능을 통해 사용자는 수백 개의 GPU를 단일 가속기처럼 사용할 수 있습니다.</p></div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Overview</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The MoAI Platform is an AI platform for the development of large-scale deep learning models, simplifying the management of thousands of GPU clusters...</p></div>
     </div>
 </a>
 <a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/">
@@ -202,38 +197,45 @@
     <div class="p-6">
         <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Supported Documents</div>
         <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Moreh Toolkit Guide</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (</p></div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerator on the MoAI Platform. With just three commands (</p></div>
     </div>
 </a>
 <a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/prepare_fine_tuning_moai/">
     <div class="p-6">
         <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Supported Documents</div>
         <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Prepare Fine-tuning on MoAI Platform</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The MoAI Platform can be customized with various GPUs while maintaining a consistent user experience via a command line interface(CLI).</p></div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The MoAI Platform can be configured with various GPUs, yet it provides a consistent user experience through a unified interface (CLI).</p></div>
     </div>
 </a>
 <a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/ap/">
     <div class="relative shrink-0 bg-gray-300 md:w-5/12 pb-9/16 md:pb-0 dark:bg-dark-450">
-        <img class="absolute object-cover w-full h-full" src="../../supported_documents/ap/overview_05.png">
+        <img class="absolute object-cover w-full h-full" src="../../overview/img_ov/ap_1.png">
     </div>
     <div class="p-6">
         <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Supported Documents</div>
         <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Advanced Parallelization(AP)</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Advanced Parallelization (AP) is an optimized automated distributed parallel processing feature provided by the MoAI Platform.</p></div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The MoAI Platform's Advanced Parallelization (AP) is the automatic model optimization and distributed parallel processing feature.</p></div>
     </div>
 </a>
-<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/">
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/ap/utilize_ap/">
     <div class="p-6">
         <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Supported Documents &#8226; Advanced Parallelization(AP)</div>
-        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Advanced Parallelism(AP)</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP.</p></div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Utilizing AP</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.</p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/ap/ap_learn_more/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Supported Documents &#8226; Advanced Parallelization(AP)</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Learn More About AP</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Let's take a closer look at the logs related to AP.</p></div>
     </div>
 </a>
 <a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../supported_documents/llm_param_guide/">
     <div class="p-6">
         <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Supported Documents</div>
-        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">LLM Fine-tuning Parameter guide</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">This guide provides optimal parameters offered by the MoAI Platform and should be used solely as a helpful reference during the training.</p></div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">LLM Fine-tuning Parameter Guide</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">This guide provides the optimal parameters recommended by the MoAI Platform and should be used as a reference during your training.</p></div>
     </div>
 </a>
 
