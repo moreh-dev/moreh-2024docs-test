@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html lang="eng" class="h-full">
+<html lang="ko" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770802247461">
+    <meta name="turbo-root" content="/ko">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770805750832">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Utilizing AP</title>
-    <meta name="title" content="Utilizing AP">
-    <meta name="description" content="The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.">
+    <title>자동 병렬화</title>
+    <meta name="title" content="자동 병렬화">
+    <meta name="description" content="딥러닝 모델은 여러 개의 레이어로 이루어져 있고, 각 레이어는 다양한 연산을 포함하고 있습니다. 이러한 연산들은 독립적으로 학습될 수 있어 병렬 처리가 가능합니다. 그러나 이를 위해 ML 엔지니어는 파라미터와 환경 변수의 조합을 수동으로 설정해야 합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/supported_documents/ap/utilize_ap/">
+    <link rel="canonical" href="https://docs.moreh.io/ko/overview/moai_features/ap/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/supported_documents/ap/utilize_ap/">
-    <meta property="og:title" content="Utilizing AP">
-    <meta property="og:description" content="The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.">
+    <meta property="og:url" content="https://docs.moreh.io/ko/overview/moai_features/ap/">
+    <meta property="og:title" content="자동 병렬화">
+    <meta property="og:description" content="딥러닝 모델은 여러 개의 레이어로 이루어져 있고, 각 레이어는 다양한 연산을 포함하고 있습니다. 이러한 연산들은 독립적으로 학습될 수 있어 병렬 처리가 가능합니다. 그러나 이를 위해 ML 엔지니어는 파라미터와 환경 변수의 조합을 수동으로 설정해야 합니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/supported_documents/ap/utilize_ap/">
-    <meta property="twitter:title" content="Utilizing AP">
-    <meta property="twitter:description" content="The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.">
+    <meta property="twitter:url" content="https://docs.moreh.io/ko/overview/moai_features/ap/">
+    <meta property="twitter:title" content="자동 병렬화">
+    <meta property="twitter:description" content="딥러닝 모델은 여러 개의 레이어로 이루어져 있고, 각 레이어는 다양한 연산을 포함하고 있습니다. 이러한 연산들은 독립적으로 학습될 수 있어 병렬 처리가 가능합니다. 그러나 이를 위해 ML 엔지니어는 파라미터와 환경 변수의 조합을 수동으로 설정해야 합니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770802247461" rel="stylesheet">
+    <link href="../../../../static/favicon.png" rel="icon">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770805750832" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770805750832" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770802247461" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770805750832" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770805750832" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770805750832" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -71,7 +72,7 @@
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/">EN</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../">KO</a>
                             </li>
         
                         </ul>
@@ -85,7 +86,7 @@
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="검색">
                         </div>
         
                         <!-- Mobile search button -->
@@ -119,7 +120,7 @@
             
                 <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="필터">
                 </div>
             
                 <div class="pl-6 mt-1 mb-4">
@@ -151,7 +152,7 @@
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/">EN</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../">KO</a>
                                     </li>
             
                                 </ul>
@@ -175,168 +176,70 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="utilizing-ap" class="break-words">
+<doc-anchor-target id="자동-병렬화" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-ap">#</doc-anchor-trigger>
-        <span>Utilizing AP</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#자동-병렬화">#</doc-anchor-trigger>
+        <span>자동 병렬화</span>
     </h1>
 </doc-anchor-target>
-<p>The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP. Before using the AP feature, please check the information on the accelerators you are using.</p>
-<doc-anchor-target id="how-to-apply-the-ap-feature">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-apply-the-ap-feature">#</doc-anchor-trigger>
-        <span>How to Apply the AP Feature</span>
-    </h3>
-</doc-anchor-target>
-<p>The AP feature can be applied by adding a single line of code after <strong><code v-pre>import torch</code></strong>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import torch
-
-torch.moreh.option.enable_advanced_parallelization()
-...</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="example-usage">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-usage">#</doc-anchor-trigger>
-        <span>Example Usage</span>
-    </h3>
-</doc-anchor-target>
-<p>If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we&#x27;ll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to <a href="https://docs.moreh.io/tutorials/llama2_tutorial/1_prepare_fine-tuning/">Llama2 Tutorial 1. Preparing for fine-tuning</a> to prepare the training code.</p>
-<p>Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
-...
-# Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
-...</code></pre>
-</doc-codeblock></div>
-<p>Once the PyTorch environment is set up, fetch the training code from the GitHub repository.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ git clone https://github.com/moreh-dev/quickstart
-$ cd quickstart
-~/quickstart$ ls ap-example
-... text_summarization_for_ap.py ...
-</code></pre>
-</doc-codeblock></div>
-<p>Clone the <strong><code v-pre>quickstart</code></strong> repository and check the <strong><code v-pre>quickstart/ap-example</code></strong> directory. You&#x27;ll find the <strong><code v-pre>text_summarization_for_ap.py</code></strong> file prepared by Moreh for testing the AP feature. Let&#x27;s apply the AP feature using this code.</p>
-<p>The training configuration for testing is as follows. We will proceed with testing based on this configuration.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5><strong>자동 병렬화란?</strong></h5>
+<p>딥러닝 모델은 여러 개의 레이어로 이루어져 있고, 각 레이어는 다양한 연산을 포함하고 있습니다. 이러한 연산들은 독립적으로 학습될 수 있어 병렬 처리가 가능합니다. 그러나 이를 위해 ML 엔지니어는 파라미터와 환경 변수의 조합을 수동으로 설정해야 합니다.
+MoAI Platform의 자동 병렬화 기능은 최적의 병렬화 환경 변수 조합을 신속하게 결정합니다.
+따라서 사용자는 대규모 모델 훈련 시 필요한 <a href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">Data Parallelism</a>, <a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html">DDP</a>, <a href="https://pytorch.org/docs/stable/pipeline.html">Pipeline Parallelism</a>, and <a href="https://pytorch.org/tutorials/intermediate/TP_tutorial.html">Tensor Parallelism</a> 등의 병렬화 기법을 자동으로 적용하여 모델을 훈련할 수 있습니다.</p>
+        </div>
+    </div>
+</div>
+<p>인공지능 시대에는 대형 언어 모델(LLM) 및 대형 멀티모달 모델(LMM)과 같은 대규모 모델의 훈련 및 추론에 상당한 규모의 GPU 클러스터와 효과적인 GPU 병렬화가 필요합니다.</p>
+<p>현재 NVIDIA와 함께 사용되는 일반적인 AI 프레임워크는 모델의 크기와 복잡성, 그리고 사용 가능한 GPU의 크기나 클러스터에 따라 AI 엔지니어가 병렬화를 수동으로 조정해야 합니다. 이 과정은 시간이 많이 소요되며 종종 몇 주가 걸립니다.</p>
 <ul>
-<li>Batch Size: <strong><code v-pre>64</code></strong></li>
-<li>Sequence Length: <strong><code v-pre>1024</code></strong></li>
-<li>MoAI Accelerator: <strong><code v-pre>4xLarge</code></strong></li>
+<li>MoAI 플랫폼은 특정 AI 모델과 GPU 클러스터의 크기를 기반으로 GPU 리소스를 최적으로 활용하는 Moreh AI 컴파일러를 통해 자동 병렬화를 제공합니다.</li>
+<li>자동 병렬화를 통해 NVIDIA 환경(플랫폼)에서 몇 주가 소요되는 모델 훈련을 대략 2~3일로 대폭 단축할 수 있습니다.</li>
 </ul>
-<doc-anchor-target id="enabling-the-ap-feature">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-the-ap-feature">#</doc-anchor-trigger>
-        <span>Enabling the AP Feature</span>
-    </h3>
-</doc-anchor-target>
-<p>At the beginning of the program&#x27;s main function, there&#x27;s a line to enable the AP feature. Apply AP and then run the training as shown below.</p>
+<p>MoAI Platform에서 사용자는 가상화된 하나의 GPU인 MoAI Accelerator를 사용하게 됩니다. 따라서 MoAI Platform 상에서 사용자는 별도 병렬화 작업없이 하나의 GPU를 사용하는 것을 가정하고 코드를 작성하게 됩니다. 그렇다면 MoAI Platform에서는 어떻게 여러 개의 GPU를 사용할 수 있을까요?</p>
+<p><strong>MoAI Platform은 사용하는 GPU 수에 따라 자동으로 가장 좋은 최적화 및 병렬화를 수행합니다.</strong></p>
+<p>예를 들어, 사용자가 8개의 GPU를 사용하는 가속기 flavor를 선택하여 학습을 시작하면 MoAI Platform은 자동으로 전체 배치 크기를 8등분하여 각 GPU에 분배하여 처리합니다. 더 자세한 설명을 위해 Llama3-8b 모델을 fine-tuning하는 상황을 가정해보겠습니다. 사용자가 4개의 GPU를 사용하는 가속기 flavor를 선택하고 배치 크기를 16으로 설정한다면, 각 GPU당 4개의 배치가 자동으로 분배되어 대략 1초에 12만 5천 개의 토큰을 처리하는 것을 확인할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">def main(args):
+<pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 16, gpu 4
+[Step 4/17944] | Loss: 2.03125 | Duration: 1.27 | Throughput: 12882.87 tokens/sec
+[Step 6/17944] | Loss: 2.03125 | Duration: 1.22 | Throughput: 13393.38 tokens/sec
+[Step 8/17944] | Loss: 2.109375 | Duration: 1.31 | Throughput: 12492.66 tokens/sec
+[Step 10/17944] | Loss: 2.015625 | Duration: 1.24 | Throughput: 13201.98 tokens/sec</code></pre>
+</doc-codeblock></div>
+<p>더 빠르고 효율적인 학습을 위해 더 많은 GPU를 사용하는 가속기 flavor를 선택하고 배치 크기를 키울 수도 있습니다. 사용자가 16개의 GPU를 사용하는 가속기 flavor를 선택하고 배치 크기를 64로 설정한 후 학습을 시작하면, 1초에 처리되는 토큰 수를 기존 대비 4배로 키울 수 있습니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 64, gpu 16
+[Step 4/4486] | Loss: 2.125 | Duration: 1.42 | Throughput: 46148.86 tokens/sec
+[Step 6/4486] | Loss: 2.078125 | Duration: 1.33 | Throughput: 49221.88 tokens/sec
+[Step 8/4486] | Loss: 2.03125 | Duration: 1.33 | Throughput: 49392.99 tokens/sec
+[Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec</code></pre>
+</doc-codeblock></div>
+<p>그런데 만약 사용자가 보다 더 <strong>큰 배치 크기를 사용하려는 경우</strong>는 어떨까요? 추가적인 코드 수정이 없다면, 일반적인 GPU 클러스터에서는 Out of Memory(OOM) 에러가 발생할 가능성이 큽니다. 하지만 MoAI Platform은 자동으로 모델을 병렬화하여 학습을 진행시킬 수 있습니다.</p>
+<p>사용자가 16개의 GPU를 사용하는 가속기 flavor를 선택하고, 배치 크기를 512로 설정하여 학습하면 자동으로 모델 병렬화와 데이터 병렬화가 동시에 적용돼 같은 개수의 GPU를 사용하더라도 더 큰 배치 크기로 학습할 수 있습니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">
+# Llama3-8b-base fine-tuning, batch-size 512, gpu 16
+[Step 4/560] | Loss: 1.953125 | Duration: 24.00 | Throughput: 21844.08 tokens/sec
+[Step 6/560] | Loss: 1.8671875 | Duration: 24.63 | Throughput: 21283.67 tokens/sec
+[Step 8/560] | Loss: 2.0 | Duration: 24.41 | Throughput: 21475.45 tokens/sec
+[Step 10/560] | Loss: 1.9609375 | Duration: 24.26 | Throughput: 21609.36 tokens/sec
+[Step 12/560] | Loss: 1.90625 | Duration: 24.43 | Throughput: 21463.95 tokens/sec</code></pre>
+</doc-codeblock></div>
+<p>이 외에도 70B와 같은 대형 모델도 별도의 추가 작업없이 자동으로 병렬화되기 때문에 간편하게 학습할 수 있습니다. 이처럼 MoAI Platform은 사용자가 사용하는 모델과 배치 크기 등에 따라 자동으로 <strong>최적화와 병렬화를 제공하여, 다중 GPU를 편리하고 효율적으로 사용할 수 있도록 합니다.</strong></p>
 
-    # Apply Advanced Parallelization
-    torch.moreh.option.enable_advanced_parallelization()</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
-</doc-codeblock></div>
-<p>When the training starts, you will see logs like the following:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">...
-[info] Establishing links to the resources...
-[info] MoAI Accelerator is ready to use.
-[info] The number of candidates is 30.
-[info] Parallel Graph Compile start...
-[info] Elapsed Time to compile all candidates = 6103 [ms]
-[info] Parallel Graph Compile finished.
-[info] The number of possible candidates is 7.
-[info] SelectBestGraphFromCandidates start...
-[info] Elapsed Time to compute cost for survived candidates = 808 [ms]
-[info] SelectBestGraphFromCandidates finished.
-info] Configuration for parallelism is selected.
-[info] num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
-[info] train: true
-|INFO     | __main__:main:151 - [Step 2/15] Loss: 1.6484375
-|INFO     | __main__:main:151 - [Step 4/15] Loss: 1.828125
-...</code></pre>
-</doc-codeblock></div>
-<p>As shown, by adding just one line to enable the AP feature, complex distributed parallel processing is executed, and training progresses. Next, we&#x27;ll explain the scenario users might encounter if they do not use the AP feature.</p>
-<doc-anchor-target id="disabling-the-ap-feature">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disabling-the-ap-feature">#</doc-anchor-trigger>
-        <span>Disabling the AP Feature</span>
-    </h3>
-</doc-anchor-target>
-<p>Let&#x27;s examine the situation when the AP feature is not used. To verify this, comment out the line that enables the AP feature at the beginning of the Python program&#x27;s main function.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">def main(args):
-
-    # Apply Advanced Parallelization
-    # torch.moreh.option.enable_advanced_parallelization() # Commented out
-</code></pre>
-</doc-codeblock></div>
-<p>Then proceed with the training.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
-</doc-codeblock></div>
-<p>After the training completes, you will see logs as the following.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">...
-[info] [1/4] Connecting to resources on the server (192.168.110.10:24163)...
-[info] [2/4] Connecting to resources on the server (192.168.110.34:24163)...
-[info] [3/4] Connecting to resources on the server (192.168.110.62:24163)...
-[info] [4/4] Connecting to resources on the server (192.168.110.87:24163)...
-[info] Establishing links to the resources...
-[info] MoAI Accelerator is ready to use.
-Traceback (most recent call last):
-  File &quot;text_summarization_for_ap.py&quot;, line 183, in &lt;module&gt;
-    main(args)
-  File &quot;text_summarization_for_ap.py&quot;, line 146, in main
-    optim.step()
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/optim/optimizer.py&quot;, line 140, in wrapper
-    out = func(*args, **kwargs)
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/autograd/grad_mode.py&quot;, line 27, in decorate_context
-    return func(*args, **kwargs)
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/transformers/optimization.py&quot;, line 455, in step
-    state[&quot;exp_avg&quot;] = torch.zeros_like(p)
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/wrapper/moreh_wrapper.py&quot;, line 109, in wrapper
-    raise instance
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/wrapper/moreh_wrapper.py&quot;, line 74, in wrapper
-    return moreh_function(
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/builtin.py&quot;, line 15653, in zeros_like
-    new_tensor = _make_filled_moreh_tensor_like('torch.zeros_like', None,
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/builtin.py&quot;, line 337, in _make_filled_moreh_tensor_like
-    return _make_filled_moreh_tensor(
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/builtin.py&quot;, line 324, in _make_filled_moreh_tensor
-    return frontend.register_operation_([new_tensor], op)[0]
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/common/frontend.py&quot;, line 773, in register_operation_
-    return _register_operation_internal(input_tensors,
-  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/common/frontend.py&quot;, line 641, in _register_operation_internal
-    output_tickets = moreh_ir.create_operation(op_name, op.SerializeToString(),
-RuntimeError: **Error Code 4: OUT_OF_MEMORY**
-Moreh solution has detected that the application requires more memory than what is currently available in at least one physical device of KT AI Accelerator.
-&gt;&gt; Memory requested : 75051597828 bytes
-&gt;&gt; Memory available : 68702699520 bytes
-To address this issue, we recommend considering the following steps:
- 1. Increase Device Size: If feasible, try increasing the size of the device, MoAI Accelerator, to accommodate the required memory.This can be done by using the `moreh-switch-model` command.
- 2. Decrease Batch Size: Alternatively, you can decrease the batch size used in the application. By reducing the batch size by -b {new batch size} command, you can effectively manage the memory usage and ensure it fits within the available resources.
-If the problem persists and you are unable to resolve it, please reach out to our technical support team for further assistance:</code></pre>
-</doc-codeblock></div>
-<p>In the above logs, you can see the message <strong><code v-pre>RuntimeError: Error Code 4: OUT_OF_MEMORY</code></strong>, indicating an Out of Memory (OOM) error caused by trying to load data exceeding the VRAM of the 1 device chip, which is 64GB.</p>
-<p>If you were using a framework other than MoAI Platform, you would experience such inconvenience. However, as a user of the MoAI Platform, you can easily solve the troublesome OOM problem by applying the AP feature with just one line, without spending a long time calculating and deliberating separate parallelization optimizations.</p>
-
-                                <div class="flex items-center mt-6 mb-6 clear-both">
-                                    <span>
-                                        <a href="../../../tags/">
-                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
-                                        </a>
-                                        <span class="mr-2"><a href="../../../tags/guide/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
-                                    <span>guide</span>
-                                </a></span>
-                                    </span>
-                                </div>
-                
+                                
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
@@ -344,20 +247,20 @@ If the problem persists and you are unable to resolve it, please reach out to ou
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../supported_documents/ap/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../overview/index_old/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Advanced Parallelization(AP)</span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">이전</span>
+                                                <span class="block mt-1">Index old</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../supported_documents/ap/ap_learn_more/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../overview/moai_features/ap/about_ap/">
                                             <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Learn More About AP</span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">다음</span>
+                                                <span class="block mt-1">Advanced Parallelization(AP)</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -401,6 +304,6 @@ If the problem persists and you are unable to resolve it, please reach out to ou
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Utilizing AP", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "자동 병렬화", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

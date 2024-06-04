@@ -3,43 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770802247461">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770805755407">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>GPU Virtualization: MoAI Accelerator</title>
-    <meta name="title" content="GPU Virtualization: MoAI Accelerator">
-    <meta name="description" content="The MoAI Platform virtualizes large GPU clusters, consisting of dozens or hundreds of GPU nodes, into a single accelerator called the MoAI...">
+    <title>How to use AP</title>
+    <meta name="title" content="How to use AP">
+    <meta name="description" content="The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/moai_features/virtualization/">
+    <link rel="canonical" href="https://docs.moreh.io/overview/ap/utilize_ap/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/moai_features/virtualization/">
-    <meta property="og:title" content="GPU Virtualization: MoAI Accelerator">
-    <meta property="og:description" content="The MoAI Platform virtualizes large GPU clusters, consisting of dozens or hundreds of GPU nodes, into a single accelerator called the MoAI...">
-    <meta property="og:image" content="https://docs.moreh.io/overview/img_ov/v_3.png">
+    <meta property="og:url" content="https://docs.moreh.io/overview/ap/utilize_ap/">
+    <meta property="og:title" content="How to use AP">
+    <meta property="og:description" content="The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/moai_features/virtualization/">
-    <meta property="twitter:title" content="GPU Virtualization: MoAI Accelerator">
-    <meta property="twitter:description" content="The MoAI Platform virtualizes large GPU clusters, consisting of dozens or hundreds of GPU nodes, into a single accelerator called the MoAI...">
-    <meta property="twitter:image" content="https://docs.moreh.io/overview/img_ov/v_3.png">
+    <meta property="twitter:url" content="https://docs.moreh.io/overview/ap/utilize_ap/">
+    <meta property="twitter:title" content="How to use AP">
+    <meta property="twitter:description" content="The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.770802247461" rel="stylesheet">
+    <link href="../../../static/favicon.png" rel="icon">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770805755407" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770802247461" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770802247461" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770805755407" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770805755407" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770805755407" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770805755407" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -54,10 +52,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
                             <span class="grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../img/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../img/logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo.png">
                             </span>
                         </a>
                     </div>
@@ -177,125 +175,162 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="gpu-virtualization-moai-accelerator" class="break-words">
+<doc-anchor-target id="how-to-use-ap" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gpu-virtualization-moai-accelerator">#</doc-anchor-trigger>
-        <span>GPU Virtualization: MoAI Accelerator</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use-ap">#</doc-anchor-trigger>
+        <span>How to use AP</span>
     </h1>
 </doc-anchor-target>
-<p>The MoAI Platform virtualizes large GPU clusters, consisting of dozens or hundreds of GPU nodes, into a single accelerator called the MoAI Accelerator. This allows users to design and train models as if they are using a single GPU, without worrying about model parallelization or manually configuring cluster environments.</p>
-<p><figure class="content-center">
-    <img src="../../overview/img_ov/v_3.png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>You can check the MoAI Accelerator status by entering the <code v-pre>moreh-smi</code> command in the terminal.</p>
+<p>The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP. Before using the AP feature, please check the information on the accelerators you are using.</p>
+<p>The AP feature can be applied by adding a single line of code after <strong><code v-pre>import torch</code></strong>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-+-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|    0     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+</code></pre>
+<pre class="language-python"><code v-pre class="language-python">import torch
+
+torch.moreh.option.enable_advanced_parallelization()
+...</code></pre>
 </doc-codeblock></div>
-<p>The output shows that the user is utilizing a single accelerator with 2048 GB of memory. However, in reality, it consists of 4 nodes, each with 4 GPUs.</p>
-<p>Let&#x27;s verify if the MoAI Accelerator is recognized correctly in PyTorch, one of the most widely used deep learning frameworks. Using the cuda API in the Python interpreter, we can see that PyTorch recognizes the MoAI Accelerator as a single device.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ python
-Python 3.8.19 (default) 
-[GCC 11.2.0] :: Anaconda, Inc. on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; import torch
-&gt;&gt;&gt; torch.cuda.device_count()
-1</code></pre>
-</doc-codeblock></div>
-<p>An important point to note is that there are no physical GPUs in the user&#x27;s environment. When the user attempts to use GPU accelerators through APIs like <strong><code v-pre>cuda</code></strong> in deep learning frameworks such as PyTorch, the MoAI Platform automatically allocates GPU cluster resources.</p>
-<doc-anchor-target id="dynamic-gpu-allocation-on-the-moai-platform">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dynamic-gpu-allocation-on-the-moai-platform">#</doc-anchor-trigger>
-        <span>Dynamic GPU Allocation on the MoAI Platform</span>
-    </h2>
+<doc-anchor-target id="example-usage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-usage">#</doc-anchor-trigger>
+        <span>Example Usage</span>
+    </h3>
 </doc-anchor-target>
-<p>The MoAI Platform dynamically handles GPU allocation at the process level. This ensures that users efficiently receive physical GPU allocations while training and inferencing models using frameworks like PyTorch. It also provides flexibility, allowing users to select and adjust the number of GPUs from various pre-defined MoAI Accelerator flavors as needed.</p>
-<p>In contrast, traditional cloud platforms typically allocate physical GPUs statically from the moment an instance is created. If users wish to change the number of GPUs or stop using them, they need to delete the existing instance or terminate the container and restart it. The MoAI Platform&#x27;s dynamic allocation significantly reduces this inconvenience.</p>
-<p>Let&#x27;s go through a simple example of changing the MoAI Accelerator flavor.</p>
-<p>First, check the current MoAI Accelerator in use by entering the <strong><code v-pre>moreh-smi</code></strong> command in the terminal.</p>
+<p>If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we&#x27;ll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to <a href="https://docs.moreh.io/tutorials/llama2_tutorial/1_prepare_fine-tuning/">Llama2 Tutorial 1. Preparing for fine-tuning</a> to prepare the training code.</p>
+<p>Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-+---------------------------------------------------------------------------------------------------+
-|                                                  Current Version: 24.5.0  Latest Version: 24.5.0  |
-+---------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
-+===================================================================================================+
-|  * 0     |   MoAI Accelerator  |  xLarge.512GB  |  -             |  -             |  -            |
-+---------------------------------------------------------------------------------------------------+</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
+...
+# Name                    Version                   Build  Channel
+torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+...</code></pre>
 </doc-codeblock></div>
-<p>You can see that the current flavor of the MoAI Accelerator being used is <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>xLarge.512GB</span>
-</span>. If you need to train a larger model or want to use more GPUs to speed up training, you can easily switch the flavor by entering the <strong><code v-pre>moreh-switch-model</code></strong> command.</p>
+<p>Once the PyTorch environment is set up, fetch the training code from the GitHub repository.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model
-Current MoAI Accelerator: xLarge.512GB
-
-1. Small.64GB
-2. Medium.128GB
-3. Large.256GB
-4. xLarge.512GB  *
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q): 8
-
-The MoAI Accelerator model is successfully switched to  &quot;4xLarge.2048GB&quot;.
-
-1. Small.64GB
-2. Medium.128GB
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB  *
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q):
-q</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">$ git clone https://github.com/moreh-dev/quickstart
+$ cd quickstart
+~/quickstart$ ls ap-example
+... text_summarization_for_ap.py ...
+</code></pre>
 </doc-codeblock></div>
-<p>After entering the <strong><code v-pre>moreh-smi</code></strong> command again to check the current MoAI Accelerator flavor, you can see it has been successfully changed to <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>4xLarge.2048GB</span>
-</span>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-+-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|  * 0     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="conclusion">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
-        <span>Conclusion</span>
-    </h2>
+<p>Clone the <strong><code v-pre>quickstart</code></strong> repository and check the <strong><code v-pre>quickstart/ap-example</code></strong> directory. You&#x27;ll find the <strong><code v-pre>text_summarization_for_ap.py</code></strong> file prepared by Moreh for testing the AP feature. Let&#x27;s apply the AP feature using this code.</p>
+<p>The training configuration for testing is as follows. We will proceed with testing based on this configuration.</p>
+<ul>
+<li>Batch Size: <strong><code v-pre>64</code></strong></li>
+<li>Sequence Length: <strong><code v-pre>1024</code></strong></li>
+<li>MoAI Accelerator: <strong><code v-pre>4xLarge</code></strong></li>
+</ul>
+<doc-anchor-target id="enabling-the-ap-feature">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-the-ap-feature">#</doc-anchor-trigger>
+        <span>Enabling the AP Feature</span>
+    </h3>
 </doc-anchor-target>
-<p>The MoAI Platform simplifies the complexity of multi-node GPU clusters through virtualization technology known as the MoAI Accelerator. It provides users with a powerful yet flexible computing environment. By allowing users to adjust model size and the number of GPUs without complex settings and management tasks, it enables efficient resource utilization. Use the MoAI Accelerator on the MoAI Platform to design and train deep learning models quickly and efficiently.</p>
+<p>At the beginning of the program&#x27;s main function, there&#x27;s a line to enable the AP feature. Apply AP and then run the training as shown below.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def main(args):
 
-                                
+    # Apply Advanced Parallelization
+    torch.moreh.option.enable_advanced_parallelization()</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
+</doc-codeblock></div>
+<p>When the training starts, you will see logs like the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] The number of candidates is 30.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 6103 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 7.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 808 [ms]
+[info] SelectBestGraphFromCandidates finished.
+info] Configuration for parallelism is selected.
+[info] num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
+[info] train: true
+|INFO     | __main__:main:151 - [Step 2/15] Loss: 1.6484375
+|INFO     | __main__:main:151 - [Step 4/15] Loss: 1.828125
+...</code></pre>
+</doc-codeblock></div>
+<p>As shown, by adding just one line to enable the AP feature, complex distributed parallel processing is executed, and training progresses. Next, we&#x27;ll explain the scenario users might encounter if they do not use the AP feature.</p>
+<doc-anchor-target id="disabling-the-ap-feature">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disabling-the-ap-feature">#</doc-anchor-trigger>
+        <span>Disabling the AP Feature</span>
+    </h3>
+</doc-anchor-target>
+<p>Let&#x27;s examine the situation when the AP feature is not used. To verify this, comment out the line that enables the AP feature at the beginning of the Python program&#x27;s main function.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def main(args):
+
+    # Apply Advanced Parallelization
+    # torch.moreh.option.enable_advanced_parallelization() # Commented out
+</code></pre>
+</doc-codeblock></div>
+<p>Then proceed with the training.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
+</doc-codeblock></div>
+<p>After the training completes, you will see logs as the following.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">...
+[info] [1/4] Connecting to resources on the server (192.168.110.10:24163)...
+[info] [2/4] Connecting to resources on the server (192.168.110.34:24163)...
+[info] [3/4] Connecting to resources on the server (192.168.110.62:24163)...
+[info] [4/4] Connecting to resources on the server (192.168.110.87:24163)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+Traceback (most recent call last):
+  File &quot;text_summarization_for_ap.py&quot;, line 183, in &lt;module&gt;
+    main(args)
+  File &quot;text_summarization_for_ap.py&quot;, line 146, in main
+    optim.step()
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/optim/optimizer.py&quot;, line 140, in wrapper
+    out = func(*args, **kwargs)
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/autograd/grad_mode.py&quot;, line 27, in decorate_context
+    return func(*args, **kwargs)
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/transformers/optimization.py&quot;, line 455, in step
+    state[&quot;exp_avg&quot;] = torch.zeros_like(p)
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/wrapper/moreh_wrapper.py&quot;, line 109, in wrapper
+    raise instance
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/wrapper/moreh_wrapper.py&quot;, line 74, in wrapper
+    return moreh_function(
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/builtin.py&quot;, line 15653, in zeros_like
+    new_tensor = _make_filled_moreh_tensor_like('torch.zeros_like', None,
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/builtin.py&quot;, line 337, in _make_filled_moreh_tensor_like
+    return _make_filled_moreh_tensor(
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/builtin.py&quot;, line 324, in _make_filled_moreh_tensor
+    return frontend.register_operation_([new_tensor], op)[0]
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/common/frontend.py&quot;, line 773, in register_operation_
+    return _register_operation_internal(input_tensors,
+  File &quot;/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/common/frontend.py&quot;, line 641, in _register_operation_internal
+    output_tickets = moreh_ir.create_operation(op_name, op.SerializeToString(),
+RuntimeError: **Error Code 4: OUT_OF_MEMORY**
+Moreh solution has detected that the application requires more memory than what is currently available in at least one physical device of KT AI Accelerator.
+&gt;&gt; Memory requested : 75051597828 bytes
+&gt;&gt; Memory available : 68702699520 bytes
+To address this issue, we recommend considering the following steps:
+ 1. Increase Device Size: If feasible, try increasing the size of the device, MoAI Accelerator, to accommodate the required memory.This can be done by using the `moreh-switch-model` command.
+ 2. Decrease Batch Size: Alternatively, you can decrease the batch size used in the application. By reducing the batch size by -b {new batch size} command, you can effectively manage the memory usage and ensure it fits within the available resources.
+If the problem persists and you are unable to resolve it, please reach out to our technical support team for further assistance:</code></pre>
+</doc-codeblock></div>
+<p>In the above logs, you can see the message <strong><code v-pre>RuntimeError: Error Code 4: OUT_OF_MEMORY</code></strong>, indicating an Out of Memory (OOM) error caused by trying to load data exceeding the VRAM of the 1 device chip, which is 64GB.</p>
+<p>If you were using a framework other than MoAI Platform, you would experience such inconvenience. However, as a user of the MoAI Platform, you can easily solve the troublesome OOM problem by applying the AP feature with just one line, without spending a long time calculating and deliberating separate parallelization optimizations.</p>
+
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../../tags/guide/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>guide</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
@@ -303,20 +338,20 @@ q</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../moai_features/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../overview/ap/about_ap/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Mo​AI Platform Features</span>
+                                                <span class="block mt-1">AP: Concept</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../moai_features/parallelization/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../overview/ap/ap_learn_more/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Automatic Parallelization</span>
+                                                <span class="block mt-1">Learn More</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -360,6 +395,6 @@ q</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "GPU Virtualization: MoAI Accelerator", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "How to use AP", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
