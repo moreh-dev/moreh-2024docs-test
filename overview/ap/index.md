@@ -1,6 +1,6 @@
 ---
 icon: note
-order: 108
+order: 30
 ---
 
 # Automatic Parallelization

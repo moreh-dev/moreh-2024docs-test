@@ -5,7 +5,7 @@ order: 17
 expanded: false
 ---
 
-# Learn More About AP
+# Learn More
 
 Let's take a closer look at the logs related to AP.
 

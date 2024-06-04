@@ -2,6 +2,7 @@
 icon: note
 tags: [guide]
 order: 600
+visibility: hidden
 outbound:
   enabled: false
 ---

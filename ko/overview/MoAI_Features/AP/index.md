@@ -1,9 +1,23 @@
 ---
 icon: note
-order: 5
+order: 30
 ---
 
 # 자동 병렬화
+
+!!!info **자동 병렬화란?** 
+딥러닝 모델은 여러 개의 레이어로 이루어져 있고, 각 레이어는 다양한 연산을 포함하고 있습니다. 이러한 연산들은 독립적으로 학습될 수 있어 병렬 처리가 가능합니다. 그러나 이를 위해 ML 엔지니어는 파라미터와 환경 변수의 조합을 수동으로 설정해야 합니다.
+MoAI Platform의 자동 병렬화 기능은 최적의 병렬화 환경 변수 조합을 신속하게 결정합니다.
+따라서 사용자는 대규모 모델 훈련 시 필요한 [Data Parallelism](https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html), [DDP](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html), [Pipeline Parallelism](https://pytorch.org/docs/stable/pipeline.html), and [Tensor Parallelism](https://pytorch.org/tutorials/intermediate/TP_tutorial.html) 등의 병렬화 기법을 자동으로 적용하여 모델을 훈련할 수 있습니다.
+!!!
+
+인공지능 시대에는 대형 언어 모델(LLM) 및 대형 멀티모달 모델(LMM)과 같은 대규모 모델의 훈련 및 추론에 상당한 규모의 GPU 클러스터와 효과적인 GPU 병렬화가 필요합니다. 
+
+현재 NVIDIA와 함께 사용되는 일반적인 AI 프레임워크는 모델의 크기와 복잡성, 그리고 사용 가능한 GPU의 크기나 클러스터에 따라 AI 엔지니어가 병렬화를 수동으로 조정해야 합니다. 이 과정은 시간이 많이 소요되며 종종 몇 주가 걸립니다.
+
+- MoAI 플랫폼은 특정 AI 모델과 GPU 클러스터의 크기를 기반으로 GPU 리소스를 최적으로 활용하는 Moreh AI 컴파일러를 통해 자동 병렬화를 제공합니다.
+- 자동 병렬화를 통해 NVIDIA 환경(플랫폼)에서 몇 주가 소요되는 모델 훈련을 대략 2~3일로 대폭 단축할 수 있습니다.
+
 
 MoAI Platform에서 사용자는 가상화된 하나의 GPU인 MoAI Accelerator를 사용하게 됩니다. 따라서 MoAI Platform 상에서 사용자는 별도 병렬화 작업없이 하나의 GPU를 사용하는 것을 가정하고 코드를 작성하게 됩니다. 그렇다면 MoAI Platform에서는 어떻게 여러 개의 GPU를 사용할 수 있을까요?
 

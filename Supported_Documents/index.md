@@ -5,12 +5,9 @@ order: 80
 expanded: true
 ---
 
-
 - [Moreh Toolkit Guide](moreh_toolkit.md)
 
 - [Prepare Fine-tuning on MoAI Platform](Prepare_Fine_tuning_MoAI.md)
-
-- [Advanced Parallelization (AP)](https://docs.moreh.io/supported_documents/ap/)
 
 - [LLM Fine-tuning Parameter Guide](LLM_param_guide.md)
 

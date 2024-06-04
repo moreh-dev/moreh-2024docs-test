@@ -1,13 +1,13 @@
 ---
 icon: cpu
-order: 109
+order: 110
 ---
 
-# GPU Virtualization: MoAI Accelerator
+# GPU Virtualization
 
 The MoAI Platform virtualizes large GPU clusters, consisting of dozens or hundreds of GPU nodes, into a single accelerator called the MoAI Accelerator. This allows users to design and train models as if they are using a single GPU, without worrying about model parallelization or manually configuring cluster environments.
 
-![](/overview/img_ov/v_3.png)
+![](img_ov/v_3.png)
 
 You can check the MoAI Accelerator status by entering the `moreh-smi` command in the terminal.
 
