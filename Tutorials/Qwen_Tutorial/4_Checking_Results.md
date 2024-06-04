@@ -18,7 +18,8 @@ input_text = """Below is an instruction that describes a task. Write a response 
 ### Instruction:
 Create a function to join given list of strings with space.
 
-### Input:\n['I', 'love', 'you']
+### Input:
+['I', 'love', 'you']
 
 ### Output:
 """
@@ -32,19 +33,19 @@ Run the code below.
 
 Upon examining the output, you can confirm that the model has appropriately generated the function as per the prompt.
 
-```bash
+```
 Qwen: Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
 ### Instruction:
 Create a function to join given list of strings with space.
 
 ### Input:
-['I', 'love', 'Moreh']
+['I', 'love', 'you']
 
 ### Output:
 def join_strings(string_list):
-		return ' '.join(string_list)
+    return ' '.join(string_list)
 
-result = join_strings(['I', 'love', 'Moreh'])
+result = join_strings(['I', 'love', 'you'])
 print(result)
 ```

@@ -4,7 +4,7 @@ tags: [tutorial, baichuan]
 order: 40
 ---
 
-# 2. Understanding training code
+# 2. Understanding Training Code
 
 
 If you've prepared all the training data, let's now take a look at the contents of `train_baichuan2_13b.py` script for the actual fine-tuning process. **In this step, you'll notice that MoAI Platform ensures full compatibility with PyTorch, confirming that the training code is identical to the typical PyTorch code for NVIDIA GPUs.** Additionally, you'll explore how efficiently MoAI Platform implements complex parallelization techniques beyond this.
@@ -12,74 +12,79 @@ If you've prepared all the training data, let's now take a look at the contents 
 **First and foremost, it's recommended to proceed with the tutorial using the provided script as is until the end.** Afterwards, you can modify the script as you wish to fine-tune the Baichuan model in different ways. If needed, refer to the [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md).
 
 
-# Training Code
+## Training Code
 
 **All the code is exactly the same as when using PyTorch conventionally.** 
 
 First, import the necessary modules from the transformers library.
 
 ```python
-from transformers import AutoModelForCausalLM, AdamW, AutoTokenizer
+from transformers import AdamW, AutoTokenizer
+from modeling_baichuan import BaichuanForCausalLM
 ```
 
-Load the model configuration and checkpoint from HuggingFace.
+Load the checkpoint from HuggingFace.
+
+For model optimization, we use the `BaichuanForCausalLM` predefined in the quickstart repository.
 
 ```python
-model = AutoModelForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
+model = BaichuanForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 ```
 
-Load the preprocessed dataset saved during the [**1. Preparing for Fine-tuning**](1_Prepare_Finetuning.md) and define the data loader.
-
+Then load the [training dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 
 ```python
- dataset = torch.load('./baichuan_dataset.pt')
+# Load dataset
+dataset = load_dataset("bitext/Bitext-customer-support-llm-chatbot-training-dataset").with_format("torch")
+...
+dataset = dataset.map(preprocess)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 Subsequent training proceeds just like any other model training with PyTorch. 
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+    labels[~idx_mask.bool()] = ignore_index
+    return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+    for i, batch in enumerate(train_dataloader, 0):
+	input_ids = batch["input_ids"]
+	attn_mask = batch["attention_mask"]
+	labels = mask_pads(input_ids, attn_mask)
+	outputs = model(
+		input_ids.cuda(),
+		attention_mask=attn_mask.cuda(),
+		labels=labels.cuda(),
+		use_cache=False,
+	)
 
-            loss = outputs[0]
-            loss.backward()
+	loss = outputs[0]
+	loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+	optim.step()
+	model.zero_grad(set_to_none=True)
 ```
 
 **As shown above, with MoAI Platform, you can use your existing PyTorch scripts without any modifications.**
 
-# About Advanced Parallelism
+## About Advanced Parallelism
 
 The training script used in this tutorial includes the following additional line of code, which performs automatic parallelization provided by MoAI Platform.
 

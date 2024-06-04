@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [guide]
+tags: [tutorial, gpt]
 order: 40
 ---
 # 2. Moreh의 학습 코드 톺아보기
@@ -26,51 +26,54 @@ model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
 tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B") 
 ```
 
-[Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Hugging Face에 공개된 학습 데이터셋을 불러와 전처리하고, 데이터 로더를 정의합니다.
+이 튜토리얼에서는 [Evol-Instruct-Python-26k](https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k) 데이터셋을 사용합니다. 이 데이터셋은 주어진 프롬프트에 대응하여 작성된 파이썬 코드로 구성되어 있습니다.
 
 ```python
-  dataset = torch.load("gpt_dataset.pt")
+dataset = load_dataset("mlabonne/Evol-Instruct-Python-26k").with_format("torch")
+...
+dataset = dataset.map(preprocess)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+	for i, batch in enumerate(train_dataloader, 0):
+		input_ids = batch["input_ids"]
+		attn_mask = batch["attention_mask"]
+		labels = mask_pads(input_ids, attn_mask)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
 
-            loss = outputs[0]
-            loss.backward()
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
 
 **위와 같이 MoAI Platform에서는 기존 pytorch 코드와 동일한 방식으로 작성하실 수 있습니다.**
@@ -115,19 +118,19 @@ torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
-이와 같은 기본적인 세팅 이외에도 유저는 학습 스크립트 작성 과정에서 multi processing 환경에서의 Python 코드의 동작에 대해 이해하고 있어야 하며, 특히 multi node 세팅에서는 학습에 사용되는 노드들에 대한 환경 구성 작업이 추가적으로 들어가야 합니다. 게다가 모델의 종류, 크기, 데이터셋 등을 고려한 최적의 병렬화 방법을 찾기 위해서는 매우 많은 시간이 소요됩니다.
+DDP는 비교적 쉽게 적용할 수 있지만, [파이프라인 병렬 처리](https://pytorch.org/docs/stable/pipeline.html)나 [텐서 병렬 처리](https://pytorch.org/tutorials/intermediate/TP_tutorial.html)를 적용하려면 상당히 복잡한 코드 수정이 필요합니다. 최적화된 병렬화 처리를 적용하려면 학습 스크립트 작성 과정에서 Python 코드가 다중 처리 환경에서 어떻게 동작하는지 이해해야 하며, 특히 다중 노드 설정에서는 학습에 사용되는 각 노드의 환경을 구성해야 합니다. 또한, 모델 종류, 크기, 데이터셋 등을 고려해 최적의 병렬화 방법을 찾기 위해서는 상당히 많은 시간이 필요합니다.
 
-**반면, MoAI Platform의 AP기능은 유저가 직접 이러한 추가적인 병렬화 기법을 적용할 필요 없이, 단지 학습 스크립트에 다음과 같은 코드 한 줄을 추가하는 것 만으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
+반면, MoAI Platform의 AP 기능을 통해 사용자는 별도의 병렬화 기법을 적용할 필요 없이, 학습 스크립트에 단 한 줄의 코드를 추가하는 것으로도 최적화된 병렬화 학습을 진행할 수 있습니다.
 
 ```python
 import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-7B")
-...
+model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
+tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B")
 ...
 ```
+다른 프레임워크에서는 경험할 수 없는 MoAI Platform만의 Advanced Parallelization(AP) 기능을 통해 최적의 자동화된 분산 병렬처리를 경험해보세요. 
 
-이렇게 MoAI Platform만의 Advanced Parallelization(AP)은 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능입니다. 이를 통해 **최적의 분산 병렬 처리**를 경험해 보실 수 있습니다. AP기능을 활용하면 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 **매우 간단한 코드 한 줄**로 설정할 수 있습니다.
+AP기능을 이용하면 대규모 모델 훈련시 일반적으로 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수를 **아주 간단한 코드 한 줄로 설정할 수 있습니다.**

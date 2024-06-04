@@ -1,7 +1,7 @@
 ---
 icon: book
 tags: [guide]
-order: 10
+order: 80
 expanded: true
 ---
 
@@ -10,9 +10,12 @@ expanded: true
 
 - [Prepare Fine-tuning on MoAI Platform](Prepare_Fine_tuning_MoAI.md)
 
-- [Advanced Parallelization (AP)](/ap/index.md)
+- [Advanced Parallelization (AP)](https://docs.moreh.io/supported_documents/ap/)
 
-- [LLM Fine-tuning Parameter guide](LLM_param_guide.md)
+- [LLM Fine-tuning Parameter Guide](LLM_param_guide.md)
 
-- [KT Hyperscale AI Computing (HAC) AI Accelerator Information](KT_HAC_Models_Info.md)
+
+For technical support questions, it is best to report issue and we will investigate right away.
+
+If you have a general inquiry, please feel free to contact us at support@moreh.io.
 

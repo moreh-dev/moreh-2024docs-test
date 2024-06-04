@@ -1,12 +1,23 @@
 ---
 icon: terminal
-tags: [guide]
+tags: [tutorial, qwen]
 order: 40
 ---
 
 # 1. Fine-tuning 준비하기
 
-MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
+MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.<br>
+단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다.
+
+- CPU: 16 core 이상
+
+- memory: 256GB 이상
+
+- MAF 버전: 24.5.0
+
+- 스토리지: 61GB 이상
+
+원할한 튜토리얼 진행 전 실행 환경을 확인하시길 바랍니다.
 
 ## PyTorch 설치 여부 확인하기
 
@@ -16,13 +27,24 @@ SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 con
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...
 ```
 
-버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.
+버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.5.0 버전이 설치되어 있음을 의미합니다.
 
-만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 ***([Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md))*** 문서에 따라 conda 환경을 생성하십시오.
+만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 ***[MoAI Platform에서 Fine-tuning 준비하기](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)*** 문서에 따라 conda 환경을 생성하십시오.
+
+만약 해당 MoAI 버전이 24.5.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.
+
+```bash
+$ update-moreh --target 24.5.0
+Currently installed: 24.3.0
+Possible upgrading version: 24.5.0
+
+Do you want to upgrade? (y/n, default:n)
+y
+```
 
 ## PyTorch 동작 여부 확인하기
 
@@ -30,7 +52,7 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 
 ```bash
 $ python
-Python 3.8.19 (default, Sep 11 2023, 13:40:15)
+Python 3.8.18 (default)
 [GCC 11.2.0] :: Anaconda, Inc. on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch
@@ -38,21 +60,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> torch.cuda.device_count()
 1
 >>> torch.cuda.get_device_name()
-[2024-04-16 19:17:45.714] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-16 19:17:45.752] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-16 19:17:47.409] [info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
-[2024-04-16 19:17:47.452] [info] Establishing links to the resources...
-[2024-04-16 19:17:47.636] [info] MoAI Accelerator is ready to use.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
 'MoAI Accelerator'
 >>> quit()
-```
-
-# 필요 Python 패키지 설치
-
-다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
-
-```bash
-$ pip install transformers==4.40.1 datasets==2.18.0 loguru==0.7.2 tiktoken==0.6.0
 ```
 
 ## 학습 스크립트 다운로드
@@ -67,33 +81,10 @@ $ cd quickstart
 ...  train_qwen.py  ...
 ```
 
-## 학습 데이터 다운로드
+## 필요 Python 패키지 설치
 
-학습 데이터를 다운로드하기 위해 `dataset` 디렉터리 안에 있는 `prepare_qwen_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [python_code_instruction_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터를 다운로드하고 학습에 사용할 수 있도록 전처리를 진행하여 `qwen_dataset.pt` 파일로 저장합니다.
-
-```
-~/quickstart$ ls dataset
-...  prepare_qwen_dataset.py ...
-
-~/quickstart$ python dataset/prepare_qwen_dataset.py
-2024-04-19 03:27:05,865 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-2024-04-19 03:27:05,866 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-2024-04-19 03:27:24,010 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./qwen_dataset.pt
-
-~/quickstart$ ls
-... qwen_dataset.pt ...
-```
-
-전처리가 진행된 데이터셋은 `qwen_dataset.pt` 로 저장됩니다. 
-
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
+다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
 
 ```bash
-dataset = torch.load("./qwen_dataset.pt")
+$ pip install -r requirements/requirements_qwen.txt
 ```

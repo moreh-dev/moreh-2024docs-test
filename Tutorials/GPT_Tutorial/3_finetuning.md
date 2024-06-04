@@ -4,16 +4,13 @@ tags:  [tutorial, gpt]
 order: 40
 ---
 
-# 3. Model fine-tuning
+# 3. Model Fine-tuning
 
 Now, we will train the model through the following process. 
 
 # **Setting the Accelerator**
 
-In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.
-
-- **[KT Hyperscale AI Computing (HAC) AI Accelerator Information](/Supported_Documents/KT_HAC_Models_Info.md)** 
-- **[LLM Fine-tuning Parameter Guide ](/Supported_Documents/LLM_param_guide.md)**
+In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. If needed, please refer to the [LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md) to select the accelerator Flavor that aligns with your training objectives.
 
 
 !!!
@@ -28,20 +25,19 @@ You can choose one of the following flavors to proceed:
 - AMD MI210 GPU with 32 units.
 - AMD MI300X GPU with 8 units.
 
-Do you remember checking MoAI Accelerator in the [**GPT Fine-tuning**](index.md) document? Now let's set up the accelerator needed for learning.
+Do you remember checking MoAI Accelerator in the [**GPT Fine-tuning - Getting Started**](index.md) document? Now let's set up the accelerator needed for learning.
 
 First, we'll use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 
 ```bash
 $ moreh-smi
-11:40:36 April 16, 2024
-+-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+=================================================================================================+
++--------------------------------------------------------------------------------------------------+
+|                                                 Current Version: 24.5.0  Latest Version: 24.5.0  |
++--------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |     Model     |  Memory Usage  |  Total Memory  |  Utilization  |
++==================================================================================================+
 |  * 0     |   MoAI Accelerator  |  Large.256GB  |  -             |  -             |  -            |
-+-------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
 ```
 
 The current MoAI Accelerator in use has a memory size of 256GB.
@@ -103,9 +99,8 @@ To confirm that the changes have been successfully applied, use the **`moreh-smi
 
 ```bash
 $ moreh-smi
-11:50:29 April 16, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -129,38 +124,37 @@ $ cd ~/quickstart
 If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It's worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.
 
 
-```bash
-2024-04-19 18:12:02,209 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpbfjomsh3
-2024-04-19 18:12:02,210 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpbfjomsh3/_remote_module_non_scriptable.py
-Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [01:00<00:00, 30.41s/it]
-2024-04-19 18:13:39,352 - numexpr.utils - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-2024-04-19 18:13:39,352 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
-2024-04-19 18:13:39,607 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
-2024-04-19 18:13:39,608 - datasets - INFO - Apache Beam version 2.46.0 available.
-[2024-04-19 18:13:40.277] [info] Got DBs from backend for auto config.
-[2024-04-19 18:13:43.764] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-19 18:13:43.777] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-19 18:13:48.960] [info] [1/4] Connecting to resources on the server (192.168.110.7:24166)...
-[2024-04-19 18:13:48.973] [info] [2/4] Connecting to resources on the server (192.168.110.10:24166)...
-[2024-04-19 18:13:48.982] [info] [3/4] Connecting to resources on the server (192.168.110.34:24166)...
-[2024-04-19 18:13:48.989] [info] [4/4] Connecting to resources on the server (192.168.110.83:24166)...
-[2024-04-19 18:13:48.997] [info] Establishing links to the resources...
-[2024-04-19 18:13:49.448] [info] MoAI Accelerator is ready to use.
-[2024-04-19 18:13:49.750] [info] The number of candidates is 6.
-[2024-04-19 18:13:49.750] [info] Parallel Graph Compile start...
-[2024-04-19 18:13:54.152] [info] Elapsed Time to compile all candidates = 4401 [ms]
-[2024-04-19 18:13:54.152] [info] Parallel Graph Compile finished.
-[2024-04-19 18:13:54.152] [info] The number of possible candidates is 2.
-[2024-04-19 18:13:54.152] [info] SelectBestGraphFromCandidates start...
-[2024-04-19 18:13:54.655] [info] Elapsed Time to compute cost for survived candidates = 502 [ms]
-[2024-04-19 18:13:54.655] [info] SelectBestGraphFromCandidates finished.
-[2024-04-19 18:13:54.655] [info] Configuration for parallelism is selected.
-[2024-04-19 18:13:54.655] [info] num_stages : 4, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
-[2024-04-19 18:13:54.657] [info] train: true
-2024-04-19 18:15:58.157 | INFO     | __main__:main:81 - [Step 1/3320] Loss: 0.83984375 Throughput: 4007.04 tokens/sec
-2024-04-19 18:16:06.354 | INFO     | __main__:main:81 - [Step 2/3320] Loss: 0.8984375 Throughput: 16871.67 tokens/sec
-2024-04-19 18:16:15.819 | INFO     | __main__:main:81 - [Step 3/3320] Loss: 0.80078125 Throughput: 17141.09 tokens/sec
-2024-04-19 18:16:24.512 | INFO     | __main__:main:81 - [Step 4/3320] Loss: 0.63671875 Throughput: 17170.67 tokens/sec
+```
+...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/4] Connecting to resources on the server (192.168.110.4:24166)...
+[info] [2/4] Connecting to resources on the server (192.168.110.25:24166)...
+[info] [3/4] Connecting to resources on the server (192.168.110.61:24166)...
+[info] [4/4] Connecting to resources on the server (192.168.110.88:24166)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977780
+[info] The number of candidates is 2.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 1521 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 1.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 231 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 4, num_micro_batches : 2, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
+[info] train: true
+| INFO     | __main__:train:82 - [Step 0/6644] Loss: 0.96484375 Throughput: 1134.75 tokens/sec
+| INFO     | __main__:train:82 - [Step 10/6644] Loss: 0.65625 Throughput: 7088.29 tokens/sec
+| INFO     | __main__:train:82 - [Step 20/6644] Loss: 0.8125 Throughput: 6683.68 tokens/sec
+| INFO     | __main__:train:82 - [Step 30/6644] Loss: 0.78125 Throughput: 6928.45 tokens/sec
+| INFO     | __main__:train:82 - [Step 40/6644] Loss: 0.6328125 Throughput: 6836.38 tokens/sec
+| INFO     | __main__:train:82 - [Step 50/6644] Loss: 0.609375 Throughput: 6757.83 tokens/sec
+...
 ```
 
 The training loss decreases as follows, confirming normal training progress.
@@ -169,7 +163,7 @@ The training loss decreases as follows, confirming normal training progress.
 
 The throughput displayed during training indicates how many tokens per second are being processed through the PyTorch script.
 
-- When using 16 AMD MI250 GPUs: approximately 6800 tokens/sec
+- When using 16 AMD MI250 GPUs: approximately 6,800 tokens/sec
 
 Approximate training times based on GPU type and quantity are as follows:
 
@@ -182,10 +176,17 @@ During training, open another terminal and connect to the container. You can exe
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
 |  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    71%        |
 +-----------------------------------------------------------------------------------------------------+
+
+Processes:
++----------------------------------------------------------------------------------+
+|  Device  |  Job ID  |    PID    |             Process           |  Memory Usage  |
++==================================================================================+
+|       0  |  977780  |  2219280  |  python tutorial/train_gpt.py |  1806648 MiB   |
++----------------------------------------------------------------------------------+
 ```

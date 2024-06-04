@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [guide]
+tags: [tutorial, llama3]
 order: 40
 ---
 # 2. Moreh의 학습 코드 톺아보기
@@ -17,72 +17,60 @@ order: 40
 먼저, `transformers` 라이브러리에서 필요한 모듈을 불러옵니다.
 
 ```python
-from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
+from transformers import AdamW, LlamaForCausalLM, AutoTokenizer
 ```
 
- 앞서 다운로드 받았던 모델 체크포인트와 토크나이저를 불러옵니다.
+HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.  
 
 ```python
-model = AutoModelForCausalLM.from_pretrained("./llama3-8b")
-tokenizer = LlamaTokenizer.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ```
 
-[1. Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Hugging Face에 공개된 [학습 데이터셋](https://huggingface.co/datasets/abisee/cnn_dailymail)을 불러와 전처리하고, 데이터 로더를 정의합니다. 
 
 ```python
-  dataset = torch.load("./llama3_dataset.pt")
-
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset["train"],
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+dataset = load_dataset("cnn_dailymail", "3.0.0").with_format("torch")
+...
+dataset = dataset.map(preprocess, num_proc=16)
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset["train"],
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
 
 ```python
-    # Compose pad token mask
-    def create_mask(input_ids, tokenizer):
-		    pad_token_ids = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
-			  return (input_ids != pad_token_ids).long() 
-			   
-    # Mask pad tokens for training
-    def mask_pads(inputs, tokenizer, ignore_index = -100):
-        idx_mask = create_mask(inputs, tokenizer)
-        labels = copy.deepcopy(inputs)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Start training
+for epoch in range(args.num_train_epochs):
+	for step, batch in enumerate(train_dataloader, start=1):
+		start_time = time.perf_counter()
+		input_ids = batch["input_ids"]
+		inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
+		attn_mask = create_mask(inputs, tokenizer)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
+		loss = outputs[0]
+		loss.backward()
 
-    # Start training
-    for epoch in range(args.num_train_epochs):
-        for step, batch in enumerate(train_dataloader, start=1):
-            #breakpoint()
-            start_time = time.perf_counter()
-            input_ids = batch["input_ids"]
-            inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
-            attn_mask = create_mask(inputs, tokenizer)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
-            loss = outputs[0]
-            loss.backward()
-
-            optim.step()
-            model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
+
 위와 같이 MoAI Platform에서는 기존 PyTorch 코드와 동일한 방식으로 작성하실 수 있습니다.
 
-
-# About Advanced Parallelism
+## About Advanced Parallelism
 
 본 튜토리얼에 사용되는 학습 스크립트에서는 아래와 같은 코드가 추가로 한 줄 존재합니다. 이는 MoAI Platform에서 제공하는 최고의 병렬화 기능을 수행하는 코드입니다.
 
@@ -93,7 +81,7 @@ torch.moreh.option.enable_advanced_parallelization()
 
 예를 들어, 사용자가 일반적인 pytorch 코드에서 DDP를 적용하고 싶다면, 다음과 같은 코드 스니펫이 추가되어야 합니다. 
 
-[!ref https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)
+(Reference: [https://pytorch.org/tutorials/intermediate/ddp_tutorial.html](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html))
 
 
 ```python
@@ -124,7 +112,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py
 ```
 
-이와 같은 기본적인 설정 외에도 사용자는 학습 스크립트 작성 과정에서 Python 코드가 다중 처리(multi processing) 환경에서 어떻게 동작하는지 이해해야 하며, 특히 다중 노드(multi node) 설정에서는 학습에 사용되는 각 노드의 환경을 구성해야 합니다. 또한, 모델 종류, 크기, 데이터셋 등을 고려하여 최적의 병렬화 방법을 찾기 위해서는 상당한 시간이 필요합니다.
+DDP는 비교적 쉽게 적용할 수 있지만, [파이프라인 병렬 처리](https://pytorch.org/docs/stable/pipeline.html)나 [텐서 병렬 처리](https://pytorch.org/tutorials/intermediate/TP_tutorial.html)를 적용하려면 상당히 복잡한 코드 수정이 필요합니다. 최적화된 병렬화 처리를 적용하려면 학습 스크립트 작성 과정에서 Python 코드가 다중 처리 환경에서 어떻게 동작하는지 이해해야 하며, 특히 다중 노드 설정에서는 학습에 사용되는 각 노드의 환경을 구성해야 합니다. 또한, 모델 종류, 크기, 데이터셋 등을 고려해 최적의 병렬화 방법을 찾기 위해서는 상당히 많은 시간이 필요합니다.
 
 **반면, MoAI Platform의 AP 기능을 통해 사용자는 별도의 병렬화 기법을 적용할 필요 없이, 학습 스크립트에 단 한 줄의 코드를 추가하는 것으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
 
@@ -134,8 +122,8 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
+model = LlamaForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ...
 ```
 
-이렇게 MoAI Platform의 Advanced Parallelization(AP)은 다른 프레임워크에서는 경험하기 어려운 최적화 및 자동화 기능을 제공합니다. AP 기능를 통해 **최적의 분산 병렬처리**를 경험해 보시기 바랍니다. AP기능을 이용하면 대규모 모델 훈련 시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경 변수 조합을 **아주 간단한 코드 한 줄**로 설정할 수 있습니다.
+다른 프레임워크에서는 경험할 수 없는 MoAI Platform만의 Advanced Parallelization(AP) 기능을 통해 최적의 자동화된 분산 병렬처리를 경험해보세요. AP기능을 이용하면 대규모 모델 훈련시 일반적으로 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수를 **아주 간단한 코드 한 줄로 설정할 수 있습니다.**
